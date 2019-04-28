@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="liangwenxin’s blog">
 <meta property="og:description" content="计算机启动过程启动bios加载bootloader,bootloader读取磁盘信息加载操作系统到内存https://www.jianshu.com/p/f8040cc6e0de 计算机体系结构CPU：运算器 控制器 寄存器 缓存(Cache) 存储管理单元(MMU)内存：设备(I/O): 磁盘设备 CPU内存处理过程：L1缓存&amp;gt;L2缓存&amp;gt;主存(交换/分页)&amp;gt;磁盘(虚拟内存) 操">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T13:18:25.692Z">
+<meta property="og:updated_time" content="2019-04-27T13:33:08.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统笔记">
 <meta name="twitter:description" content="计算机启动过程启动bios加载bootloader,bootloader读取磁盘信息加载操作系统到内存https://www.jianshu.com/p/f8040cc6e0de 计算机体系结构CPU：运算器 控制器 寄存器 缓存(Cache) 存储管理单元(MMU)内存：设备(I/O): 磁盘设备 CPU内存处理过程：L1缓存&amp;gt;L2缓存&amp;gt;主存(交换/分页)&amp;gt;磁盘(虚拟内存) 操">
@@ -327,6 +327,7 @@
 <h3 id="操作系统基本特征"><a href="#操作系统基本特征" class="headerlink" title="操作系统基本特征"></a>操作系统基本特征</h3><p>并发：并行与并发、引入进程<br>共享：互斥共享方式、同时访问方式<br>虚拟：<br>异步：在多道程序环境下，系统允许多个进程并发执行</p>
 <p>0x1 并发和共享是多任务OS的最基本特征<br>0x2 虚拟性以并发性和共享性为前提<br>0x3 异步性是并发性和共享性的必然结果</p>
 <h3 id="操作系统功能"><a href="#操作系统功能" class="headerlink" title="操作系统功能"></a>操作系统功能</h3><p><strong>进程管理(CPU管理)</strong><br>进程控制：创建、暂停、唤醒、撤销<br>进程调度：调度策略、优先级<br>进程通信：进程间通信<br><strong>内存管理</strong><br>内存分配 内存共享 内存保护 虚拟内存<br><strong>设备管理</strong><br>设备的分配和调度 设备无关性 设备传输控制 设备驱动<br><strong>文件管理</strong><br>存储空间管理 文件的操作 目录的操作 文件和目录的存储权限管理</p>
+<h3 id="OS结构设计"><a href="#OS结构设计" class="headerlink" title="OS结构设计"></a>OS结构设计</h3><p>0x1 无结构操作系统<br>0x2 模块化操作系统<br>0x3 分层式操作系统</p>
 
       
     </div>
@@ -510,7 +511,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机启动过程"><span class="nav-number">1.</span> <span class="nav-text">计算机启动过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机体系结构"><span class="nav-number">2.</span> <span class="nav-text">计算机体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统发展的四个经典阶段"><span class="nav-number">3.</span> <span class="nav-text">操作系统发展的四个经典阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统基本特征"><span class="nav-number">4.</span> <span class="nav-text">操作系统基本特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统功能"><span class="nav-number">5.</span> <span class="nav-text">操作系统功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机启动过程"><span class="nav-number">1.</span> <span class="nav-text">计算机启动过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机体系结构"><span class="nav-number">2.</span> <span class="nav-text">计算机体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统发展的四个经典阶段"><span class="nav-number">3.</span> <span class="nav-text">操作系统发展的四个经典阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统基本特征"><span class="nav-number">4.</span> <span class="nav-text">操作系统基本特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统功能"><span class="nav-number">5.</span> <span class="nav-text">操作系统功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OS结构设计"><span class="nav-number">6.</span> <span class="nav-text">OS结构设计</span></a></li></ol></div>
             
 
           </div>
