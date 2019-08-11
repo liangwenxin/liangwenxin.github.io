@@ -79,16 +79,13 @@
 
 
 
-<meta name="description" content="生活已经很累了就不要去招惹感情了">
 <meta property="og:type" content="website">
 <meta property="og:title" content="liangwenxin’s blog">
 <meta property="og:url" content="http://liangwenxin.github.io/index.html">
 <meta property="og:site_name" content="liangwenxin’s blog">
-<meta property="og:description" content="生活已经很累了就不要去招惹感情了">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="liangwenxin’s blog">
-<meta name="twitter:description" content="生活已经很累了就不要去招惹感情了">
 
 
 
@@ -238,6 +235,401 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/10/计算机组成原理1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/10/计算机组成原理1/" itemprop="url">计算机组成原理1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-10T18:19:44+08:00">
+                2019-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>0x01 计算机体系系统结构</strong><br>软件和硬件</p>
+<p><strong>0x02 计算机系统组成</strong><br>运算器、控制器</p>
+<p><strong>0x03 计算机系统的层次结构</strong><br>高级语言-&gt;汇编语言-&gt;操作系统-&gt;机器语言-&gt;微指令系统<br>虚拟机器M4：用编译程序翻译成汇编语言程序<br>虚拟机器M3：用汇编程序翻译成机器语言程序<br>虚拟机器M2：用机器语言解释操作系统<br>实际机器M1：用微指令解释机器指令<br>微程序机器M0：由硬件直接执行微指令<br>备注：M4、M3、M2由软件实现M1、M0由硬件实现</p>
+<p><strong>0x04 计算机体系结构与计算机组成的区别</strong><br>计算机体系结构：程序员所见到的计算机系统的属性概念性的结构与功能特性（指令系统、数据类型、寻址技术、I/O机理）架构<br>计算机组成：实现计算机体系结构所见的属性（具体指令的实现）执行者</p>
+<p><strong>0x05 计算机得基本组成</strong><br>冯诺依曼计算机的特点<br>1.计算机由五大部件组成<br>2.指令和数据以同等地位存于存储器、可以按照地址寻访<br>3.指令和数据用二进制表示<br>4.指令由操作码和地址码组成<br><u>5.存储程序</u><br>6.以运算器为中心（核心） </p>
+<p><strong>0x06 主机的基本组成</strong><br>1.主存储器：存储体、MAR（存储器地址寄存器）、MDR（存储器数据寄存器）<br>存储体-存储单元-存储元件<br><em>存储单元：存放一串二进制代码</em><br><em>存储字：存储单元中二进制代码的组合</em><br><em>存储字长：存储单元中二进制代码的</em><br>MAR（存储器地址寄存器）：反应存储单元的个数<br>MDR（存储器数据寄存器）：反应存储字长<br>备注：以二进制的形式存储、可以按照地址访问、指令有操作码和地址码<br>2.运算器：ACC（累加器）、ALU（算数逻辑单元）、MQ（乘商寄存器）、X（操作数寄存器）<br>3.控制器：PC（程序计数器）、IR（指令寄存器）、<u>CU（控制单元）</u><br>PC（程序计数器）：存放当前欲执行的指令的地址、具有计数功能<br>IR（指令寄存器）：存放当前欲执行的指令<br>4.I/O设备</p>
+<p><strong>0x07 指令的运行过程</strong><br>1.取数指令操作：PC-&gt;MAR-&gt;存储体-&gt;MDR-&gt;IR-&gt;CU—IR-&gt;MAR-&gt;存储体-&gt;MDR-&gt;ACC<br>2.存数指令操作：PC-&gt;MAR-&gt;存储体-&gt;MDR-&gt;IR-&gt;CU—IR-&gt;MAR-&gt;存储体—ACC-&gt;MDR<br>3.ax2+bx+c程序的运行过程<br>将程序通过输入设备送至计算机<br>程序首地址-&gt;PC<br>启动程序运行<br>取指令PC-&gt;MAR-&gt;存储体-&gt;MDR-&gt;IR<br>分析指令OP（IR）-&gt;CU<br>执行指令AD（IR）-&gt;MAR-&gt;存储体-&gt;-&gt;MDR-&gt;ACC</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/05/python-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/05/python-1/" itemprop="url">python爬虫解析库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T16:07:01+08:00">
+                2019-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Urllib</strong></p>
+<p>Python内置的Http请求库<br>urllib.request 请求模块<br>urllib.error 异常处理模块<br>urllib.parse url解析模块<br>urllib.robotparser robots.txt解析模块</p>
+<p><strong>获取百度源代码</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"></span><br><span class="line">re = urllib.request.urlopen(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">print(re.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+<p><strong>Requests</strong></p>
+<p><strong>异常处理</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> ReadTimeout</span><br><span class="line"></span><br><span class="line">URL = <span class="string">"http://httpbin.org/get"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	response = requests.get(URL,timeout = <span class="number">0.01</span>)</span><br><span class="line">	print(response.status_code)</span><br><span class="line"><span class="keyword">except</span> ReadTimeout:</span><br><span class="line">	print(<span class="string">"Timeout"</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>正则表达式</strong></p>
+<p><img src="/2019/08/05/python-1/H:/hexo\blog\myblog\source\_posts\python-1\正则表达式.jpg" alt></p>
+<p>re.match</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">"Hello 123 4567 World_This is a Regex Demo"</span></span><br><span class="line">result = re.match(<span class="string">'^Hello\s\d\d\d\s\d&#123;4&#125;\s\w&#123;10&#125;.*Demo$'</span>,content)</span><br><span class="line">print(result) </span><br><span class="line">print(result.group()) <span class="comment">#输出结果</span></span><br><span class="line">print(result.span()) <span class="comment">#输出范围</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">"Hello 1234567 World_This is a Regex Demo"</span></span><br><span class="line">result = re.match(<span class="string">'^.*?(\d+).*$'</span>,content) <span class="comment">#非贪婪匹配</span></span><br><span class="line">result = re.match(<span class="string">'^.*(\d+).*$'</span>,content) <span class="comment">#贪婪匹配</span></span><br><span class="line"></span><br><span class="line">print(result) </span><br><span class="line">print(result.group(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''Hello 1234567 World_This </span></span><br><span class="line"><span class="string">is a Regex Demo'''</span></span><br><span class="line"></span><br><span class="line">result = re.match(<span class="string">'^.*?(\d+).*$'</span>,content,re.S)</span><br><span class="line"><span class="comment">#匹配换行re.s</span></span><br><span class="line"></span><br><span class="line">print(result) </span><br><span class="line">print(result.group())</span><br></pre></td></tr></table></figure>
+<p>总结：尽量使用反匹配、使用括号得到匹配目标、尽量使用非贪婪模式、有换行符就用re.s</p>
+<p>re.search</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Extra stings Hello 1234567 World_This is a Regex Demo Extra strings'</span></span><br><span class="line">result = re.search(<span class="string">'Hello.*?(\d+).*?Demo'</span>,content)</span><br><span class="line"></span><br><span class="line">print(result) </span><br><span class="line">print(result.group())</span><br></pre></td></tr></table></figure>
+<p>总结：为匹配方便，能用search就不用match</p>
+<p>html测试</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	'''</span></span><br><span class="line">result = re.search(<span class="string">'&lt;li.*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>,content,re.S)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> result: </span><br><span class="line">	print(result.group(<span class="number">1</span>),result.group(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<p>re.findall</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''   &lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">				&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="陈奕迅"&gt;十年&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">				&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="梁文鑫"&gt;再见&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">				&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">								</span></span><br><span class="line"><span class="string">			'''</span></span><br><span class="line"></span><br><span class="line">results = re.findall (<span class="string">'&lt;li.*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>,content,re.S)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">	print(result[<span class="number">0</span>],result[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>总结：查找符合所有符合的信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content =requests.get(<span class="string">'https://book.douban.com'</span>).text</span><br><span class="line">pattern = re.compile(<span class="string">'&lt;li.*?cover.*?href="(.*?)".*?title="(.*?)".*?mort-meta.*?author"&gt;(.*?)&lt;/span&gt;.*?year"&gt;(.*?)&lt;/span&gt;.*?&lt;/li&gt;'</span>,re.S)</span><br><span class="line"></span><br><span class="line">results = re.findall(pattern,content)</span><br><span class="line">print(results)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/05/python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/05/python/" itemprop="url">python爬虫基本知识</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T15:09:44+08:00">
+                2019-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>python爬虫获取网页信息</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1'</span>&#125;</span><br><span class="line">response = requests.get(<span class="string">"http://www.baidu.com"</span>,headers = headers)</span><br><span class="line"></span><br><span class="line">print(response.text) </span><br><span class="line">print(response.headers)</span><br><span class="line">print(response.content) <span class="comment">#获取二进制信息 </span></span><br><span class="line">print(response.status_code)</span><br></pre></td></tr></table></figure>
+<p><strong>将网页图片保存到本地（图片、视频、文档使用二进制方式）</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">URL = <span class="string">"https://ss0.bdstatic.com/k4oZeXSm1A5BphGlnYG/pad/hd/sidenavicon/news.png"</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1'</span>&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(URL,headers = headers)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'h:/1/1.png'</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(response.content)</span><br><span class="line">	f.close()</span><br></pre></td></tr></table></figure>
+<p><strong>数据提取方式：直接处理、Json解析、正则表达式、解析库BeautifulSoup</strong></p>
+<p><strong>解决JavaScript渲染问题(模拟js渲染)Selenium/Webdriver、Splash、Pyv8、Ghost.py</strong></p>
+<p><strong>从本地Chrome浏览器进入百度</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver </span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome()  </span><br><span class="line">driver.get(<span class="string">'https://www.baidu.com'</span>)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1148,383 +1540,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/04/28/操作系统笔记2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/28/操作系统笔记2/" itemprop="url">操作系统笔记2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T20:47:06+08:00">
-                2019-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="程序、进程和线程的区别"><a href="#程序、进程和线程的区别" class="headerlink" title="程序、进程和线程的区别"></a>程序、进程和线程的区别</h3><p>程序是一组指令及参数的集合，指令按照既定的逻辑控制计算机运行。进程则是运行着的程序，是操作系统执行的基本单位。线程则是为了节省资源而可以在同一个进程中共享资源的一个执行单位。</p>
-<h3 id="程序和进程的区别"><a href="#程序和进程的区别" class="headerlink" title="程序和进程的区别"></a>程序和进程的区别</h3><p>C、C++、Java等语言编写的源程序经相应的编译器编译成可执行文件后，提交给计算机处理器运行。应用程序的运行状态称为进程。进程与应用程序的区别在于应用程序作为一个静态文件存储在计算机系统的硬盘等存储空间中，而进程则是处于动态条件下由操作系统维护的资源管理实体。可以从以下几个方面进行区别：<br>进程是动态的，而程序是静态的。<br>进程有一定的生命周期，而程序是指令的集合，本身无”运动”的含义。<br>一个进程只能对应一个程序，一个程序可以对应一个进程。<br>进程和程序的关系就像戏剧和剧本之间的关系。</p>
-<h3 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h3><p>线程和进程是另一对有意义的概念，主要区别和联系如下：<br>进程是操作系统进行资源分配的基本单位，拥有完整的进程空间。进行系统资源分配的时候，除了CPU资源之外，不会给线程分配独立的资源，线程所需要的资源需要共享。<br>线程是进程的一部分，如果没有进行显示的线程分配，可以认为进程是单线程的；如果进程中建立了线程，则可认为系统是多线程的。<br>多线程和多进程是两种不同的概念。多线程与多进程有不同的资源共享方式。<br>进程有进程控制块PCB，系统通过PCB对进程进行调度。进程有线程控制块TCB，但TCB所表示的状态比PCB要少的多。</p>
-<h3 id="临界资源、临界区、信号量、P-V操作"><a href="#临界资源、临界区、信号量、P-V操作" class="headerlink" title="临界资源、临界区、信号量、P,V操作"></a>临界资源、临界区、信号量、P,V操作</h3><p><strong>资源：</strong><br>Linux上有硬件资源和软件资源之分。程序会受到资源限制的影响，可能在这几方面的资源限制受到影响：1.硬件方面的物理性限制（内存）；2.系统策略的限制（允许使用的CPU时间）；3.具体实现的限制（整数的长度、文件名中所允许的最大字符数）。<br><strong>临界资源：</strong><br>临界资源是一次仅允许一个进程使用的共享资源。每次只准许一个进程进入临界区，进入后不允许其他进程进入。不论是硬件临界资源，还是软件临界资源，多个进程必须互斥地对它进行访问。<br><strong>临界区：</strong><br>临界区指的是一个访问共用资源（例如：共用设备或是共用存储器）的程序片段，而这些共用资源又无法同时被多个线程访问的特性。当有线程进入临界区段时，其他线程或是进程必须等待（例如：bounded waiting 等待法），有一些同步的机制必须在临界区段的进入点与离开点实现，以确保这些共用资源是被互斥获得使用，例如：semaphore。只能被单一线程访问的设备，例如：打印机。<br><strong>信号量：</strong><br>信号量（Semaphore）有时被称为信号灯，是解决并发问题过程中所使用的一种设施，可以用来保证两个或多个关键代码段不被并发调用。一个进程在进入一个关键代码段之前，进程（或线程）必须获取一个信号量；一旦关键代码段完成了，那么该进程（或线程）必须释放信号量。其它想进入该关键代码段的进程（或线程）必须等待直到第一个进程（或线程）释放信号量。</p>
-<p>从并发机制的角度看，信号量是一种并发机制，它用于进程间传递信号的一个整数值。在信号量上只有3中操作可以进行：初始化、递减和增加，这三种都是原子操作。递减操作可以用于阻塞一个进程，增加操作可以用于解除阻塞一个进程。也成为计数信号量或一般信号量。（其它的并行机制还有很多，如二元信号量、互斥量、自旋锁、事件标志等）<br><strong>简单的理解：</strong><br>信号量：特殊变量，加1（v操作，释放资源），减1（p操作，获取资源），都是一个原子操作，值为0，减1阻塞。信号量用来同步进程。同步：只有一个程序在执行。<br>五、原子操作：它在执行过程中不能被打断。<br><strong>P，V操作：</strong><br>实际上p操作就是-1（获取资源），v操作就是+1（释放资源）。</p>
-<p>我的理解也就是信号量用来解决互斥问题的一种方法。设信号量为s,设有n个进程，所有的进程都需要访问共享资源。每个进程中进入临界区前执行semWait(s),如果s的值为负，则进程被阻塞，s的绝对值就是被阻塞进程的数量；如果值为1，则s被减为0，进程立即进入临界区；由于s不再为正，因而其他任何程序都不能进入临界区。信号量一般初始化为1，这样第一个执行semWait的进程可以立即进入临界区，并把s的值置为0。接着任何试图进入临界区的其他（一个）进程，都将发现第一个进程忙，因此被阻塞，把s的值置为-1。可以有任意数目的进程试图进入，每个不成功的尝试都会使s的值减1，当最初进入临界区的进程离开时，s的值增1，一个被阻塞的进程（如果有的话）被移出阻塞队列，置为就绪状态（这里的s的值增1和一个阻塞进程被移出置为就绪状态是一步完成的）。这样，当操作系统下一次调度时，它可以进入临界区，并把信号量的值置为0。</p>
-<p>PV操作与信号量的处理相关，P表示通过的意思，V表示释放的意思。p操作和v操作是不可中断的程序段，称为原语。如果将信号量看作共享变量，则pv操作为其临界区，多个进程不能同时执行，一般用硬件方法保证。一个信号量只能置一次初值，以后只能对之进行p操作或v操作。<br><strong>使用PV操作实现进程互斥时应该注意的是：</strong><br>0x1 每个程序中用户实现互斥的P、V操作必须成对出现，先做P操作，进临界区，后做V操作，出临界区。若有多个分支，要认真检查其成对性。<br>0x2 P、V操作应分别紧靠临界区的头尾部，临界区的代码应尽可能短，不能有死循环。<br>0x3  互斥信号量的初值一般为1。<br><strong>一些其它的知识</strong><br>0x1 二值信号量   0   1<br>0x2 计数信号量   可能会&gt;1<br>0x3 semget 创建信号量<br>0x4 semop  修改信号量的值   实现p v操作<br>0x5 semctl   初始化信号量  删除<br>0x6 信号量的使用<br>1）创建信号量，初始化值为1<br>2）提供P V操作<br>3）使用临界资源之前执行P操作，用完执行V操作<br>4）销毁信号量<br>0x7 ipcs命令<br>ipcs –q  查看消息队列      ipcs  -s<br>ipcrm  -s  +信号量id：手动清楚信号量<br>ipcs  -m  显示共享内存</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/04/27/计算机硬件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/27/计算机硬件/" itemprop="url">计算机发展历史</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T19:42:01+08:00">
-                2019-04-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="计算机硬件发展四个经典阶段"><a href="#计算机硬件发展四个经典阶段" class="headerlink" title="计算机硬件发展四个经典阶段"></a>计算机硬件发展四个经典阶段</h3><p><strong>电子管时代【1946-1955】ENCIA</strong><br>硬件：电子管、接线面板<br>程序：二进制程序、打孔：纸带卡片<br><strong>晶体管时代【1955-1965】</strong><br>1955年IBM推出第一台晶体管计算机：典型机型7094<br><strong>集成电路时代【1965-1980】</strong><br><strong>大规模集成电路时代【1980-至今】</strong><br>1962年由ARPA支持:<br>MIT、BELL和G.E参与开发”公用计算服务系统”</p>
-<h3 id="操作系统发展的四个经典阶段"><a href="#操作系统发展的四个经典阶段" class="headerlink" title="操作系统发展的四个经典阶段"></a>操作系统发展的四个经典阶段</h3><p><strong>手工操作体统（无操作系统） 50年代早期</strong><br>手工处理 繁琐耗时<br>缺点：效率低、用户独占、缺少交互<br><strong>单道批处理系统 50年代</strong><br>管理员事先讲多个作业输入到磁盘形成队列<br>操作系统依次自动处理队列的每个作业<br>程序装入和撤出自动完成效率高<br>特点：批量 自动 单道(依次处理)<br><strong>多道批处理系统 60年代初</strong><br>定义：在内存中存放多道程序，当某个程序因某种原因不能继续执行而放弃cpu时，操作系统便调度另一 程序投入 运行。<br>提高系统CPU利用率<br>提供系统吞吐量<br><strong>分时系统 60年代中</strong><br>事务性任务的涌现<br>要求支持多任务/多用户<br>多终端计算机：高性能主机+多个终端/主机采用分时技术<br>UNIX第一个实用化的分时操作系统</p>
-<h3 id="操作系统的进一步发展"><a href="#操作系统的进一步发展" class="headerlink" title="操作系统的进一步发展"></a>操作系统的进一步发展</h3><p><strong>微机操作系统</strong><br>1973年：CP/M操作系统(Control Program/Microprocessor)<br>良好的层次结构：BIOS把操作系统和硬件分隔<br>1976年：苹果MAC OS和Macintosh<br>Mac OS是运行Macintosh系列电脑上的操作系统<br>Mac OS是首个配有GUI和鼠标的操作系统<br>80年代：微软MS DOS<br>磁盘操作系统/单用户单任务/MS DOS预装在IBM PC</p>
-<p>微软Windows操作系统<br>1985年11月，windows 1.0正式上市<br>1992年04月，发表Windows 3.1<br>1993年05月，发表Windows NT<br>Windows 95、CE、98、2K、XP、Win7、Win 10……</p>
-<p>Linux操作系统<br>Linus Torvalds[芬兰.赫尔辛基大学],1969.12<br>1994年03月，Linux 1.0正式发布<br><strong>多处理机操作系统</strong><br><strong>网络操作系统</strong><br>普通操作系统+网络通信+网络服务|<br>UNIX/LINUX/WINDOWS<br>功能：透明存取/实时控制<br><strong>实时操作系统</strong><br>实时事务:军事、工业控制、智能仪器<br>应实时系统/软实时系统<br><strong>嵌入式操作系统</strong><br>常见嵌入式操作系统：Andriod、LInux、ucOS、ucLInux</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/04/27/操作系统笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/27/操作系统笔记/" itemprop="url">操作系统笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T17:27:09+08:00">
-                2019-04-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="计算机启动过程"><a href="#计算机启动过程" class="headerlink" title="计算机启动过程"></a>计算机启动过程</h3><p>启动bios加载bootloader,<br>bootloader读取磁盘信息加载操作系统到内存<br><a href="https://www.jianshu.com/p/f8040cc6e0de" target="_blank" rel="noopener">https://www.jianshu.com/p/f8040cc6e0de</a></p>
-<h3 id="计算机体系结构"><a href="#计算机体系结构" class="headerlink" title="计算机体系结构"></a>计算机体系结构</h3><p>CPU：运算器 控制器 寄存器 缓存(Cache) 存储管理单元(MMU)<br>内存：<br>设备(I/O): 磁盘设备</p>
-<p>CPU内存处理过程：L1缓存&gt;L2缓存&gt;主存(交换/分页)&gt;磁盘(虚拟内存)</p>
-<h3 id="操作系统发展的四个经典阶段"><a href="#操作系统发展的四个经典阶段" class="headerlink" title="操作系统发展的四个经典阶段"></a>操作系统发展的四个经典阶段</h3><p><strong>手工操作体统（无操作系统） 50年代早期</strong><br>手工处理 繁琐耗时<br>缺点：效率低、用户独占、缺少交互<br><strong>单道批处理系统 50年代</strong><br>管理员事先讲多个作业输入到磁盘形成队列<br>操作系统依次自动处理队列的每个作业<br>程序装入和撤出自动完成效率高<br>特点：批量 自动 单道(依次处理)<br><strong>多道批处理系统 60年代初</strong><br>定义：在内存中存放多道程序，当某个程序因某种原因不能继续执行而放弃cpu时，操作系统便调度另一 程序投入 运行。<br>提高系统CPU利用率<br>提供系统吞吐量<br><strong>分时系统 60年代中</strong><br>事务性任务的涌现<br>要求支持多任务/多用户<br>多终端计算机：高性能主机+多个终端/主机采用分时技术<br>特点：多路调制性 独占性 交互性</p>
-<h3 id="操作系统基本特征"><a href="#操作系统基本特征" class="headerlink" title="操作系统基本特征"></a>操作系统基本特征</h3><p>并发：并行与并发、引入进程<br>共享：互斥共享方式、同时访问方式<br>虚拟：<br>异步：在多道程序环境下，系统允许多个进程并发执行</p>
-<p>0x1 并发和共享是多任务OS的最基本特征<br>0x2 虚拟性以并发性和共享性为前提<br>0x3 异步性是并发性和共享性的必然结果</p>
-<h3 id="操作系统功能"><a href="#操作系统功能" class="headerlink" title="操作系统功能"></a>操作系统功能</h3><p><strong>进程管理(CPU管理)</strong><br>进程控制：创建、暂停、唤醒、撤销<br>进程调度：调度策略、优先级<br>进程通信：进程间通信<br><strong>内存管理</strong><br>内存分配 内存共享 内存保护 虚拟内存<br><strong>设备管理</strong><br>设备的分配和调度 设备无关性 设备传输控制 设备驱动<br><strong>文件管理</strong><br>存储空间管理 文件的操作 目录的操作 文件和目录的存储权限管理</p>
-<h3 id="OS结构设计"><a href="#OS结构设计" class="headerlink" title="OS结构设计"></a>OS结构设计</h3><p>0x1 无结构操作系统<br>0x2 模块化操作系统<br>0x3 分层式操作系统</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1567,7 +1582,7 @@
               <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="梁文鑫">
             
               <p class="site-author-name" itemprop="name">梁文鑫</p>
-              <p class="site-description motion-element" itemprop="description">生活已经很累了就不要去招惹感情了</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1577,7 +1592,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1590,7 +1605,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
