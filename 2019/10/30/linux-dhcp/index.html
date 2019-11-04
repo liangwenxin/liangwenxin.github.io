@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked.也就是说这个命令被锁着了，只需要执行如下命令： 1systemctl unmask firewalld 出现下面提示即可 1Removed symlink /etc/systemd/system/firewalld.service">
+<meta name="description" content="1、安装DHCP服务12yum list dhcpyum install dhcp.x86_64 2、配置DHCP服务器1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）     1cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 3、编写DHCP文档修改">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux-----firewalld">
-<meta property="og:url" content="http://liangwenxin.github.io/2019/10/25/linux-firewalld/index.html">
+<meta property="og:title" content="linux--dhcp">
+<meta property="og:url" content="http://liangwenxin.github.io/2019/10/30/linux-dhcp/index.html">
 <meta property="og:site_name" content="liangwenxin’s blog">
-<meta property="og:description" content="Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked.也就是说这个命令被锁着了，只需要执行如下命令： 1systemctl unmask firewalld 出现下面提示即可 1Removed symlink /etc/systemd/system/firewalld.service">
+<meta property="og:description" content="1、安装DHCP服务12yum list dhcpyum install dhcp.x86_64 2、配置DHCP服务器1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）     1cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 3、编写DHCP文档修改">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-29T14:24:46.133Z">
+<meta property="og:updated_time" content="2019-11-04T08:17:46.872Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux-----firewalld">
-<meta name="twitter:description" content="Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked.也就是说这个命令被锁着了，只需要执行如下命令： 1systemctl unmask firewalld 出现下面提示即可 1Removed symlink /etc/systemd/system/firewalld.service">
+<meta name="twitter:title" content="linux--dhcp">
+<meta name="twitter:description" content="1、安装DHCP服务12yum list dhcpyum install dhcp.x86_64 2、配置DHCP服务器1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）     1cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 3、编写DHCP文档修改">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://liangwenxin.github.io/2019/10/25/linux-firewalld/">
+  <link rel="canonical" href="http://liangwenxin.github.io/2019/10/30/linux-dhcp/">
 
 
 
 
 
-  <title>linux-----firewalld | liangwenxin’s blog</title>
+  <title>linux--dhcp | liangwenxin’s blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/10/25/linux-firewalld/">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/10/30/linux-dhcp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁文鑫">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux-----firewalld</h1>
+          <h1 class="post-title" itemprop="name headline">linux--dhcp</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-25T08:26:34+08:00">
-                2019-10-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-30T09:37:34+08:00">
+                2019-10-30
               </time>
             
 
@@ -320,36 +320,12 @@
       
 
       
-        <h5 id="Centos7-systemctl-启动-firewalld-时出现-Failed-to-start-firewalld-service-Unit-is-masked"><a href="#Centos7-systemctl-启动-firewalld-时出现-Failed-to-start-firewalld-service-Unit-is-masked" class="headerlink" title="Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked."></a>Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked.</h5><p>也就是说这个命令被锁着了，只需要执行如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl unmask firewalld</span><br></pre></td></tr></table></figure>
-<p>出现下面提示即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Removed symlink /etc/systemd/system/firewalld.service</span><br></pre></td></tr></table></figure>
-<p>如果啥时候想锁定他，执行下面命令即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl mask firewalld</span><br></pre></td></tr></table></figure>
-<p>通过systemctl start firewalld开启防火墙，没有任何提示即开启成功。</p>
-<p>再次通过systemctl status firewalld查看firewalld状态，显示running即已开启。</p>
-<h4 id="redirecting-to-bin-systemctl-restart-sshd-service"><a href="#redirecting-to-bin-systemctl-restart-sshd-service" class="headerlink" title="redirecting to /bin/systemctl restart sshd.service"></a>redirecting to /bin/systemctl restart sshd.service</h4><p>查看 sshd 服务是否启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status sshd.service</span><br></pre></td></tr></table></figure>
-<p>启动该服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start sshd.service</span><br></pre></td></tr></table></figure>
-<p>重启sshd服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd.service</span><br></pre></td></tr></table></figure>
-<p>设置服务开启自启</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable sshd.service</span><br></pre></td></tr></table></figure>
-<h4 id="查看linux-SSH服务常用命令"><a href="#查看linux-SSH服务常用命令" class="headerlink" title="查看linux SSH服务常用命令"></a>查看linux SSH服务常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep ssh</span><br></pre></td></tr></table></figure>
-<p> 可以看到系统中ssh安装包   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep ssh</span><br></pre></td></tr></table></figure>
-<p>查看ssh服务有没有运行,如果有,可以看到类似以下内容:<br>root 2659 1 0 18:31 ? 00:00:00 /usr/sbin/sshd<br>root 2702 2618 0 18:38 pts/0 00:00:00 grep ssh<br>这证明ssh已经在运行了,进程名为sshd<br>如果没有运行,可以通过以下命令运行之:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service sshd start</span><br></pre></td></tr></table></figure>
-<p>再看下这个ssh服务的网络连接情况:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ntlp</span><br></pre></td></tr></table></figure>
-<p>如果看到如下内容:<br>tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN<br>这说明sshd已经能够正常工作了,如果利用客户端(SecurCRT,putty等)连接不上,尝试关闭防火墙试试: service iptables stop</p>
-<h4 id="配置虚拟机网络"><a href="#配置虚拟机网络" class="headerlink" title="配置虚拟机网络"></a>配置虚拟机网络</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/networf-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
-<p>配置与主机相同网段的IP地址、子网掩码、网关信息</p>
-<p>重启网卡</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure>
-<h4 id="使用systemctl-restart-network无法重启网络和ping不通百度"><a href="#使用systemctl-restart-network无法重启网络和ping不通百度" class="headerlink" title="使用systemctl restart network无法重启网络和ping不通百度"></a>使用systemctl restart network无法重启网络和ping不通百度</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop NetworkManager.service </span><br><span class="line">systemctl disable NetworkManager.service</span><br></pre></td></tr></table></figure>
-<p>停止网络管理服务</p>
+        <h4 id="1、安装DHCP服务"><a href="#1、安装DHCP服务" class="headerlink" title="1、安装DHCP服务"></a>1、安装DHCP服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum list dhcp</span><br><span class="line">yum install dhcp.x86_64</span><br></pre></td></tr></table></figure>
+<h4 id="2、配置DHCP服务器"><a href="#2、配置DHCP服务器" class="headerlink" title="2、配置DHCP服务器"></a>2、配置DHCP服务器</h4><p>1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure>
+<h4 id="3、编写DHCP文档"><a href="#3、编写DHCP文档" class="headerlink" title="3、编写DHCP文档"></a>3、编写DHCP文档</h4><p>修改配置文件/etc/dhcp/dhcpd.conf  如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">subnet 192.168.0.0  netmask 255.255.255.0 &#123;</span><br><span class="line">  range 192.168.0.100  192.168.0.200;                         ##地址池 </span><br><span class="line">  option domain-name-servers  192.168.0.2;                   ##DNS服务器地址     </span><br><span class="line">  option routers ip-address 192.168.0.1;                        ##默认路由</span><br><span class="line">  option broadcast-address 192.168.0.255;                     ##广播地址</span><br><span class="line">  default-lease-time 86400;                                       ##默认租约时间 </span><br><span class="line">  max-lease-time 28800;                                          ##最大租约时间 </span><br><span class="line">&#125;</span><br><span class="line">host windows7 &#123;</span><br><span class="line">	hardware ethernet 00:0c:29:0f:67;</span><br><span class="line">	fixed-address 192.168.0.111;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4、重新启动DHCP服务"><a href="#4、重新启动DHCP服务" class="headerlink" title="4、重新启动DHCP服务"></a>4、重新启动DHCP服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart dhcpd.service</span><br><span class="line"></span><br><span class="line">#重新获得地址</span><br><span class="line">dhclient</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -380,8 +356,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/06/linux/" rel="next" title="linux">
-                <i class="fa fa-chevron-left"></i> linux
+              <a href="/2019/10/30/Untitled/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -390,8 +366,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/25/linux-firewalld-1/" rel="prev" title="linux配置防火墙策略实验">
-                linux配置防火墙策略实验 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/03/linux-dns/" rel="prev" title="linux-dns">
+                linux-dns <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -533,7 +509,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Centos7-systemctl-启动-firewalld-时出现-Failed-to-start-firewalld-service-Unit-is-masked"><span class="nav-number">1.</span> <span class="nav-text">Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked.</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#redirecting-to-bin-systemctl-restart-sshd-service"><span class="nav-number"></span> <span class="nav-text">redirecting to /bin/systemctl restart sshd.service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看linux-SSH服务常用命令"><span class="nav-number"></span> <span class="nav-text">查看linux SSH服务常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置虚拟机网络"><span class="nav-number"></span> <span class="nav-text">配置虚拟机网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用systemctl-restart-network无法重启网络和ping不通百度"><span class="nav-number"></span> <span class="nav-text">使用systemctl restart network无法重启网络和ping不通百度</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、安装DHCP服务"><span class="nav-number">1.</span> <span class="nav-text">1、安装DHCP服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、配置DHCP服务器"><span class="nav-number">2.</span> <span class="nav-text">2、配置DHCP服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、编写DHCP文档"><span class="nav-number">3.</span> <span class="nav-text">3、编写DHCP文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、重新启动DHCP服务"><span class="nav-number">4.</span> <span class="nav-text">4、重新启动DHCP服务</span></a></li></ol></div>
             
 
           </div>

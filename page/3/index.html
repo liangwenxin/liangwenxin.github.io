@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,13 @@
 
 
 
-<meta name="description" content="python爬虫获取网页信息 123456789import requestsheaders = &amp;#123;&apos;User-Agent&apos;:&apos;Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1&apos;&amp;#">
-<meta name="keywords" content="python">
-<meta property="og:type" content="article">
-<meta property="og:title" content="python爬虫基本知识">
-<meta property="og:url" content="http://liangwenxin.github.io/2019/08/05/python/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="liangwenxin’s blog">
+<meta property="og:url" content="http://liangwenxin.github.io/page/3/index.html">
 <meta property="og:site_name" content="liangwenxin’s blog">
-<meta property="og:description" content="python爬虫获取网页信息 123456789import requestsheaders = &amp;#123;&apos;User-Agent&apos;:&apos;Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1&apos;&amp;#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-05T08:19:02.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python爬虫基本知识">
-<meta name="twitter:description" content="python爬虫获取网页信息 123456789import requestsheaders = &amp;#123;&apos;User-Agent&apos;:&apos;Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1&apos;&amp;#">
+<meta name="twitter:title" content="liangwenxin’s blog">
 
 
 
@@ -120,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://liangwenxin.github.io/2019/08/05/python/">
+  <link rel="canonical" href="http://liangwenxin.github.io/page/3/">
 
 
 
 
 
-  <title>python爬虫基本知识 | liangwenxin’s blog</title>
+  <title>liangwenxin’s blog</title>
   
 
 
@@ -145,7 +140,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -238,9 +234,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -253,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/05/python/">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/04/11/生活已经很疲惫了-就不要去招惹疲惫的感情了/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁文鑫">
@@ -270,7 +266,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python爬虫基本知识</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/11/生活已经很疲惫了-就不要去招惹疲惫的感情了/" itemprop="url">生活已经很疲惫了 就不要去招惹疲惫的感情了</a></h1>
         
 
         <div class="post-meta">
@@ -282,8 +280,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T15:09:44+08:00">
-                2019-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-11T08:05:28+08:00">
+                2019-04-11
               </time>
             
 
@@ -320,15 +318,14 @@
       
 
       
-        <p><strong>python爬虫获取网页信息</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1'</span>&#125;</span><br><span class="line">response = requests.get(<span class="string">"http://www.baidu.com"</span>,headers = headers)</span><br><span class="line"></span><br><span class="line">print(response.text) </span><br><span class="line">print(response.headers)</span><br><span class="line">print(response.content) <span class="comment">#获取二进制信息 </span></span><br><span class="line">print(response.status_code)</span><br></pre></td></tr></table></figure>
-<p><strong>将网页图片保存到本地（图片、视频、文档使用二进制方式）</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">URL = <span class="string">"https://ss0.bdstatic.com/k4oZeXSm1A5BphGlnYG/pad/hd/sidenavicon/news.png"</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1'</span>&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(URL,headers = headers)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'h:/1/1.png'</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(response.content)</span><br><span class="line">	f.close()</span><br></pre></td></tr></table></figure>
-<p><strong>数据提取方式：直接处理、Json解析、正则表达式、解析库BeautifulSoup</strong></p>
-<p><strong>解决JavaScript渲染问题(模拟js渲染)Selenium/Webdriver、Splash、Pyv8、Ghost.py</strong></p>
-<p><strong>从本地Chrome浏览器进入百度</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver </span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome()  </span><br><span class="line">driver.get(<span class="string">'https://www.baidu.com'</span>)</span><br></pre></td></tr></table></figure>
+        
+          
+            <p>已经快二十周岁 想到自己已经是成年人了 迫切需要独立 有了自己奋斗的目标。<br>不可以每天都想象着安乐的生活  在虚无缥缈的日子里渡过。<br>要学会自己照顾好自己 不要太注重感情 因为感情失去的那天 她会让你对生活充满失望 所以感情会使你更丧。<br>生活是挺累的 但有些甜甜恋爱会闯入你的生活 会让你的生活瞬间多彩。<br>但她也会让你疲惫不堪 爱情真的让人捉摸不通 让人快乐 失去后却再也找不到快乐了。<br>有时候学会放弃也是一种快乐。坚守不住的人啊 就让她走吧。没有遇见她只是时间未到。<br>有时候 人和人的出场顺序真的很重要，陪你一起喝醉的人，是没法送你回家的。<br>喜欢一个人不要觉得她对你好就要喜欢她 要找到她的一种习惯或者品格去喜欢 这样你才可以不断去加深自己对她的感情你们也才会走的长远。<br>长大了之后 渐渐地你会发现 不是所有人都适合让你去分享成功的喜悦 有的埋怨你炫耀 有的妒忌 有的不屑 所以我们都慢慢变得谦虚起来 到最后 那些能让你毫无保留地分享骄傲心情的人 那些在你得意忘形时也不会反感而带着微笑的人 才是你最重要的人。<br>​所以我们要等着更好的爱情来啊 地球是圆的 兜兜转转 你还是会找到属于你的那份甜甜的爱情</p>
+<p>好的歌只会在无意间听到<br>可人们会贪心将其循环<br>直到有一天厌烦了 便丢弃在一边 但偶尔听到也会觉得好听<br>仔细想想遇到的人 喜欢的人不也是如此<br>都渴望遇到更好的而我遇见了她<br>每天想她一万一千八百遍去哪都要粘着她<br>爱很简单 只想和她眉来眼去 互相调戏讲点低俗内容 嘻嘻<br>“世界有很多恶意 但是请相信天道有轮回 我们要保持善良可爱和有趣” ​ ​​​</p>
+<p>你喜欢的人一定会慢慢慢慢慢慢慢慢喜欢上你的 要相信</p>
 
+          
+        
       
     </div>
     
@@ -343,40 +340,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/07/22/TCP-IP协议/" rel="next" title="TCP的三次握手与四次挥手理解">
-                <i class="fa fa-chevron-left"></i> TCP的三次握手与四次挥手理解
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/05/python-1/" rel="prev" title="python爬虫解析库">
-                python爬虫解析库 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -386,11 +357,265 @@
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/04/07/Hexo-常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/07/Hexo-常用命令/" itemprop="url">Hexo 常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-07T20:38:45+08:00">
+                2019-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h3><p>  npm install hexo -g #安装<br>  npm update hexo -g #更新<br>  hexo init #初始化</p>
+<p>  hexo n “name” #新建文章<br>  hexo g #生成静态网页<br>  hexo p #发表草稿。<br>  hexo s #启动服务<br>  hexo d #部署网站 参数：-g 部署之前先生成静态文件。</p>
+<p>  npm install hexo-server –save #安装服务<br>  hexo s #启动服务<br>  hexo server -p 5000 #更改端口<br>  hexo s -s #静态模式<br>  hexo s -i 192.168.1.1 #自定义ip<br>  hexo clean #清除缓存</p>
+<p>  hexo d -g #部署<br>  hexo g -d</p>
+
+          
+        
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/04/07/关于我/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/07/关于我/" itemprop="url">关于我</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-07T13:03:48+08:00">
+                2019-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><p>三本院校网络工程专业大二学生<br>平时喜欢看一些技术blog<br>乏创新思维的工科男<br>对待感情比较感性想成为有趣的人<br>努力在这个喧嚣的时代保持独立思考</p>
+<h3 id="学习方向"><a href="#学习方向" class="headerlink" title="学习方向"></a>学习方向</h3><p>网络工程专业，目前没有很明确的目标，以后想从事网络安全方面，目前正在学习Python、算法以及网络方面基础内容，争取多参加一些比赛，本科毕业后有考研想法。</p>
+<h3 id="关于本博客"><a href="#关于本博客" class="headerlink" title="关于本博客"></a>关于本博客</h3><p>这个博客框架诞生于2019年4月初，在HTML5课堂上突然看到了一位博主的博客，大概看了一下是基于Hexo+Github托管，然后就开始琢磨各种模板，最终选择了Next。</p>
+<p>在经历了CSDN和一些博主博客后，开始安装Node.js和Git Bush工具，根据一篇Blog完成了Hexo网页框架，在不断的完善下有了今天，虽然还不是很完善，也终于有了一种寄人篱下的感觉。</p>
+<p>日后也会不断地完善现在这个博客，不断的优化，也会不断地写Blog把学习经历记录下来。</p>
+<h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><p>我逐渐发现，自己还很幼稚，无论从思想上讲还是技术上。所以很长一段时间我都会留下一些笔记性质的文章，它对读者不是很友好，当然比纯笔记更开放。发文章的频率会很高，现在这个博客，更像是我目前学习状况的详细体现。</p>
+<p>网络上的每个人都在浪潮中浮沉，每个人都希望能在登上一座岛后发现崖下秘籍，然后站在聚光灯下，得到形而上的成功。我必须提前告诉你，这座岛上没有这些东西，不过它也不是海市蜃楼，没那么玄乎其神，没准能为你的生活增添一些乐趣和惊喜。</p>
+<p>希望你和我都能，把假大空的人生，变成看得见摸得着的欲望。</p>
+<p>旅途愉快。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
@@ -398,10 +623,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -640,10 +861,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
