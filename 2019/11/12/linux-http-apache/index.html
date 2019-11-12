@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python,">
+  <meta name="keywords" content="linux,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="python爬虫获取网页信息 123456789import requestsheaders = &amp;#123;&apos;User-Agent&apos;:&apos;Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1&apos;&amp;#">
-<meta name="keywords" content="python">
+<meta name="description" content="https://www.cnblogs.com/sxchengchen/p/7856810.html 1、安装http服务 1yum -y intsll http* 2、创建一个或多个网站12345678910111213141516vi /etc/httpd/conf/httpd.conf //在文档的末尾添加如下代码&amp;lt;VirtualHost 1.1.1.110：80&amp;gt;	Server">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python爬虫基本知识">
-<meta property="og:url" content="http://liangwenxin.github.io/2019/08/05/python/index.html">
+<meta property="og:title" content="linux--http(apache)">
+<meta property="og:url" content="http://liangwenxin.github.io/2019/11/12/linux-http-apache/index.html">
 <meta property="og:site_name" content="liangwenxin’s blog">
-<meta property="og:description" content="python爬虫获取网页信息 123456789import requestsheaders = &amp;#123;&apos;User-Agent&apos;:&apos;Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1&apos;&amp;#">
+<meta property="og:description" content="https://www.cnblogs.com/sxchengchen/p/7856810.html 1、安装http服务 1yum -y intsll http* 2、创建一个或多个网站12345678910111213141516vi /etc/httpd/conf/httpd.conf //在文档的末尾添加如下代码&amp;lt;VirtualHost 1.1.1.110：80&amp;gt;	Server">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-05T08:19:02.088Z">
+<meta property="og:updated_time" content="2019-11-12T08:31:50.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python爬虫基本知识">
-<meta name="twitter:description" content="python爬虫获取网页信息 123456789import requestsheaders = &amp;#123;&apos;User-Agent&apos;:&apos;Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1&apos;&amp;#">
+<meta name="twitter:title" content="linux--http(apache)">
+<meta name="twitter:description" content="https://www.cnblogs.com/sxchengchen/p/7856810.html 1、安装http服务 1yum -y intsll http* 2、创建一个或多个网站12345678910111213141516vi /etc/httpd/conf/httpd.conf //在文档的末尾添加如下代码&amp;lt;VirtualHost 1.1.1.110：80&amp;gt;	Server">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://liangwenxin.github.io/2019/08/05/python/">
+  <link rel="canonical" href="http://liangwenxin.github.io/2019/11/12/linux-http-apache/">
 
 
 
 
 
-  <title>python爬虫基本知识 | liangwenxin’s blog</title>
+  <title>linux--http(apache) | liangwenxin’s blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/05/python/">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/11/12/linux-http-apache/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁文鑫">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python爬虫基本知识</h1>
+          <h1 class="post-title" itemprop="name headline">linux--http(apache)</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T15:09:44+08:00">
-                2019-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T16:12:04+08:00">
+                2019-11-12
               </time>
             
 
@@ -320,14 +320,13 @@
       
 
       
-        <p><strong>python爬虫获取网页信息</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1'</span>&#125;</span><br><span class="line">response = requests.get(<span class="string">"http://www.baidu.com"</span>,headers = headers)</span><br><span class="line"></span><br><span class="line">print(response.text) </span><br><span class="line">print(response.headers)</span><br><span class="line">print(response.content) <span class="comment">#获取二进制信息 </span></span><br><span class="line">print(response.status_code)</span><br></pre></td></tr></table></figure>
-<p><strong>将网页图片保存到本地（图片、视频、文档使用二进制方式）</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">URL = <span class="string">"https://ss0.bdstatic.com/k4oZeXSm1A5BphGlnYG/pad/hd/sidenavicon/news.png"</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1'</span>&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(URL,headers = headers)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'h:/1/1.png'</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(response.content)</span><br><span class="line">	f.close()</span><br></pre></td></tr></table></figure>
-<p><strong>数据提取方式：直接处理、Json解析、正则表达式、解析库BeautifulSoup</strong></p>
-<p><strong>解决JavaScript渲染问题(模拟js渲染)Selenium/Webdriver、Splash、Pyv8、Ghost.py</strong></p>
-<p><strong>从本地Chrome浏览器进入百度</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver </span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome()  </span><br><span class="line">driver.get(<span class="string">'https://www.baidu.com'</span>)</span><br></pre></td></tr></table></figure>
+        <p><a href="https://www.cnblogs.com/sxchengchen/p/7856810.html" target="_blank" rel="noopener">https://www.cnblogs.com/sxchengchen/p/7856810.html</a></p>
+<p>1、安装http服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y intsll http*</span><br></pre></td></tr></table></figure>
+<h4 id="2、创建一个或多个网站"><a href="#2、创建一个或多个网站" class="headerlink" title="2、创建一个或多个网站"></a>2、创建一个或多个网站</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/httpd/conf/httpd.conf //在文档的末尾添加如下代码</span><br><span class="line">&lt;VirtualHost 1.1.1.110：80&gt;</span><br><span class="line">	ServerAdmin admin@www1.lwx.com //管理邮箱</span><br><span class="line">	DocumentRoot /var/www/html/www1 //目录</span><br><span class="line">	ServerName www1.lwx.com //域名</span><br><span class="line">	ErrorLog logs/www1_error_log //错误日志</span><br><span class="line">	Customlog logs/www1_access_log common //错误日志</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost 1.1.1.110：80&gt;</span><br><span class="line">	ServerAdmin admin@www2.lwx.com</span><br><span class="line">	DocumentRoot /var/www/html/www2</span><br><span class="line">	ServerName www2.lwx.com</span><br><span class="line">	ErrorLog logs/www2_error_log</span><br><span class="line">	Customlog logs/www2_access_log common</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="3、创建目录以及主页文档"><a href="#3、创建目录以及主页文档" class="headerlink" title="3、创建目录以及主页文档"></a>3、创建目录以及主页文档</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www/html/www1 </span><br><span class="line">echo &quot;this is my www1.lwx.com&quot; &gt;&gt; index.html</span><br></pre></td></tr></table></figure>
+<h4 id="4、配置dns解析文件"><a href="#4、配置dns解析文件" class="headerlink" title="4、配置dns解析文件"></a>4、配置dns解析文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">正向文件</span><br><span class="line">www1 IN A 1.1.1.110 //www1.lwx.com对应的地址</span><br><span class="line">www2 IN A 1.1.1.110 //www2.lwx.com对应的地址</span><br><span class="line">反向文件</span><br><span class="line">110 IN PTR www1.lwx.com.</span><br><span class="line">110 IN PTR www1.lwx.com.</span><br><span class="line"></span><br><span class="line">systemctl restart named //重启dns服务</span><br><span class="line"></span><br><span class="line">vi /etc/reslov.conf //设置主机或客户端dns服务器地址</span><br></pre></td></tr></table></figure>
+<h4 id="5、重启http服务器以及测试"><a href="#5、重启http服务器以及测试" class="headerlink" title="5、重启http服务器以及测试"></a>5、重启http服务器以及测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart httpd //重启</span><br><span class="line">curl www1.lwx.com</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -345,7 +344,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
         </div>
       
@@ -358,8 +357,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/22/TCP-IP协议/" rel="next" title="TCP的三次握手与四次挥手理解">
-                <i class="fa fa-chevron-left"></i> TCP的三次握手与四次挥手理解
+              <a href="/2019/11/06/linux-samba/" rel="next" title="linux--samba">
+                <i class="fa fa-chevron-left"></i> linux--samba
               </a>
             
           </div>
@@ -367,10 +366,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/05/python-1/" rel="prev" title="python爬虫解析库">
-                python爬虫解析库 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -422,8 +417,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -492,6 +496,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#2、创建一个或多个网站"><span class="nav-number">1.</span> <span class="nav-text">2、创建一个或多个网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、创建目录以及主页文档"><span class="nav-number">2.</span> <span class="nav-text">3、创建目录以及主页文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、配置dns解析文件"><span class="nav-number">3.</span> <span class="nav-text">4、配置dns解析文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、重启http服务器以及测试"><span class="nav-number">4.</span> <span class="nav-text">5、重启http服务器以及测试</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

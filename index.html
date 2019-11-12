@@ -249,6 +249,378 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/11/12/linux-http-apache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/12/linux-http-apache/" itemprop="url">linux--http(apache)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-12T16:12:04+08:00">
+                2019-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.cnblogs.com/sxchengchen/p/7856810.html" target="_blank" rel="noopener">https://www.cnblogs.com/sxchengchen/p/7856810.html</a></p>
+<p>1、安装http服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y intsll http*</span><br></pre></td></tr></table></figure>
+<h4 id="2、创建一个或多个网站"><a href="#2、创建一个或多个网站" class="headerlink" title="2、创建一个或多个网站"></a>2、创建一个或多个网站</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/httpd/conf/httpd.conf //在文档的末尾添加如下代码</span><br><span class="line">&lt;VirtualHost 1.1.1.110：80&gt;</span><br><span class="line">	ServerAdmin admin@www1.lwx.com //管理邮箱</span><br><span class="line">	DocumentRoot /var/www/html/www1 //目录</span><br><span class="line">	ServerName www1.lwx.com //域名</span><br><span class="line">	ErrorLog logs/www1_error_log //错误日志</span><br><span class="line">	Customlog logs/www1_access_log common //错误日志</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost 1.1.1.110：80&gt;</span><br><span class="line">	ServerAdmin admin@www2.lwx.com</span><br><span class="line">	DocumentRoot /var/www/html/www2</span><br><span class="line">	ServerName www2.lwx.com</span><br><span class="line">	ErrorLog logs/www2_error_log</span><br><span class="line">	Customlog logs/www2_access_log common</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="3、创建目录以及主页文档"><a href="#3、创建目录以及主页文档" class="headerlink" title="3、创建目录以及主页文档"></a>3、创建目录以及主页文档</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www/html/www1 </span><br><span class="line">echo &quot;this is my www1.lwx.com&quot; &gt;&gt; index.html</span><br></pre></td></tr></table></figure>
+<h4 id="4、配置dns解析文件"><a href="#4、配置dns解析文件" class="headerlink" title="4、配置dns解析文件"></a>4、配置dns解析文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">正向文件</span><br><span class="line">www1 IN A 1.1.1.110 //www1.lwx.com对应的地址</span><br><span class="line">www2 IN A 1.1.1.110 //www2.lwx.com对应的地址</span><br><span class="line">反向文件</span><br><span class="line">110 IN PTR www1.lwx.com.</span><br><span class="line">110 IN PTR www1.lwx.com.</span><br><span class="line"></span><br><span class="line">systemctl restart named //重启dns服务</span><br><span class="line"></span><br><span class="line">vi /etc/reslov.conf //设置主机或客户端dns服务器地址</span><br></pre></td></tr></table></figure>
+<h4 id="5、重启http服务器以及测试"><a href="#5、重启http服务器以及测试" class="headerlink" title="5、重启http服务器以及测试"></a>5、重启http服务器以及测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart httpd //重启</span><br><span class="line">curl www1.lwx.com</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/11/06/linux-samba/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/06/linux-samba/" itemprop="url">linux--samba</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T21:26:44+08:00">
+                2019-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1、安装samba服务"><a href="#1、安装samba服务" class="headerlink" title="1、安装samba服务"></a>1、安装samba服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba*</span><br></pre></td></tr></table></figure>
+<h4 id="2、添加用户"><a href="#2、添加用户" class="headerlink" title="2、添加用户"></a>2、添加用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useradd jsjuser #添加用户</span><br><span class="line">smpasswd -a jsjuser #设置密码</span><br><span class="line">groupadd jsjusers #添加用户组</span><br><span class="line">usermod -G jsjusers jsjuser #将用户添加到组中</span><br></pre></td></tr></table></figure>
+<h4 id="3、创建目录"><a href="#3、创建目录" class="headerlink" title="3、创建目录"></a>3、创建目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /share</span><br></pre></td></tr></table></figure>
+<h4 id="4、修改配置文件"><a href="#4、修改配置文件" class="headerlink" title="4、修改配置文件"></a>4、修改配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/samba/smb.conf</span><br><span class="line">[global]</span><br><span class="line">			security = user</span><br><span class="line">			hosts allow=192.168.0.0/255.255.255.0</span><br><span class="line"></span><br><span class="line">[shore]</span><br><span class="line">			comment = share</span><br><span class="line">			path = /share</span><br><span class="line">			browseable = yes</span><br><span class="line">			writable = yes</span><br><span class="line">			valid users = @jsjuser,jsjuser</span><br></pre></td></tr></table></figure>
+<h4 id="5、启动服务"><a href="#5、启动服务" class="headerlink" title="5、启动服务"></a>5、启动服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart smb</span><br></pre></td></tr></table></figure>
+<h4 id="6、关闭防火墙、修改策略"><a href="#6、关闭防火墙、修改策略" class="headerlink" title="6、关闭防火墙、修改策略"></a>6、关闭防火墙、修改策略</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl  stop iptables#防火墙</span><br><span class="line">systemctl  stop firewalld#防火墙</span><br><span class="line">setenforce 0</span><br></pre></td></tr></table></figure>
+<h4 id="7、挂载目录"><a href="#7、挂载目录" class="headerlink" title="7、挂载目录"></a>7、挂载目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount //1.1.1.110/share /mnt -o username = smb1,password = liangwenxin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net use * /delete /y</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/11/06/linux挂载光盘/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/06/linux挂载光盘/" itemprop="url">linux挂载光盘</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T09:26:15+08:00">
+                2019-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/11/03/linux-dns/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -332,6 +704,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">named-checkconf //检查语法错误</span><br></pre></td></tr></table></figure>
 <h4 id="5、重新启动服务"><a href="#5、重新启动服务" class="headerlink" title="5、重新启动服务"></a>5、重新启动服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart named //重新启动</span><br><span class="line"></span><br><span class="line">netstat -anpu | grep name //查看服务运行状态</span><br></pre></td></tr></table></figure>
 <h4 id="6、测试"><a href="#6、测试" class="headerlink" title="6、测试"></a>6、测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/resolv.conf //配置服务器DNS</span><br><span class="line"></span><br><span class="line">nslookup www.lwx.com //正向</span><br><span class="line">nslookup 68.68.68.168//反向</span><br></pre></td></tr></table></figure>
+<h4 id="7、客户端测试关闭防火墙"><a href="#7、客户端测试关闭防火墙" class="headerlink" title="7、客户端测试关闭防火墙"></a>7、客户端测试关闭防火墙</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld //关闭防火墙</span><br><span class="line"></span><br><span class="line">systemctl stop iptables //关闭防火墙</span><br></pre></td></tr></table></figure>
 
           
         
@@ -456,6 +829,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure>
 <h4 id="3、编写DHCP文档"><a href="#3、编写DHCP文档" class="headerlink" title="3、编写DHCP文档"></a>3、编写DHCP文档</h4><p>修改配置文件/etc/dhcp/dhcpd.conf  如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">subnet 192.168.0.0  netmask 255.255.255.0 &#123;</span><br><span class="line">  range 192.168.0.100  192.168.0.200;                         ##地址池 </span><br><span class="line">  option domain-name-servers  192.168.0.2;                   ##DNS服务器地址     </span><br><span class="line">  option routers ip-address 192.168.0.1;                        ##默认路由</span><br><span class="line">  option broadcast-address 192.168.0.255;                     ##广播地址</span><br><span class="line">  default-lease-time 86400;                                       ##默认租约时间 </span><br><span class="line">  max-lease-time 28800;                                          ##最大租约时间 </span><br><span class="line">&#125;</span><br><span class="line">host windows7 &#123;</span><br><span class="line">	hardware ethernet 00:0c:29:0f:67;</span><br><span class="line">	fixed-address 192.168.0.111;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dhcpd -t ##检查语法错误</span><br></pre></td></tr></table></figure>
 <h4 id="4、重新启动DHCP服务"><a href="#4、重新启动DHCP服务" class="headerlink" title="4、重新启动DHCP服务"></a>4、重新启动DHCP服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart dhcpd.service #重新启动dhcp</span><br><span class="line"></span><br><span class="line">dhclient #重新获得地址</span><br></pre></td></tr></table></figure>
 
           
@@ -796,7 +1170,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/06/linux/" itemprop="url">linux</a></h1>
+                <a class="post-title-link" href="/2019/09/06/linux/" itemprop="url">linux基本操作</a></h1>
         
 
         <div class="post-meta">
@@ -848,8 +1222,12 @@
       
         
           
-            <p>我们要查看一些文本文件的内容时，要使用文本编辑器来查看。在Linux下，可以使用一些命令预览文本文件中的内容，而不必使用文本编辑器打开查看。这篇笔记分享几个常用的文本查看命令。分别是：</p>
+            <h4 id="1、查看文档信息"><a href="#1、查看文档信息" class="headerlink" title="1、查看文档信息"></a>1、查看文档信息</h4><p>我们要查看一些文本文件的内容时，要使用文本编辑器来查看。在Linux下，可以使用一些命令预览文本文件中的内容，而不必使用文本编辑器打开查看。这篇笔记分享几个常用的文本查看命令。分别是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat：从第一行开始显示文本内容（适用于内容较少的）</span><br><span class="line">tac：从最后一行开始显示，是 cat 的逆顺序</span><br><span class="line">more：一页一页的显示文本内容（适用于内容较多的）</span><br><span class="line">less：与 more 类似，但是比 more 更好的是，它可以往前翻页！</span><br><span class="line">head：只看文本的前面几行</span><br><span class="line">tail：只看文本的后面几行</span><br><span class="line">nl：显示文本内容与行号</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -v &quot;^#&quot;     ###查看非注释文件</span><br></pre></td></tr></table></figure>
+<h4 id="2、挂载光盘"><a href="#2、挂载光盘" class="headerlink" title="2、挂载光盘"></a>2、挂载光盘</h4><p>1、找到光盘的完整路径名。在命令行输入：ls -l /dev | grep cdrom。<br>2、可以看到光盘的名字叫做：cdrom。然后在命令行执行： mount /dev/cdrom /mnt/。这会把光盘挂载到/mnt目录下。然后我们就可以通过访问/mnt来访问光盘。<br>3、比如我们要从光盘中拷贝出来一个rpm包。首先在命令行输入：cd /mnt。然后输入ll。就列出了光盘里面的所有的内容。<br>4、进入到Packages目录，在命令行输入：cd Packages。然后输入：ls -l | grep mysql。找到我们要拷贝出来的rpm包。<br>5、在命令行输入： cp mysql-5.1.66-2.el6_3.x86_64.rpm /opt/soft。把mysql-5.1.66-2.el6_3.x86_64.rpm这个包拷贝到/opt/soft目录下面。在命令行输入：cd /opt/soft。然后ll。可以看到文件已经被拷贝过去了。<br>6、使用完毕以后，要记得卸载光盘。在命令行输入：umount /mnt。然后再进入/mnt目录就看不到光盘的内容了，说明已经成功卸载。</p>
+<p>这个时候，会出现一个问题：mount: block device /dev/sr0 is write-protected, mounting read-only<br>提示信息说，虚拟机挂着光驱光驱时提示只读。用以下命令可解决该报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o remount,rw /dev/cdrom /mnt</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1136,421 +1514,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/05/python-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/05/python-1/" itemprop="url">python爬虫解析库</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T16:07:01+08:00">
-                2019-08-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>Urllib</strong></p>
-<p>Python内置的Http请求库<br>urllib.request 请求模块<br>urllib.error 异常处理模块<br>urllib.parse url解析模块<br>urllib.robotparser robots.txt解析模块</p>
-<p><strong>获取百度源代码</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"></span><br><span class="line">re = urllib.request.urlopen(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">print(re.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
-<p><strong>Requests</strong></p>
-<p><strong>异常处理</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> ReadTimeout</span><br><span class="line"></span><br><span class="line">URL = <span class="string">"http://httpbin.org/get"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	response = requests.get(URL,timeout = <span class="number">0.01</span>)</span><br><span class="line">	print(response.status_code)</span><br><span class="line"><span class="keyword">except</span> ReadTimeout:</span><br><span class="line">	print(<span class="string">"Timeout"</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>正则表达式</strong></p>
-<p><img src="/2019/08/05/python-1/H:/hexo\blog\myblog\source\_posts\python-1\正则表达式.jpg" alt></p>
-<p>re.match</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">"Hello 123 4567 World_This is a Regex Demo"</span></span><br><span class="line">result = re.match(<span class="string">'^Hello\s\d\d\d\s\d&#123;4&#125;\s\w&#123;10&#125;.*Demo$'</span>,content)</span><br><span class="line">print(result) </span><br><span class="line">print(result.group()) <span class="comment">#输出结果</span></span><br><span class="line">print(result.span()) <span class="comment">#输出范围</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">"Hello 1234567 World_This is a Regex Demo"</span></span><br><span class="line">result = re.match(<span class="string">'^.*?(\d+).*$'</span>,content) <span class="comment">#非贪婪匹配</span></span><br><span class="line">result = re.match(<span class="string">'^.*(\d+).*$'</span>,content) <span class="comment">#贪婪匹配</span></span><br><span class="line"></span><br><span class="line">print(result) </span><br><span class="line">print(result.group(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''Hello 1234567 World_This </span></span><br><span class="line"><span class="string">is a Regex Demo'''</span></span><br><span class="line"></span><br><span class="line">result = re.match(<span class="string">'^.*?(\d+).*$'</span>,content,re.S)</span><br><span class="line"><span class="comment">#匹配换行re.s</span></span><br><span class="line"></span><br><span class="line">print(result) </span><br><span class="line">print(result.group())</span><br></pre></td></tr></table></figure>
-<p>总结：尽量使用反匹配、使用括号得到匹配目标、尽量使用非贪婪模式、有换行符就用re.s</p>
-<p>re.search</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Extra stings Hello 1234567 World_This is a Regex Demo Extra strings'</span></span><br><span class="line">result = re.search(<span class="string">'Hello.*?(\d+).*?Demo'</span>,content)</span><br><span class="line"></span><br><span class="line">print(result) </span><br><span class="line">print(result.group())</span><br></pre></td></tr></table></figure>
-<p>总结：为匹配方便，能用search就不用match</p>
-<p>html测试</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	'''</span></span><br><span class="line">result = re.search(<span class="string">'&lt;li.*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>,content,re.S)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> result: </span><br><span class="line">	print(result.group(<span class="number">1</span>),result.group(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-<p>re.findall</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''   &lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">				&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="陈奕迅"&gt;十年&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">				&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="梁文鑫"&gt;再见&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">				&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">								</span></span><br><span class="line"><span class="string">			'''</span></span><br><span class="line"></span><br><span class="line">results = re.findall (<span class="string">'&lt;li.*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>,content,re.S)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">	print(result[<span class="number">0</span>],result[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-<p>总结：查找符合所有符合的信息</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content =requests.get(<span class="string">'https://book.douban.com'</span>).text</span><br><span class="line">pattern = re.compile(<span class="string">'&lt;li.*?cover.*?href="(.*?)".*?title="(.*?)".*?mort-meta.*?author"&gt;(.*?)&lt;/span&gt;.*?year"&gt;(.*?)&lt;/span&gt;.*?&lt;/li&gt;'</span>,re.S)</span><br><span class="line"></span><br><span class="line">results = re.findall(pattern,content)</span><br><span class="line">print(results)</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/05/python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/05/python/" itemprop="url">python爬虫基本知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T15:09:44+08:00">
-                2019-08-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>python爬虫获取网页信息</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1'</span>&#125;</span><br><span class="line">response = requests.get(<span class="string">"http://www.baidu.com"</span>,headers = headers)</span><br><span class="line"></span><br><span class="line">print(response.text) </span><br><span class="line">print(response.headers)</span><br><span class="line">print(response.content) <span class="comment">#获取二进制信息 </span></span><br><span class="line">print(response.status_code)</span><br></pre></td></tr></table></figure>
-<p><strong>将网页图片保存到本地（图片、视频、文档使用二进制方式）</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">URL = <span class="string">"https://ss0.bdstatic.com/k4oZeXSm1A5BphGlnYG/pad/hd/sidenavicon/news.png"</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1'</span>&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(URL,headers = headers)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'h:/1/1.png'</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">	f.write(response.content)</span><br><span class="line">	f.close()</span><br></pre></td></tr></table></figure>
-<p><strong>数据提取方式：直接处理、Json解析、正则表达式、解析库BeautifulSoup</strong></p>
-<p><strong>解决JavaScript渲染问题(模拟js渲染)Selenium/Webdriver、Splash、Pyv8、Ghost.py</strong></p>
-<p><strong>从本地Chrome浏览器进入百度</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver </span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome()  </span><br><span class="line">driver.get(<span class="string">'https://www.baidu.com'</span>)</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/07/22/TCP-IP协议/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/22/TCP-IP协议/" itemprop="url">TCP的三次握手与四次挥手理解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-22T22:10:56+08:00">
-                2019-07-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>TCP的三次握手与四次挥手理解</strong></p>
-<p><img src="/2019/07/22/TCP-IP协议/H:/hexo\blog\myblog\source\_posts\TCP-IP协议\1.jpg" alt></p>
-<p>序列号seq：占4个字节，用来标记数据段的顺序，TCP把连接中发送的所有数据字节都编上一个序号，第一个字节的编号由本地随机产生；给字节编上序号后，就给每一个报文段指派一个序号；序列号seq就是这个报文段中的第一个字节的数据编号。</p>
-<p> 确认号ack：占4个字节，期待收到对方下一个报文段的第一个数据字节的序号；序列号表示报文段携带数据的第一个字节的编号；而确认号指的是期望接收到下一个字节的编号；因此当前报文段最后一个字节的编号+1即为确认号。</p>
-<p>确认ACK：占1位，仅当ACK=1时，确认号字段才有效。ACK=0时，确认号无效。</p>
-<p> 同步SYN：连接建立时用于同步序号。当SYN=1，ACK=0时表示：这是一个连接请求报文段。若同意连接，则在响应报文段中使得SYN=1，ACK=1。因此，SYN=1表示这是一个连接请求，或连接接受报文。SYN这个标志位只有在TCP建产连接时才会被置1，握手完成后SYN标志位被置0。</p>
-<p> 终止FIN：用来释放一个连接。FIN=1表示：此报文段的发送方的数据已经发送完毕，并要求释放运输连接</p>
-<p>PS：ACK、SYN和FIN这些大写的单词表示标志位，其值要么是1，要么是0；ack、seq小写的单词表示序号。</p>
-<p>字段    含义<br>URG    紧急指针是否有效。为1，表示某一位需要被优先处理<br>ACK    确认号是否有效，一般置为1。<br>PSH    提示接收端应用程序立即从TCP缓冲区把数据读走。<br>RST    对方要求重新建立连接，复位。<br>SYN    请求建立连接，并在其序列号的字段进行序列号的初始值设定。建立连接，设置为1<br>FIN        希望断开连接。</p>
-<p><strong>三次握手过程理解</strong></p>
-<p><img src="/2019/07/22/TCP-IP协议/H:/hexo\blog\myblog\source\_posts\TCP-IP协议\20180717202520531.png" alt></p>
-<p>第一次握手：建立连接时，客户端发送syn包（syn=j）到服务器，并进入SYN_SENT状态，等待服务器确认；SYN：同步序列编号（Synchronize Sequence Numbers）。</p>
-<p>第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；</p>
-<p>第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=k+1），此包发送完毕，客户端和服务器进入ESTABLISHED（TCP连接成功）状态，完成三次握手。</p>
-<p><strong>四次挥手过程理解</strong></p>
-<p><img src="/2019/07/22/TCP-IP协议/H:/hexo\blog\myblog\source\_posts\TCP-IP协议\3.png" alt="四次握手"> </p>
-<p>1）客户端进程发出连接释放报文，并且停止发送数据。释放数据报文首部，FIN=1，其序列号为seq=u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，客户端进入FIN-WAIT-1（终止等待1）状态。 TCP规定，FIN报文段即使不携带数据，也要消耗一个序号。<br>2）服务器收到连接释放报文，发出确认报文，ACK=1，ack=u+1，并且带上自己的序列号seq=v，此时，服务端就进入了CLOSE-WAIT（关闭等待）状态。TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。<br>3）客户端收到服务器的确认请求后，此时，客户端就进入FIN-WAIT-2（终止等待2）状态，等待服务器发送连接释放报文（在这之前还需要接受服务器发送的最后的数据）。<br>4）服务器将最后的数据发送完毕后，就向客户端发送连接释放报文，FIN=1，ack=u+1，由于在半关闭状态，服务器很可能又发送了一些数据，假定此时的序列号为seq=w，此时，服务器就进入了LAST-ACK（最后确认）状态，等待客户端的确认。<br>5）客户端收到服务器的连接释放报文后，必须发出确认，ACK=1，ack=w+1，而自己的序列号是seq=u+1，此时，客户端就进入了TIME-WAIT（时间等待）状态。注意此时TCP连接还没有释放，必须经过2∗∗MSL（最长报文段寿命）的时间后，当客户端撤销相应的TCB后，才进入CLOSED状态。</p>
-<p>6）服务器只要收到了客户端发出的确认，立即进入CLOSED状态。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，服务器结束TCP连接的时间要比客户端早一些。</p>
-<p>常见面试题<br>【问题1】为什么连接的时候是三次握手，关闭的时候却是四次握手？</p>
-<p>答：因为当Server端收到Client端的SYN连接请求报文后，可以直接发送SYN+ACK报文。其中ACK报文是用来应答的，SYN报文是用来同步的。但是关闭连接时，当Server端收到FIN报文时，很可能并不会立即关闭SOCKET，所以只能先回复一个ACK报文，告诉Client端，”你发的FIN报文我收到了”。只有等到我Server端所有的报文都发送完了，我才能发送FIN报文，因此不能一起发送。故需要四步握手。</p>
-<p>【问题2】为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态？</p>
-<p>答：虽然按道理，四个报文都发送完毕，我们可以直接进入CLOSE状态了，但是我们必须假象网络是不可靠的，有可以最后一个ACK丢失。所以TIME_WAIT状态就是用来重发可能丢失的ACK报文。在Client发送出最后的ACK回复，但该ACK可能丢失。Server如果没有收到ACK，将不断重复发送FIN片段。所以Client不能立即关闭，它必须确认Server接收到了该ACK。Client会在发送出ACK之后进入到TIME_WAIT状态。Client会设置一个计时器，等待2MSL的时间。如果在该时间内再次收到FIN，那么Client会重发ACK并再次等待2MSL。所谓的2MSL是两倍的MSL(Maximum Segment Lifetime)。MSL指一个片段在网络中最大的存活时间，2MSL就是一个发送和一个回复所需的最大时间。如果直到2MSL，Client都没有再次收到FIN，那么Client推断ACK已经被成功接收，则结束TCP连接。</p>
-<p>【问题3】为什么不能用两次握手进行连接？</p>
-<p>答：3次握手完成两个重要的功能，既要双方做好发送数据的准备工作(双方都知道彼此已准备好)，也要允许双方就初始序列号进行协商，这个序列号在握手过程中被发送和确认。</p>
-<p>   现在把三次握手改成仅需要两次握手，死锁是可能发生的。作为例子，考虑计算机S和C之间的通信，假定C给S发送一个连接请求分组，S收到了这个分组，并发 送了确认应答分组。按照两次握手的协定，S认为连接已经成功地建立了，可以开始发送数据分组。可是，C在S的应答分组在传输中被丢失的情况下，将不知道S 是否已准备好，不知道S建立什么样的序列号，C甚至怀疑S是否收到自己的连接请求分组。在这种情况下，C认为连接还未建立成功，将忽略S发来的任何数据分 组，只等待连接确认应答分组。而S在发出的分组超时后，重复发送同样的分组。这样就形成了死锁。</p>
-<p>【问题4】如果已经建立了连接，但是客户端突然出现故障了怎么办？</p>
-<p>TCP还设有一个保活计时器，显然，客户端如果出现故障，服务器不能一直等下去，白白浪费资源。服务器每收到一次客户端的请求后都会重新复位这个计时器，时间通常是设置为2小时，若两小时还没有收到客户端的任何数据，服务器就会发送一个探测报文段，以后每隔75秒钟发送一次。若一连发送10个探测报文仍然没反应，服务器就认为客户端出了故障，接着就关闭连接。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1603,7 +1566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
