@@ -249,6 +249,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2020/03/02/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/02/hello-world/" itemprop="url">hello,world</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-02T13:12:55+08:00">
+                2020-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="hello-world"><a href="#hello-world" class="headerlink" title="hello,world"></a>hello,world</h2><p>today is 2020,3.2,13:14</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/11/12/linux-http-apache/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -268,7 +388,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/12/linux-http-apache/" itemprop="url">linux--http(apache)</a></h1>
+                <a class="post-title-link" href="/2019/11/12/linux-http-apache/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
@@ -830,6 +950,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">subnet 192.168.0.0  netmask 255.255.255.0 &#123;</span><br><span class="line">  range 192.168.0.100  192.168.0.200;                         ##地址池 </span><br><span class="line">  option domain-name-servers  192.168.0.2;                   ##DNS服务器地址     </span><br><span class="line">  option routers ip-address 192.168.0.1;                        ##默认路由</span><br><span class="line">  option broadcast-address 192.168.0.255;                     ##广播地址</span><br><span class="line">  default-lease-time 86400;                                       ##默认租约时间 </span><br><span class="line">  max-lease-time 28800;                                          ##最大租约时间 </span><br><span class="line">&#125;</span><br><span class="line">host windows7 &#123;</span><br><span class="line">	hardware ethernet 00:0c:29:0f:67;</span><br><span class="line">	fixed-address 192.168.0.111;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dhcpd -t ##检查语法错误</span><br></pre></td></tr></table></figure>
 <h4 id="4、重新启动DHCP服务"><a href="#4、重新启动DHCP服务" class="headerlink" title="4、重新启动DHCP服务"></a>4、重新启动DHCP服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart dhcpd.service #重新启动dhcp</span><br><span class="line"></span><br><span class="line">dhclient #重新获得地址</span><br></pre></td></tr></table></figure>
+<p>servername 95</p>
+<p>/var/www/html/index.html</p>
+<p>119行</p>
 
           
         
@@ -1227,6 +1350,10 @@
 <h4 id="2、挂载光盘"><a href="#2、挂载光盘" class="headerlink" title="2、挂载光盘"></a>2、挂载光盘</h4><p>1、找到光盘的完整路径名。在命令行输入：ls -l /dev | grep cdrom。<br>2、可以看到光盘的名字叫做：cdrom。然后在命令行执行： mount /dev/cdrom /mnt/。这会把光盘挂载到/mnt目录下。然后我们就可以通过访问/mnt来访问光盘。<br>3、比如我们要从光盘中拷贝出来一个rpm包。首先在命令行输入：cd /mnt。然后输入ll。就列出了光盘里面的所有的内容。<br>4、进入到Packages目录，在命令行输入：cd Packages。然后输入：ls -l | grep mysql。找到我们要拷贝出来的rpm包。<br>5、在命令行输入： cp mysql-5.1.66-2.el6_3.x86_64.rpm /opt/soft。把mysql-5.1.66-2.el6_3.x86_64.rpm这个包拷贝到/opt/soft目录下面。在命令行输入：cd /opt/soft。然后ll。可以看到文件已经被拷贝过去了。<br>6、使用完毕以后，要记得卸载光盘。在命令行输入：umount /mnt。然后再进入/mnt目录就看不到光盘的内容了，说明已经成功卸载。</p>
 <p>这个时候，会出现一个问题：mount: block device /dev/sr0 is write-protected, mounting read-only<br>提示信息说，虚拟机挂着光驱光驱时提示只读。用以下命令可解决该报错：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o remount,rw /dev/cdrom /mnt</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/qq_42776455/article/details/84066933" target="_blank" rel="noopener">https://blog.csdn.net/qq_42776455/article/details/84066933</a></p>
+<p><a href="https://www.cnblogs.com/chris-cp/p/4843407.html" target="_blank" rel="noopener">https://www.cnblogs.com/chris-cp/p/4843407.html</a></p>
+<p>3、安装报错NO <strong>*</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release //安装专业版软件库</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1387,132 +1514,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/10/计算机组成原理1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/10/计算机组成原理1/" itemprop="url">计算机组成原理1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-10T18:19:44+08:00">
-                2019-08-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>0x01 计算机体系系统结构</strong><br>软件和硬件</p>
-<p><strong>0x02 计算机系统组成</strong><br>运算器、控制器</p>
-<p><strong>0x03 计算机系统的层次结构</strong><br>高级语言-&gt;汇编语言-&gt;操作系统-&gt;机器语言-&gt;微指令系统<br>虚拟机器M4：用编译程序翻译成汇编语言程序<br>虚拟机器M3：用汇编程序翻译成机器语言程序<br>虚拟机器M2：用机器语言解释操作系统<br>实际机器M1：用微指令解释机器指令<br>微程序机器M0：由硬件直接执行微指令<br>备注：M4、M3、M2由软件实现M1、M0由硬件实现</p>
-<p><strong>0x04 计算机体系结构与计算机组成的区别</strong><br>计算机体系结构：程序员所见到的计算机系统的属性概念性的结构与功能特性（指令系统、数据类型、寻址技术、I/O机理）架构<br>计算机组成：实现计算机体系结构所见的属性（具体指令的实现）执行者</p>
-<p><strong>0x05 计算机得基本组成</strong><br>冯诺依曼计算机的特点<br>1.计算机由五大部件组成<br>2.指令和数据以同等地位存于存储器、可以按照地址寻访<br>3.指令和数据用二进制表示<br>4.指令由操作码和地址码组成<br><u>5.存储程序</u><br>6.以运算器为中心（核心） </p>
-<p><strong>0x06 主机的基本组成</strong><br>1.主存储器：存储体、MAR（存储器地址寄存器）、MDR（存储器数据寄存器）<br>存储体-存储单元-存储元件<br><em>存储单元：存放一串二进制代码</em><br><em>存储字：存储单元中二进制代码的组合</em><br><em>存储字长：存储单元中二进制代码的</em><br>MAR（存储器地址寄存器）：反应存储单元的个数<br>MDR（存储器数据寄存器）：反应存储字长<br>备注：以二进制的形式存储、可以按照地址访问、指令有操作码和地址码<br>2.运算器：ACC（累加器）、ALU（算数逻辑单元）、MQ（乘商寄存器）、X（操作数寄存器）<br>3.控制器：PC（程序计数器）、IR（指令寄存器）、<u>CU（控制单元）</u><br>PC（程序计数器）：存放当前欲执行的指令的地址、具有计数功能<br>IR（指令寄存器）：存放当前欲执行的指令<br>4.I/O设备</p>
-<p><strong>0x07 指令的运行过程</strong><br>1.取数指令操作：PC-&gt;MAR-&gt;存储体-&gt;MDR-&gt;IR-&gt;CU—IR-&gt;MAR-&gt;存储体-&gt;MDR-&gt;ACC<br>2.存数指令操作：PC-&gt;MAR-&gt;存储体-&gt;MDR-&gt;IR-&gt;CU—IR-&gt;MAR-&gt;存储体—ACC-&gt;MDR<br>3.ax2+bx+c程序的运行过程<br>将程序通过输入设备送至计算机<br>程序首地址-&gt;PC<br>启动程序运行<br>取指令PC-&gt;MAR-&gt;存储体-&gt;MDR-&gt;IR<br>分析指令OP（IR）-&gt;CU<br>执行指令AD（IR）-&gt;MAR-&gt;存储体-&gt;-&gt;MDR-&gt;ACC</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1565,7 +1566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1631,7 +1632,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
