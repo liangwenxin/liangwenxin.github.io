@@ -249,6 +249,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/04/28/操作系统笔记3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/28/操作系统笔记3/" itemprop="url">操作系统笔记3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T21:06:27+08:00">
+                2019-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="临界资源、临界区、信号量、P-V操作"><a href="#临界资源、临界区、信号量、P-V操作" class="headerlink" title="临界资源、临界区、信号量、P,V操作"></a>临界资源、临界区、信号量、P,V操作</h3><p><strong>资源：</strong><br>Linux上有硬件资源和软件资源之分。程序会受到资源限制的影响，可能在这几方面的资源限制受到影响：1.硬件方面的物理性限制（内存）；2.系统策略的限制（允许使用的CPU时间）；3.具体实现的限制（整数的长度、文件名中所允许的最大字符数）。<br><strong>临界资源：</strong><br>临界资源是一次仅允许一个进程使用的共享资源。每次只准许一个进程进入临界区，进入后不允许其他进程进入。不论是硬件临界资源，还是软件临界资源，多个进程必须互斥地对它进行访问。<br><strong>临界区：</strong><br>临界区指的是一个访问共用资源（例如：共用设备或是共用存储器）的程序片段，而这些共用资源又无法同时被多个线程访问的特性。当有线程进入临界区段时，其他线程或是进程必须等待（例如：bounded waiting 等待法），有一些同步的机制必须在临界区段的进入点与离开点实现，以确保这些共用资源是被互斥获得使用，例如：semaphore。只能被单一线程访问的设备，例如：打印机。<br><strong>信号量：</strong><br>信号量（Semaphore）有时被称为信号灯，是解决并发问题过程中所使用的一种设施，可以用来保证两个或多个关键代码段不被并发调用。一个进程在进入一个关键代码段之前，进程（或线程）必须获取一个信号量；一旦关键代码段完成了，那么该进程（或线程）必须释放信号量。其它想进入该关键代码段的进程（或线程）必须等待直到第一个进程（或线程）释放信号量。</p>
+<p>从并发机制的角度看，信号量是一种并发机制，它用于进程间传递信号的一个整数值。在信号量上只有3中操作可以进行：初始化、递减和增加，这三种都是原子操作。递减操作可以用于阻塞一个进程，增加操作可以用于解除阻塞一个进程。也成为计数信号量或一般信号量。（其它的并行机制还有很多，如二元信号量、互斥量、自旋锁、事件标志等）<br><strong>简单的理解：</strong>信号量：特殊变量，加1（v操作，释放资源），减1（p操作，获取资源），都是一个原子操作，值为0，减1阻塞。信号量用来同步进程。同步：只有一个程序在执行。<br>五、原子操作：它在执行过程中不能被打断。<br><strong>P，V操作：</strong><br>实际上p操作就是-1（获取资源），v操作就是+1（释放资源）。<br>我的理解也就是信号量用来解决互斥问题的一种方法。设信号量为s,设有n个进程，所有的进程都需要访问共享资源。每个进程中进入临界区前执行semWait(s),如果s的值为负，则进程被阻塞，s的绝对值就是被阻塞进程的数量；如果值为1，则s被减为0，进程立即进入临界区；由于s不再为正，因而其他任何程序都不能进入临界区。信号量一般初始化为1，这样第一个执行semWait的进程可以立即进入临界区，并把s的值置为0。接着任何试图进入临界区的其他（一个）进程，都将发现第一个进程忙，因此被阻塞，把s的值置为-1。可以有任意数目的进程试图进入，每个不成功的尝试都会使s的值减1，当最初进入临界区的进程离开时，s的值增1，一个被阻塞的进程（如果有的话）被移出阻塞队列，置为就绪状态（这里的s的值增1和一个阻塞进程被移出置为就绪状态是一步完成的）。这样，当操作系统下一次调度时，它可以进入临界区，并把信号量的值置为0。<br>PV操作与信号量的处理相关，P表示通过的意思，V表示释放的意思。p操作和v操作是不可中断的程序段，称为原语。如果将信号量看作共享变量，则pv操作为其临界区，多个进程不能同时执行，一般用硬件方法保证。一个信号量只能置一次初值，以后只能对之进行p操作或v操作。<br><strong>使用PV操作实现进程互斥时应该注意的是：</strong><br>0x1 每个程序中用户实现互斥的P、V操作必须成对出现，先做P操作，进临界区，后做V操作，出临界区。若有多个分支，要认真检查其成对性。<br>0x2 P、V操作应分别紧靠临界区的头尾部，临界区的代码应尽可能短，不能有死循环。<br>0x3  互斥信号量的初值一般为1。<br><strong>一些其它的知识</strong><br>0x1 二值信号量   0   1<br>0x2 计数信号量   可能会&gt;1<br>0x3 semget 创建信号量<br>0x4 semop  修改信号量的值   实现p v操作<br>0x5 semctl   初始化信号量  删除<br>0x6 信号量的使用<br>1）创建信号量，初始化值为1<br>2）提供P V操作<br>3）使用临界资源之前执行P操作，用完执行V操作<br>4）销毁信号量<br>0x7 ipcs命令<br>ipcs –q  查看消息队列      ipcs  -s<br>ipcrm  -s  +信号量id：手动清楚信号量<br>ipcs  -m  显示共享内存</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/04/28/操作系统笔记2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1039,7 +1160,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1052,7 +1173,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

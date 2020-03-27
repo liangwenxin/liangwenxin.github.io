@@ -249,6 +249,227 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2020/03/27/C-容器的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/27/C-容器的使用/" itemprop="url">C++容器的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-27T11:34:39+08:00">
+                2020-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1、vector"><a href="#1、vector" class="headerlink" title="1、vector"></a>1、vector</h3><p>Vectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。</p>
+<table>
+<thead>
+<tr>
+<th><a href="cppvector_details.html#Constructors">Constructors</a></th>
+<th>构造函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="cppvector_details.html#Operators">Operators</a></td>
+<td>对vector进行赋值或比较</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#assign">assign()</a></td>
+<td>对Vector中的元素赋值</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#at">at()</a></td>
+<td>返回指定位置的元素</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#back">back()</a></td>
+<td>返回最末一个元素</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#begin">begin()</a></td>
+<td>返回第一个元素的迭代器</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#capacity">capacity()</a></td>
+<td>返回vector所能容纳的元素数量(在不重新分配内存的情况下）</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#clear">clear()</a></td>
+<td>清空所有元素</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#empty">empty()</a></td>
+<td>判断Vector是否为空（返回true时为空）</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#end">end()</a></td>
+<td>返回最末元素的迭代器(译注:实指向最末元素的下一个位置)</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#erase">erase()</a></td>
+<td>删除指定元素</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#front">front()</a></td>
+<td>返回第一个元素</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#get_allocator">get_allocator()</a></td>
+<td>返回vector的内存分配器</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#insert">insert()</a></td>
+<td>插入元素到Vector中</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#max_size">max_size()</a></td>
+<td>返回Vector所能容纳元素的最大数量（上限）</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#pop_back">pop_back()</a></td>
+<td>移除最后一个元素</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#push_back">push_back()</a></td>
+<td>在Vector最后添加一个元素</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#rbegin">rbegin()</a></td>
+<td>返回Vector尾部的逆迭代器</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#rend">rend()</a></td>
+<td>返回Vector起始的逆迭代器</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#reserve">reserve()</a></td>
+<td>设置Vector最小的元素容纳数量</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#resize">resize()</a></td>
+<td>改变Vector元素数量的大小</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#size">size()</a></td>
+<td>返回Vector元素数量的大小</td>
+</tr>
+<tr>
+<td><a href="cppvector_details.html#swap">swap()</a></td>
+<td>交换两个Vector</td>
+</tr>
+</tbody>
+</table>
+<p>vector可以⼀一开始不不定义⼤大⼩小，之后⽤用resize分配⼤大⼩小，也可以⼀一开始就定义⼤大⼩小，之后还可以对它 插⼊入删除动态改变它的⼤大⼩小～⽽而且不不管在main函数⾥里里还是在全局中定义，它都能够直接将所有的值初 始化为0（不不⽤用显式地写出来，默认就是所有的元素为0），</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v1;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v2(<span class="number">10</span>,<span class="number">1</span>); <span class="comment">//将v2设置为长度为10内容为1</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">       <span class="comment">// v1.push_back(i); //在v1的末尾添加元素i</span></span><br><span class="line">		v1.push_back(arr[i]); <span class="comment">//在v1的末尾添加元素arr[i]</span></span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it = v1.begin();it != v1.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="string">" "</span>; <span class="comment">//使用迭代器的方式访问v1</span></span><br><span class="line">	&#125;	<span class="comment">//v1.begin()是一个指针指向容器的第一个元素</span></span><br><span class="line">    	<span class="comment">//v1.end()指向容器的最后一个元素</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; v1.size() &lt;&lt; <span class="built_in">endl</span>;; </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it = v2.begin();it != v2.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>容器器vector、set、map这些遍历的时候都是使⽤用迭代器器访问的，v1.begin()是⼀个指针，指向容器器的第⼀个元素，v1.end()指向容器器的后⼀个元素的后⼀个位置，所以迭代器器指针it的for循环判断条件是it != v1.end().访问元素的值要对it指针取值，要在前⾯面加星号～所以是cout &lt;&lt; *it; </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2020/03/02/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -566,13 +787,17 @@
         
           
             <h4 id="1、安装samba服务"><a href="#1、安装samba服务" class="headerlink" title="1、安装samba服务"></a>1、安装samba服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install samba*</span><br></pre></td></tr></table></figure>
-<h4 id="2、添加用户"><a href="#2、添加用户" class="headerlink" title="2、添加用户"></a>2、添加用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useradd jsjuser #添加用户</span><br><span class="line">smpasswd -a jsjuser #设置密码</span><br><span class="line">groupadd jsjusers #添加用户组</span><br><span class="line">usermod -G jsjusers jsjuser #将用户添加到组中</span><br></pre></td></tr></table></figure>
+<h4 id="2、添加用户"><a href="#2、添加用户" class="headerlink" title="2、添加用户"></a>2、添加用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">useradd jsjuser #添加用户</span><br><span class="line">smbpasswd -a jsjuser #设置密码</span><br><span class="line">groupadd jsjusers #添加用户组</span><br><span class="line">usermod -G jsjusers jsjuser #将用户添加到组中</span><br></pre></td></tr></table></figure>
 <h4 id="3、创建目录"><a href="#3、创建目录" class="headerlink" title="3、创建目录"></a>3、创建目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /share</span><br></pre></td></tr></table></figure>
 <h4 id="4、修改配置文件"><a href="#4、修改配置文件" class="headerlink" title="4、修改配置文件"></a>4、修改配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/samba/smb.conf</span><br><span class="line">[global]</span><br><span class="line">			security = user</span><br><span class="line">			hosts allow=192.168.0.0/255.255.255.0</span><br><span class="line"></span><br><span class="line">[shore]</span><br><span class="line">			comment = share</span><br><span class="line">			path = /share</span><br><span class="line">			browseable = yes</span><br><span class="line">			writable = yes</span><br><span class="line">			valid users = @jsjuser,jsjuser</span><br></pre></td></tr></table></figure>
 <h4 id="5、启动服务"><a href="#5、启动服务" class="headerlink" title="5、启动服务"></a>5、启动服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart smb</span><br></pre></td></tr></table></figure>
 <h4 id="6、关闭防火墙、修改策略"><a href="#6、关闭防火墙、修改策略" class="headerlink" title="6、关闭防火墙、修改策略"></a>6、关闭防火墙、修改策略</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl  stop iptables#防火墙</span><br><span class="line">systemctl  stop firewalld#防火墙</span><br><span class="line">setenforce 0</span><br></pre></td></tr></table></figure>
 <h4 id="7、挂载目录"><a href="#7、挂载目录" class="headerlink" title="7、挂载目录"></a>7、挂载目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount //1.1.1.110/share /mnt -o username = smb1,password = liangwenxin</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net use * /delete /y</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">comment---------注释说明</span><br><span class="line">path------------分享资源的完整路径名称，除了路径要正确外，目录的权限也要设对</span><br><span class="line">browseable------是yes/否no在浏览资源中显示共享目录，若为否则必须指定共享路径才能存取</span><br><span class="line">printable-------是yes/否no允许打印</span><br><span class="line">hide dot ftles--是yes/否no隐藏隐藏文件</span><br><span class="line">public----------是yes/否no公开共享，若为否则进行身份验证(只有当security = share 时此项才起作用)</span><br><span class="line">guest ok--------是yes/否no公开共享，若为否则进行身份验证(只有当security = share 时此项才起作用)</span><br><span class="line">read only-------是yes/否no以只读方式共享当与writable发生冲突时也writable为准</span><br><span class="line">writable--------是yes/否no不以只读方式共享当与read only发生冲突时，无视read only</span><br><span class="line">vaild users-----设定只有此名单内的用户才能访问共享资源(拒绝优先)(用户名/@组名)</span><br><span class="line">invalid users---设定只有此名单内的用户不能访问共享资源(拒绝优先)(用户名/@组名)</span><br><span class="line">read list-------设定此名单内的成员为只读(用户名/@组名)</span><br><span class="line">write list------若设定为只读时，则只有此设定的名单内的成员才可作写入动作(用户名/@组名)</span><br><span class="line">create mask-----建立文件时所给的权限</span><br><span class="line">directory mask--建立目录时所给的权限</span><br><span class="line">force group-----指定存取资源时须以此设定的群组使用者进入才能存取(用户名/@组名)</span><br><span class="line">force user------指定存取资源时须以此设定的使用者进入才能存取(用户名/@组名)</span><br><span class="line">allow hosts-----设定只有此网段/IP的用户才能访问共享资源</span><br><span class="line">allwo hosts = 网段 except IP</span><br><span class="line">deny hosts------设定只有此网段/IP的用户不能访问共享资源</span><br><span class="line">allow hosts=本网段指定IP指定IP</span><br><span class="line">deny hosts=指定IP本网段指定IP</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/weixin_34390996/article/details/92980208?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/weixin_34390996/article/details/92980208?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
+<p>1、FTp</p>
+<p><a href="https://www.cnblogs.com/Wang352051443/p/9805980.html" target="_blank" rel="noopener">https://www.cnblogs.com/Wang352051443/p/9805980.html</a></p>
 
           
         
@@ -814,7 +1039,7 @@
             <p><a href="https://www.cnblogs.com/yueshang/p/9447456.html" target="_blank" rel="noopener">https://www.cnblogs.com/yueshang/p/9447456.html</a></p>
 <p><a href="https://blog.csdn.net/weixin_33800593/article/details/92384884" target="_blank" rel="noopener">https://blog.csdn.net/weixin_33800593/article/details/92384884</a></p>
 <h4 id="1、安装dns服务"><a href="#1、安装dns服务" class="headerlink" title="1、安装dns服务"></a>1、安装dns服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum list bind</span><br><span class="line">yum install bind.x86_64</span><br></pre></td></tr></table></figure>
-<h4 id="2、编辑解析配置文件"><a href="#2、编辑解析配置文件" class="headerlink" title="2、编辑解析配置文件"></a>2、编辑解析配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/named.conf</span><br><span class="line">options &#123;</span><br><span class="line">listen-on port 53 &#123; 192.168.0.200&#125;; //改成自己服务器的IP</span><br><span class="line">listen-on-v6 port 53 &#123; ::1; &#125;;</span><br><span class="line">directory &quot;/var/named&quot;;</span><br><span class="line">dump-file &quot;/var/named/data/cache_dump.db&quot;;</span><br><span class="line">statistics-file &quot;/var/named/data/named_stats.txt&quot;;</span><br><span class="line">memstatistics-file &quot;/var/named/data/named_mem_stats.txt&quot;;</span><br><span class="line">allow-query &#123; any; &#125;; //任何人都可以访问</span><br></pre></td></tr></table></figure>
+<h4 id="2、编辑解析配置文件"><a href="#2、编辑解析配置文件" class="headerlink" title="2、编辑解析配置文件"></a>2、编辑解析配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/named.conf</span><br><span class="line">options &#123;</span><br><span class="line">listen-on port 53 &#123; 192.168.0.200&#125;; //改成自己服务器的IP</span><br><span class="line">listen-on-v6 port 53 &#123; ::1; &#125;;</span><br><span class="line">directory &quot;/var/named&quot;;</span><br><span class="line">dump-file &quot;/var/named/data/cache_dump.db&quot;;</span><br><span class="line">statistics-file &quot;/var/named/data/named_stats.txt&quot;;</span><br><span class="line">memstatistics-file &quot;/var/named/data/named_mem_stats.txt&quot;;</span><br><span class="line">allow-query &#123; any; &#125;; //任何人都可以访问 ###</span><br></pre></td></tr></table></figure>
 <h4 id="3、配置区域解析文件"><a href="#3、配置区域解析文件" class="headerlink" title="3、配置区域解析文件"></a>3、配置区域解析文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/named.rfc1912.zones</span><br><span class="line">//正向区域配置</span><br><span class="line">zone &quot;lwx.com&quot; IN &#123;</span><br><span class="line">type master;</span><br><span class="line">file &quot;lwx.com.zone&quot;;</span><br><span class="line">allow-update &#123; none; &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">//反向区域配置</span><br><span class="line">zone &quot;68.68.68.in-addr.arpa&quot; IN &#123;</span><br><span class="line">type master;</span><br><span class="line">file &quot;68.com.local&quot;;</span><br><span class="line">allow-update &#123; none; &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h4 id="4、编辑解析文件"><a href="#4、编辑解析文件" class="headerlink" title="4、编辑解析文件"></a>4、编辑解析文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /var/named</span><br><span class="line">cp -p named.localhost lwx.com.zone</span><br><span class="line">修改配置内容：vi lwx.com.zone</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$TTL 1D</span><br><span class="line">@ IN SOA @ rname.invalid. (</span><br><span class="line">0 ; serial</span><br><span class="line">1D ; refresh</span><br><span class="line">1H ; retry</span><br><span class="line">1W ; expire</span><br><span class="line">3H ) ; minimum</span><br><span class="line">NS @</span><br><span class="line">A 192.168.0.220 //本服务器地址</span><br><span class="line">www IN A 68.68.68.168 //www.lwx.com对应的地址</span><br><span class="line">ftp IN A 68.68.68.68 //ftp.lwx.com对应的地址</span><br><span class="line">mail IN CNAME www</span><br></pre></td></tr></table></figure>
@@ -947,7 +1172,7 @@
 <h4 id="2、配置DHCP服务器"><a href="#2、配置DHCP服务器" class="headerlink" title="2、配置DHCP服务器"></a>2、配置DHCP服务器</h4><p>1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）    </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure>
 <h4 id="3、编写DHCP文档"><a href="#3、编写DHCP文档" class="headerlink" title="3、编写DHCP文档"></a>3、编写DHCP文档</h4><p>修改配置文件/etc/dhcp/dhcpd.conf  如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">subnet 192.168.0.0  netmask 255.255.255.0 &#123;</span><br><span class="line">  range 192.168.0.100  192.168.0.200;                         ##地址池 </span><br><span class="line">  option domain-name-servers  192.168.0.2;                   ##DNS服务器地址     </span><br><span class="line">  option routers ip-address 192.168.0.1;                        ##默认路由</span><br><span class="line">  option broadcast-address 192.168.0.255;                     ##广播地址</span><br><span class="line">  default-lease-time 86400;                                       ##默认租约时间 </span><br><span class="line">  max-lease-time 28800;                                          ##最大租约时间 </span><br><span class="line">&#125;</span><br><span class="line">host windows7 &#123;</span><br><span class="line">	hardware ethernet 00:0c:29:0f:67;</span><br><span class="line">	fixed-address 192.168.0.111;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">subnet 192.168.0.0  netmask 255.255.255.0 &#123;</span><br><span class="line">  range 192.168.0.100  192.168.0.200;                         ##地址池 </span><br><span class="line">  option domain-name-servers  192.168.0.2;                   ##DNS服务器地址     </span><br><span class="line">  option routers 192.168.0.1; 					           ##默认路由</span><br><span class="line">  option broadcast-address 192.168.0.255;                     ##广播地址</span><br><span class="line">  default-lease-time 86400;                                       ##默认租约时间 </span><br><span class="line">  max-lease-time 28800;                                          ##最大租约时间 </span><br><span class="line">&#125;</span><br><span class="line">host windows7 &#123;</span><br><span class="line">	hardware ethernet 00:0c:29:0f:67;</span><br><span class="line">	fixed-address 192.168.0.111;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dhcpd -t ##检查语法错误</span><br></pre></td></tr></table></figure>
 <h4 id="4、重新启动DHCP服务"><a href="#4、重新启动DHCP服务" class="headerlink" title="4、重新启动DHCP服务"></a>4、重新启动DHCP服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart dhcpd.service #重新启动dhcp</span><br><span class="line"></span><br><span class="line">dhclient #重新获得地址</span><br></pre></td></tr></table></figure>
 <p>servername 95</p>
@@ -1354,131 +1579,11 @@
 <p><a href="https://www.cnblogs.com/chris-cp/p/4843407.html" target="_blank" rel="noopener">https://www.cnblogs.com/chris-cp/p/4843407.html</a></p>
 <p>3、安装报错NO <strong>*</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release //安装专业版软件库</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/11/计算机组成原理2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/11/计算机组成原理2/" itemprop="url">计算机组成原理---总线的基本概念</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-11T15:18:49+08:00">
-                2019-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>0x01 总线的基本概念</strong><br>1.总线是链接各个部件的信息传输线、是各个部件共享的传输介质（一条总线只能被一个设备使用、占用了就要通信）<br>2.总线上信息的传送：穿行、并行<br>备注：并行线路无法用于长距离通信、并行传输线路成本高（很宽的一根线，如PATA）信号线之间的干扰大，不能用于长距离传输。在并行传输中，如果传输频率高，数据线之间会产生很大的干扰。串行传输分为：异步传输、同步传输、等时传输。异步传输是面向字符的传输，同步传输是面向比特的传输。异步传输的单位是字符而同步传输的单位是帧，异步传输通过字符起止的开始和停止码抓住在同步的机会，而同步传输则是以数据中抽取同步信息。在实际形况中串行要比并行速度快。</p>
-<p><strong>0x02 总线的分类</strong><br>1.片内总线：芯片内的总线<br>2.系统总线：计算机各个部件的信息传输线<br>数据总线：双向、与机器字长、存储字长有关<br>地址总线：单向、与存储地址、I/O地址有关<br>控制总线：有出、有入<br>3.通信总线：用于计算机系统直线或计算机与其他系统（如控制仪表、移动通信等）之间的通信<br>传输方式：串行、并行</p>
-<p><strong>0x03 总线的特性</strong><br>1.机械特性：尺寸、形状、管脚数以及排列顺序<br>2.电气特性：传输方向和有效的电平范围（高电平表示1、低电平表示0）<br>3.功能特性：每根传输线的功能（地址、数据、控制信号）<br>4.时间特性：信号的时序关系</p>
-<p><strong>0x04 总线的性能指标</strong><br>1.总线的宽度：数据线的根数（4、8、16、32）<br>2.标准传输率：每秒传输的最大字节数（MBps）<br>3.时钟同步/异步：同步、不同步<br>4.总线复用：地址线与数据线复用（公用、8086地址线与数据线共用）<br>5.信号线数：地址线、数据线和控制线的总和<br>6.总线控制方式：图发、自动、仲裁、逻辑、计数<br>7.其他指标：负载 能力</p>
-<p><strong>0x05 总结机构</strong><br>1.单总线结构：系统总线<br>2.双总线结构：主存总线（CPU、主存、通道）、I/O总线（I/O接口、设备）<br>3.三总线结构1：主存总线（CPU与主存）、I/O总线（CPU与I/O接口）、DMA总线（高速外设与主存）<br>4.三总线结构2：局部总线（CPU与Cache、局部I/O控制器）、系统总线（主存、Cache、扩展总线接口）、扩展总线（局域网、SCSI、扩展总线接口、MOdem、串行接口）<br>5.四总线结构：局部总线（CPU与Cache桥）、系统总线（Cache、主存）、高速总线（高速设备：SCSI、图形、Cache桥、多媒体、局域网）、扩展总线（低速设备：FAX、扩展总线接口、Modem、串行接口）<br>备注：最新的设备通过总线将高速设备与低速设备分离、系统总线连接CPU与存储器。CPU与Memory一条线、高速设备一条线、低速设备一条线。北桥控制CPU、内存、显卡和PCI交换数据，南桥控制IO设备。</p>
-<p><strong>0x06 总线控制</strong><br>1、总线判优控制：<br>主设备：对总线有控制权<br>从设备：响应从主设备发来的总线命令<br>总线判优控制：集中式（链式查询、计数器定时查询、独立请求方式）、分布式</p>
+<p>4、查看本地安装的服务</p>
+<p>rpm -qa | grep ***</p>
+<p><a href="https://www.cnblogs.com/Wang352051443/p/9805980.html" target="_blank" rel="noopener">https://www.cnblogs.com/Wang352051443/p/9805980.html</a></p>
+<p>5、查看本地用户、用户组</p>
+<p>cat /etc/passwd<br>cat /etc/group</p>
 
           
         
@@ -1566,7 +1671,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1579,7 +1684,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
