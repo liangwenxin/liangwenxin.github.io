@@ -989,125 +989,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/11/06/linux挂载光盘/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/06/linux挂载光盘/" itemprop="url">linux挂载光盘</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T09:26:15+08:00">
-                2019-11-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/11/03/linux-dns/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1628,6 +1509,140 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/09/06/linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/06/linux/" itemprop="url">linux基本操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-06T08:06:47+08:00">
+                2019-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1、查看文档信息"><a href="#1、查看文档信息" class="headerlink" title="1、查看文档信息"></a>1、查看文档信息</h4><p>我们要查看一些文本文件的内容时，要使用文本编辑器来查看。在Linux下，可以使用一些命令预览文本文件中的内容，而不必使用文本编辑器打开查看。这篇笔记分享几个常用的文本查看命令。分别是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat：从第一行开始显示文本内容（适用于内容较少的）</span><br><span class="line">tac：从最后一行开始显示，是 cat 的逆顺序</span><br><span class="line">more：一页一页的显示文本内容（适用于内容较多的）</span><br><span class="line">less：与 more 类似，但是比 more 更好的是，它可以往前翻页！</span><br><span class="line">head：只看文本的前面几行</span><br><span class="line">tail：只看文本的后面几行</span><br><span class="line">nl：显示文本内容与行号</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -v &quot;^#&quot;     ###查看非注释文件</span><br></pre></td></tr></table></figure>
+<h4 id="2、挂载光盘"><a href="#2、挂载光盘" class="headerlink" title="2、挂载光盘"></a>2、挂载光盘</h4><p>1、找到光盘的完整路径名。在命令行输入：ls -l /dev | grep cdrom。<br>2、可以看到光盘的名字叫做：cdrom。然后在命令行执行： mount /dev/cdrom /mnt/。这会把光盘挂载到/mnt目录下。然后我们就可以通过访问/mnt来访问光盘。<br>3、比如我们要从光盘中拷贝出来一个rpm包。首先在命令行输入：cd /mnt。然后输入ll。就列出了光盘里面的所有的内容。<br>4、进入到Packages目录，在命令行输入：cd Packages。然后输入：ls -l | grep mysql。找到我们要拷贝出来的rpm包。<br>5、在命令行输入： cp mysql-5.1.66-2.el6_3.x86_64.rpm /opt/soft。把mysql-5.1.66-2.el6_3.x86_64.rpm这个包拷贝到/opt/soft目录下面。在命令行输入：cd /opt/soft。然后ll。可以看到文件已经被拷贝过去了。<br>6、使用完毕以后，要记得卸载光盘。在命令行输入：umount /mnt。然后再进入/mnt目录就看不到光盘的内容了，说明已经成功卸载。</p>
+<p>这个时候，会出现一个问题：mount: block device /dev/sr0 is write-protected, mounting read-only<br>提示信息说，虚拟机挂着光驱光驱时提示只读。用以下命令可解决该报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o remount,rw /dev/cdrom /mnt</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/qq_42776455/article/details/84066933" target="_blank" rel="noopener">https://blog.csdn.net/qq_42776455/article/details/84066933</a></p>
+<p><a href="https://www.cnblogs.com/chris-cp/p/4843407.html" target="_blank" rel="noopener">https://www.cnblogs.com/chris-cp/p/4843407.html</a></p>
+<p>3、安装报错NO <strong>*</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release //安装专业版软件库</span><br></pre></td></tr></table></figure>
+<p>4、查看本地安装的服务</p>
+<p>rpm -qa | grep ***</p>
+<p><a href="https://www.cnblogs.com/Wang352051443/p/9805980.html" target="_blank" rel="noopener">https://www.cnblogs.com/Wang352051443/p/9805980.html</a></p>
+<p>5、查看本地用户、用户组</p>
+<p>cat /etc/passwd<br>cat /etc/group</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1680,7 +1695,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1765,6 +1780,8 @@
 
 
   <span class="post-meta-divider">|</span>
+
+
 
 
 
