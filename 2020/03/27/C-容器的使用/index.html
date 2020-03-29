@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1、vectorVectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。    Constructors 构造函数     Operators 对vector进行赋值或比较   assign() 对Vector中的元素赋值   at() 返回指">
+<meta name="description" content="vectorVectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。    Constructors 构造函数     Operators 对vector进行赋值或比较   assign() 对Vector中的元素赋值   at() 返回指定位">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++容器的使用">
+<meta property="og:title" content="C++容器的使用-vector">
 <meta property="og:url" content="http://liangwenxin.github.io/2020/03/27/C-容器的使用/index.html">
 <meta property="og:site_name" content="liangwenxin’s blog">
-<meta property="og:description" content="1、vectorVectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。    Constructors 构造函数     Operators 对vector进行赋值或比较   assign() 对Vector中的元素赋值   at() 返回指">
+<meta property="og:description" content="vectorVectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。    Constructors 构造函数     Operators 对vector进行赋值或比较   assign() 对Vector中的元素赋值   at() 返回指定位">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-27T03:50:03.969Z">
+<meta property="og:updated_time" content="2020-03-29T10:13:23.932Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++容器的使用">
-<meta name="twitter:description" content="1、vectorVectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。    Constructors 构造函数     Operators 对vector进行赋值或比较   assign() 对Vector中的元素赋值   at() 返回指">
+<meta name="twitter:title" content="C++容器的使用-vector">
+<meta name="twitter:description" content="vectorVectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。    Constructors 构造函数     Operators 对vector进行赋值或比较   assign() 对Vector中的元素赋值   at() 返回指定位">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>C++容器的使用 | liangwenxin’s blog</title>
+  <title>C++容器的使用-vector | liangwenxin’s blog</title>
   
 
 
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++容器的使用</h1>
+          <h1 class="post-title" itemprop="name headline">C++容器的使用-vector</h1>
         
 
         <div class="post-meta">
@@ -302,6 +302,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
 
@@ -320,7 +325,7 @@
       
 
       
-        <h3 id="1、vector"><a href="#1、vector" class="headerlink" title="1、vector"></a>1、vector</h3><p>Vectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。</p>
+        <h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p>Vectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。</p>
 <table>
 <thead>
 <tr>
@@ -422,6 +427,11 @@
 <p>vector可以⼀一开始不不定义⼤大⼩小，之后⽤用resize分配⼤大⼩小，也可以⼀一开始就定义⼤大⼩小，之后还可以对它 插⼊入删除动态改变它的⼤大⼩小～⽽而且不不管在main函数⾥里里还是在全局中定义，它都能够直接将所有的值初 始化为0（不不⽤用显式地写出来，默认就是所有的元素为0），</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v1;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v2(<span class="number">10</span>,<span class="number">1</span>); <span class="comment">//将v2设置为长度为10内容为1</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">       <span class="comment">// v1.push_back(i); //在v1的末尾添加元素i</span></span><br><span class="line">		v1.push_back(arr[i]); <span class="comment">//在v1的末尾添加元素arr[i]</span></span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it = v1.begin();it != v1.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="string">" "</span>; <span class="comment">//使用迭代器的方式访问v1</span></span><br><span class="line">	&#125;	<span class="comment">//v1.begin()是一个指针指向容器的第一个元素</span></span><br><span class="line">    	<span class="comment">//v1.end()指向容器的最后一个元素</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; v1.size() &lt;&lt; <span class="built_in">endl</span>;; </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it = v2.begin();it != v2.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>容器器vector、set、map这些遍历的时候都是使⽤用迭代器器访问的，v1.begin()是⼀个指针，指向容器器的第⼀个元素，v1.end()指向容器器的后⼀个元素的后⼀个位置，所以迭代器器指针it的for循环判断条件是it != v1.end().访问元素的值要对it指针取值，要在前⾯面加星号～所以是cout &lt;&lt; *it; </p>
+<p><strong>vector初始化的方式</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(<span class="number">10</span>);<span class="comment">//定义10个整形元素</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(<span class="number">10</span>,<span class="number">1</span>);<span class="comment">//定义10个整形元素，初始值为1</span></span><br><span class="line"><span class="keyword">int</span> b[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(b);<span class="comment">//向量a的值等于向量b的值</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(b.begin(),b.end())<span class="comment">//把b的值给a</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(b,b+<span class="number">5</span>)<span class="comment">//从数组b中获取值</span></span><br></pre></td></tr></table></figure>
+<p><strong>vector读取元素的方式</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b(a,a+<span class="number">5</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; b.size()<span class="number">-1</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; b[i] &lt;&lt;<span class="built_in">endl</span>;<span class="comment">//利用下标读取数据</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it = b.begin();it != b.end();it++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="built_in">endl</span>; <span class="comment">//使用迭代器读取数据  </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> it = b.begin();it != b.end();i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="built_in">endl</span>;<span class="comment">//使用迭代器auto方式读取数据</span></span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> s = &#123;<span class="string">"hello,world"</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">char</span> c:s) <span class="comment">//以字符的方式读取数据</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; c &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str[]=&#123;<span class="string">"hello"</span>,<span class="string">"world"</span>,<span class="string">"this"</span>,<span class="string">"find"</span>,<span class="string">"gank"</span>,<span class="string">"pink"</span>,<span class="string">"that"</span>,<span class="string">"when"</span>,<span class="string">"how"</span>,<span class="string">"cpp"</span>&#125;;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; str1(str,str+<span class="number">10</span>);<span class="comment">//从数组str中获取</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; str1;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		str1.push_back(str[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it = str1.begin();it != str1.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; str[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -461,6 +471,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/28/VIM入门操作、/" rel="prev" title="VIM入门操作、">
+                VIM入门操作、 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -539,7 +553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -552,7 +566,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -601,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、vector"><span class="nav-number">1.</span> <span class="nav-text">1、vector</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-number">1.</span> <span class="nav-text">vector</span></a></li></ol></div>
             
 
           </div>
@@ -653,6 +667,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 

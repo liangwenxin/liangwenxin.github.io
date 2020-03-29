@@ -249,6 +249,144 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2020/03/28/VIM入门操作、/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁文鑫">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liangwenxin’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/28/VIM入门操作、/" itemprop="url">VIM入门操作、</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-28T23:18:17+08:00">
+                2020-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1、Vim编辑器的模式"><a href="#1、Vim编辑器的模式" class="headerlink" title="1、Vim编辑器的模式"></a>1、Vim编辑器的模式</h4><ul>
+<li>正常模式 (Normal-mode)</li>
+<li>插入模式 (Insert-mode)</li>
+<li>命令模式 (Command-mode)</li>
+<li>可视模式 (Visual-mode)</li>
+</ul>
+<h5 id="2、-vimrc-配置vim编辑器的配置"><a href="#2、-vimrc-配置vim编辑器的配置" class="headerlink" title="2、.vimrc 配置vim编辑器的配置"></a>2、.vimrc 配置vim编辑器的配置</h5><p>syntax on //语法高亮<br>set number //显示行号</p>
+<h5 id="3、移动光标"><a href="#3、移动光标" class="headerlink" title="3、移动光标"></a>3、移动光标</h5><p>在命令模式下：可以使用h、j、k、l键分别代表方向键←↓↑→</p>
+<p><img src="/2020/03/28/VIM入门操作、/C:/Users\xin\AppData\Roaming\Typora\typora-user-images\image-20200328232945105.png" alt="image-20200328232945105"></p>
+<p>w（word）：键盘可以以单词为单位跳<br>b（back）：键可以往回以单词为单位跳</p>
+<p>ctrl+f（forward）：可以往下翻页 等于Pg up<br>ctrl+b（backward）：可以往上翻页 等于Pg down</p>
+<p>数字+gg：可以以数字为行数跳到第数字行，10gg跳到第10行<br>数字+j、k：可以以数字为行数跳转，10j往下跳10行，10k网上跳10行</p>
+<p><strong>/查找的内容</strong><br>n（next）：可以查找下一个<br>shitf+n（next）：查找上一个</p>
+<p>cc：剪贴删除会自动跳入编辑模式<br>p：粘贴插入复制的行<br>yy（yank）：复制当前行，2yy复制两行<br>c数字c：删除数字的行数，c2c删除两行<br>dd：删除当前行，2dd删除两行</p>
+<p>u（undo）：撤回操作</p>
+<p>shift+g：跳到最后一行</p>
+<h4 id="3、视图模式"><a href="#3、视图模式" class="headerlink" title="3、视图模式"></a>3、视图模式</h4><p>c：剪切<br>p：粘贴</p>
+<p>ctrl+n：自动补全</p>
+<p>vim plug自动补全插件</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2020/03/27/C-容器的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -268,7 +406,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/27/C-容器的使用/" itemprop="url">C++容器的使用</a></h1>
+                <a class="post-title-link" href="/2020/03/27/C-容器的使用/" itemprop="url">C++容器的使用-vector</a></h1>
         
 
         <div class="post-meta">
@@ -320,7 +458,7 @@
       
         
           
-            <h3 id="1、vector"><a href="#1、vector" class="headerlink" title="1、vector"></a>1、vector</h3><p>Vectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。</p>
+            <h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p>Vectors 包含着一系列连续存储的元素,其行为和数组类似。访问Vector中的任意元素或从末尾添加元素都可以在常量级的时间内完成，而查找特定值的元素所处的位置或是在Vector中插入元素则是[线性时间复杂度。</p>
 <table>
 <thead>
 <tr>
@@ -422,6 +560,11 @@
 <p>vector可以⼀一开始不不定义⼤大⼩小，之后⽤用resize分配⼤大⼩小，也可以⼀一开始就定义⼤大⼩小，之后还可以对它 插⼊入删除动态改变它的⼤大⼩小～⽽而且不不管在main函数⾥里里还是在全局中定义，它都能够直接将所有的值初 始化为0（不不⽤用显式地写出来，默认就是所有的元素为0），</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v1;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v2(<span class="number">10</span>,<span class="number">1</span>); <span class="comment">//将v2设置为长度为10内容为1</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">       <span class="comment">// v1.push_back(i); //在v1的末尾添加元素i</span></span><br><span class="line">		v1.push_back(arr[i]); <span class="comment">//在v1的末尾添加元素arr[i]</span></span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it = v1.begin();it != v1.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="string">" "</span>; <span class="comment">//使用迭代器的方式访问v1</span></span><br><span class="line">	&#125;	<span class="comment">//v1.begin()是一个指针指向容器的第一个元素</span></span><br><span class="line">    	<span class="comment">//v1.end()指向容器的最后一个元素</span></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; v1.size() &lt;&lt; <span class="built_in">endl</span>;; </span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it = v2.begin();it != v2.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>容器器vector、set、map这些遍历的时候都是使⽤用迭代器器访问的，v1.begin()是⼀个指针，指向容器器的第⼀个元素，v1.end()指向容器器的后⼀个元素的后⼀个位置，所以迭代器器指针it的for循环判断条件是it != v1.end().访问元素的值要对it指针取值，要在前⾯面加星号～所以是cout &lt;&lt; *it; </p>
+<p><strong>vector初始化的方式</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(<span class="number">10</span>);<span class="comment">//定义10个整形元素</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(<span class="number">10</span>,<span class="number">1</span>);<span class="comment">//定义10个整形元素，初始值为1</span></span><br><span class="line"><span class="keyword">int</span> b[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(b);<span class="comment">//向量a的值等于向量b的值</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(b.begin(),b.end())<span class="comment">//把b的值给a</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(b,b+<span class="number">5</span>)<span class="comment">//从数组b中获取值</span></span><br></pre></td></tr></table></figure>
+<p><strong>vector读取元素的方式</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b(a,a+<span class="number">5</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; b.size()<span class="number">-1</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; b[i] &lt;&lt;<span class="built_in">endl</span>;<span class="comment">//利用下标读取数据</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it = b.begin();it != b.end();it++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="built_in">endl</span>; <span class="comment">//使用迭代器读取数据  </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> it = b.begin();it != b.end();i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="built_in">endl</span>;<span class="comment">//使用迭代器auto方式读取数据</span></span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> s = &#123;<span class="string">"hello,world"</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">char</span> c:s) <span class="comment">//以字符的方式读取数据</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; c &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str[]=&#123;<span class="string">"hello"</span>,<span class="string">"world"</span>,<span class="string">"this"</span>,<span class="string">"find"</span>,<span class="string">"gank"</span>,<span class="string">"pink"</span>,<span class="string">"that"</span>,<span class="string">"when"</span>,<span class="string">"how"</span>,<span class="string">"cpp"</span>&#125;;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; str1(str,str+<span class="number">10</span>);<span class="comment">//从数组str中获取</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; str1;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		str1.push_back(str[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> it = str1.begin();it != str1.end();it++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *it &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; str[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1485,140 +1628,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/09/06/linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁文鑫">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/touxiang.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liangwenxin’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/06/linux/" itemprop="url">linux基本操作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-06T08:06:47+08:00">
-                2019-09-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1、查看文档信息"><a href="#1、查看文档信息" class="headerlink" title="1、查看文档信息"></a>1、查看文档信息</h4><p>我们要查看一些文本文件的内容时，要使用文本编辑器来查看。在Linux下，可以使用一些命令预览文本文件中的内容，而不必使用文本编辑器打开查看。这篇笔记分享几个常用的文本查看命令。分别是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat：从第一行开始显示文本内容（适用于内容较少的）</span><br><span class="line">tac：从最后一行开始显示，是 cat 的逆顺序</span><br><span class="line">more：一页一页的显示文本内容（适用于内容较多的）</span><br><span class="line">less：与 more 类似，但是比 more 更好的是，它可以往前翻页！</span><br><span class="line">head：只看文本的前面几行</span><br><span class="line">tail：只看文本的后面几行</span><br><span class="line">nl：显示文本内容与行号</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -v &quot;^#&quot;     ###查看非注释文件</span><br></pre></td></tr></table></figure>
-<h4 id="2、挂载光盘"><a href="#2、挂载光盘" class="headerlink" title="2、挂载光盘"></a>2、挂载光盘</h4><p>1、找到光盘的完整路径名。在命令行输入：ls -l /dev | grep cdrom。<br>2、可以看到光盘的名字叫做：cdrom。然后在命令行执行： mount /dev/cdrom /mnt/。这会把光盘挂载到/mnt目录下。然后我们就可以通过访问/mnt来访问光盘。<br>3、比如我们要从光盘中拷贝出来一个rpm包。首先在命令行输入：cd /mnt。然后输入ll。就列出了光盘里面的所有的内容。<br>4、进入到Packages目录，在命令行输入：cd Packages。然后输入：ls -l | grep mysql。找到我们要拷贝出来的rpm包。<br>5、在命令行输入： cp mysql-5.1.66-2.el6_3.x86_64.rpm /opt/soft。把mysql-5.1.66-2.el6_3.x86_64.rpm这个包拷贝到/opt/soft目录下面。在命令行输入：cd /opt/soft。然后ll。可以看到文件已经被拷贝过去了。<br>6、使用完毕以后，要记得卸载光盘。在命令行输入：umount /mnt。然后再进入/mnt目录就看不到光盘的内容了，说明已经成功卸载。</p>
-<p>这个时候，会出现一个问题：mount: block device /dev/sr0 is write-protected, mounting read-only<br>提示信息说，虚拟机挂着光驱光驱时提示只读。用以下命令可解决该报错：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o remount,rw /dev/cdrom /mnt</span><br></pre></td></tr></table></figure>
-<p><a href="https://blog.csdn.net/qq_42776455/article/details/84066933" target="_blank" rel="noopener">https://blog.csdn.net/qq_42776455/article/details/84066933</a></p>
-<p><a href="https://www.cnblogs.com/chris-cp/p/4843407.html" target="_blank" rel="noopener">https://www.cnblogs.com/chris-cp/p/4843407.html</a></p>
-<p>3、安装报错NO <strong>*</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release //安装专业版软件库</span><br></pre></td></tr></table></figure>
-<p>4、查看本地安装的服务</p>
-<p>rpm -qa | grep ***</p>
-<p><a href="https://www.cnblogs.com/Wang352051443/p/9805980.html" target="_blank" rel="noopener">https://www.cnblogs.com/Wang352051443/p/9805980.html</a></p>
-<p>5、查看本地用户、用户组</p>
-<p>cat /etc/passwd<br>cat /etc/group</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1671,7 +1680,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1684,7 +1693,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1769,6 +1778,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
