@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>VIM入门操作、</title>
+    <title>LANQIAO</title>
+    <url>/2020/04/05/LANQIAO/</url>
+    <content><![CDATA[<h4 id="1、高精度加法"><a href="#1、高精度加法" class="headerlink" title="1、高精度加法"></a>1、高精度加法</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 5000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> string1,string2;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; string1 &gt;&gt; string2;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> temp1[MAX] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> temp2[MAX] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> m = <span class="number">0</span>,r = <span class="number">0</span>,j = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i &lt; string1.length();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		temp1[i] = string1[string1.length() - i <span class="number">-1</span>] - <span class="string">'0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;i &lt; string2.length();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		temp2[i] = string2[string2.length() - i <span class="number">-1</span>] - <span class="string">'0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; MAX;k++)</span><br><span class="line">	&#123;</span><br><span class="line">		m = temp1[k] + temp2[k] + r;</span><br><span class="line">		temp1[k] = m % <span class="number">10</span>;</span><br><span class="line">		r = m / <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(j = MAX - <span class="number">1</span>;j &gt;= <span class="number">0</span>;j--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(temp1[j])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">for</span>(;j &gt;=<span class="number">0</span>;j--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; temp1[j];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、高精度乘法"><a href="#2、高精度乘法" class="headerlink" title="2、高精度乘法"></a>2、高精度乘法</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> num = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">5</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">	num[i] = num[i] * n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">4</span>;i &gt; <span class="number">0</span>;i--)</span><br><span class="line">&#123;</span><br><span class="line">	num[i<span class="number">-1</span>] += num[i] / <span class="number">10</span>;</span><br><span class="line">	num[i] = num[i] % <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1、乘数的每一位与被乘数相乘保存在被乘数的数组位置</p>
+<p>2、A和B相加%10保存在原来位置，A+B相加/10向前进位在与相加，</p>
+<blockquote>
+<p>计算<em>c</em> = <em>a</em> + <em>b</em>的时候，首先将<em>A</em>[0]与<em>B</em>[0]相加，如果有进位产生，则把进位（即和的十位数）存入<em>r</em>，把和的个位数存入<em>C</em>[0]，即<em>C</em>[0]等于(<em>A</em>[0]+<em>B</em>[0])%10。然后计算<em>A</em>[1]与<em>B</em>[1]相加，这时还应将低位进上来的值<em>r</em>也加起来，即<em>C</em>[1]应该是<em>A</em>[1]、<em>B</em>[1]和<em>r</em>三个数的和．如果又有进位产生，则仍可将新的进位存入到<em>r</em>中，和的个位存到<em>C</em>[1]中。依此类推，即可求出<em>C</em>的所有位。</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>蓝桥</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux修改root密码</title>
+    <url>/2020/03/30/linux%E4%BF%AE%E6%94%B9root%E5%AF%86%E7%A0%81/</url>
+    <content><![CDATA[<h3 id="1、核心操作"><a href="#1、核心操作" class="headerlink" title="1、核心操作"></a>1、核心操作</h3><p>进入<strong>GRUB</strong>修改kernel镜像<strong>启动参数</strong></p>
+<h3 id="2、具体步骤"><a href="#2、具体步骤" class="headerlink" title="2、具体步骤"></a>2、具体步骤</h3><ol>
+<li>启动系统时长按shift，进入GRUB引导模式</li>
+<li>进入高级模式</li>
+<li>选择恢复模式（recovery mode）按E键（这里最容易错，是按e键编辑启动项，而不是按回车进入）</li>
+<li>找到recovery nomodeset改为quiet splash rw init=/bin/bash（挂载硬盘为可读写模式）</li>
+<li>按Ctrl+x或F10进行引导</li>
+<li>进入root@(none):/#</li>
+<li>输入passwd进行root的密码设置</li>
+<li>重启</li>
+</ol>
+<blockquote>
+<p>Tip：此方案用于解决root密码重置，但如果是ubuntu，默认是以普通用户登录或游客访问，在登录界面是看不到root用户的入口，需要登录普通用户需要sudo su来切换root，但如果普通用户忘记密码，就进不到这一步，这时解决方案则是在第7步为passwd加上参数，即要设置密码的用户名</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VIM入门操作</title>
     <url>/2020/03/28/VIM%E5%85%A5%E9%97%A8%E6%93%8D%E4%BD%9C%E3%80%81/</url>
     <content><![CDATA[<h4 id="1、Vim编辑器的模式"><a href="#1、Vim编辑器的模式" class="headerlink" title="1、Vim编辑器的模式"></a>1、Vim编辑器的模式</h4><ul>
 <li>正常模式 (Normal-mode)</li>
@@ -9,19 +46,10 @@
 <li>命令模式 (Command-mode)</li>
 <li>可视模式 (Visual-mode)</li>
 </ul>
-<h5 id="2、-vimrc-配置vim编辑器的配置"><a href="#2、-vimrc-配置vim编辑器的配置" class="headerlink" title="2、.vimrc 配置vim编辑器的配置"></a>2、.vimrc 配置vim编辑器的配置</h5><p>syntax on //语法高亮<br>set number //显示行号</p>
-<h5 id="3、移动光标"><a href="#3、移动光标" class="headerlink" title="3、移动光标"></a>3、移动光标</h5><p>在命令模式下：可以使用h、j、k、l键分别代表方向键←↓↑→</p>
-<p><img src="/2020/03/28/VIM入门操作、/C:/Users\xin\AppData\Roaming\Typora\typora-user-images\image-20200328232945105.png" alt="image-20200328232945105"></p>
-<p>w（word）：键盘可以以单词为单位跳<br>b（back）：键可以往回以单词为单位跳</p>
-<p>ctrl+f（forward）：可以往下翻页 等于Pg up<br>ctrl+b（backward）：可以往上翻页 等于Pg down</p>
-<p>数字+gg：可以以数字为行数跳到第数字行，10gg跳到第10行<br>数字+j、k：可以以数字为行数跳转，10j往下跳10行，10k网上跳10行</p>
-<p><strong>/查找的内容</strong><br>n（next）：可以查找下一个<br>shitf+n（next）：查找上一个</p>
-<p>cc：剪贴删除会自动跳入编辑模式<br>p：粘贴插入复制的行<br>yy（yank）：复制当前行，2yy复制两行<br>c数字c：删除数字的行数，c2c删除两行<br>dd：删除当前行，2dd删除两行</p>
-<p>u（undo）：撤回操作</p>
-<p>shift+g：跳到最后一行</p>
-<h4 id="3、视图模式"><a href="#3、视图模式" class="headerlink" title="3、视图模式"></a>3、视图模式</h4><p>c：剪切<br>p：粘贴</p>
-<p>ctrl+n：自动补全</p>
-<p>vim plug自动补全插件</p>
+<h5 id="2、-vimrc-配置vim编辑器的配置"><a href="#2、-vimrc-配置vim编辑器的配置" class="headerlink" title="2、.vimrc 配置vim编辑器的配置"></a>2、.vimrc 配置vim编辑器的配置</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">syntax on //语法高亮</span><br><span class="line">set number //显示行号</span><br></pre></td></tr></table></figure>
+<h5 id="3、移动光标"><a href="#3、移动光标" class="headerlink" title="3、移动光标"></a>3、移动光标</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在命令模式下：可以使用h、j、k、l键分别代表方向键←↓↑→</span><br><span class="line"></span><br><span class="line">w（word）：键盘可以以单词为单位跳</span><br><span class="line">b（back）：键可以往回以单词为单位跳</span><br><span class="line"></span><br><span class="line">ctrl+f（forward）：可以往下翻页 等于Pg up </span><br><span class="line">ctrl+b（backward）：可以往上翻页 等于Pg down</span><br><span class="line"></span><br><span class="line">数字+gg：可以以数字为行数跳到第数字行，10gg跳到第10行</span><br><span class="line">数字+j、k：可以以数字为行数跳转，10j往下跳10行，10k往上上跳10</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/ 查找的内容</span><br><span class="line">n（next）：可以查找下一个</span><br><span class="line">shitf+n（next）：查找上一个</span><br><span class="line"></span><br><span class="line">cc：剪贴删除会自动跳入编辑模式</span><br><span class="line">p：粘贴插入复制的行</span><br><span class="line">yy（yank）：复制当前行，2yy复制两行</span><br><span class="line">c数字c：删除数字的行数，c2c删除两行</span><br><span class="line">dd：删除当前行，2dd删除两行</span><br><span class="line"></span><br><span class="line">u（undo）：撤回操作</span><br><span class="line"></span><br><span class="line">shift+g：跳到最后一行</span><br></pre></td></tr></table></figure>
+<h4 id="3、视图模式"><a href="#3、视图模式" class="headerlink" title="3、视图模式"></a>3、视图模式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c：剪切</span><br><span class="line">p：粘贴</span><br><span class="line"></span><br><span class="line">ctrl+n：自动补全</span><br><span class="line"></span><br><span class="line">vim plug自动补全插件</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>Linux</tag>
@@ -143,6 +171,15 @@
       </tags>
   </entry>
   <entry>
+    <title>Python合并excel表格</title>
+    <url>/2020/03/20/Python%E5%90%88%E5%B9%B6excel%E8%A1%A8%E6%A0%BC/</url>
+    <content><![CDATA[<h3 id="使用python实现excel多个表格的合并"><a href="#使用python实现excel多个表格的合并" class="headerlink" title="使用python实现excel多个表格的合并"></a>使用python实现excel多个表格的合并</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#下面这些变量需要您根据自己的具体情况选择  </span></span><br><span class="line">biaotou=[<span class="string">'序号'</span>,<span class="string">'姓名'</span>,<span class="string">'系部'</span>,<span class="string">'专业班级'</span>,<span class="string">'参与账号'</span>,<span class="string">'密码'</span>,<span class="string">'答题分数'</span>,<span class="string">'联系电话'</span>,<span class="string">'辅导员'</span>,<span class="string">'备注'</span>]  </span><br><span class="line"><span class="comment">#在哪里搜索多个表格  </span></span><br><span class="line">filelocation=<span class="string">r"C:\Users\xin\Desktop\11\biaoge\\"</span>  </span><br><span class="line"><span class="comment">#当前文件夹下搜索的文件名后缀  </span></span><br><span class="line">fileform=<span class="string">"xlsx"</span>  </span><br><span class="line"><span class="comment">#将合并后的表格存放到的位置  </span></span><br><span class="line">filedestination=<span class="string">r"C:\Users\xin\Desktop\1"</span></span><br><span class="line"><span class="comment">#合并后的表格命名为file  </span></span><br><span class="line">file=<span class="string">"test"</span>  </span><br><span class="line">      </span><br><span class="line"><span class="comment">#首先查找默认文件夹下有多少文档需要整合  </span></span><br><span class="line"><span class="keyword">import</span> glob  </span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *  </span><br><span class="line">filearray=[]  </span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> glob.glob(filelocation+<span class="string">"*."</span>+fileform):  </span><br><span class="line">    filearray.append(filename)  </span><br><span class="line"><span class="comment">#以上是从pythonscripts文件夹下读取所有excel表格，并将所有的名字存储到列表filearray  </span></span><br><span class="line">print(<span class="string">"在默认文件夹下有%d个文档哦"</span>%len(filearray))  </span><br><span class="line">ge=len(filearray)  </span><br><span class="line">matrix = [<span class="literal">None</span>]*ge  </span><br><span class="line"><span class="comment">#实现读写数据  </span></span><br><span class="line">      </span><br><span class="line"><span class="comment">#下面是将所有文件读数据到三维列表cell[][][]中（不包含表头）  </span></span><br><span class="line"><span class="keyword">import</span> xlrd  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(ge):  </span><br><span class="line">    fname=filearray[i]  </span><br><span class="line">    bk=xlrd.open_workbook(fname)  </span><br><span class="line">    <span class="keyword">try</span>:  </span><br><span class="line">        sh=bk.sheet_by_name(<span class="string">"Sheet1"</span>)  </span><br><span class="line">    <span class="keyword">except</span>:  </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">"在文件%s中没有找到sheet1，读取文件数据失败,要不你换换表格的名字？"</span> %fname)  </span><br><span class="line">    nrows=sh.nrows   </span><br><span class="line">    matrix[i] = [<span class="number">0</span>]*(nrows<span class="number">-1</span>)  </span><br><span class="line">          </span><br><span class="line">    ncols=sh.ncols  </span><br><span class="line">    <span class="keyword">for</span> m <span class="keyword">in</span> range(nrows<span class="number">-1</span>):    </span><br><span class="line">        matrix[i][m] = [<span class="string">"0"</span>]*ncols  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,nrows):  </span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">0</span>,ncols):  </span><br><span class="line">            matrix[i][j<span class="number">-1</span>][k]=sh.cell(j,k).value  </span><br><span class="line"><span class="comment">#下面是写数据到新的表格test.xls中哦  </span></span><br><span class="line"><span class="keyword">import</span> xlwt  </span><br><span class="line">filename=xlwt.Workbook()  </span><br><span class="line">sheet=filename.add_sheet(<span class="string">"hel"</span>)  </span><br><span class="line"><span class="comment">#下面是把表头写上  </span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(biaotou)):  </span><br><span class="line">    sheet.write(<span class="number">0</span>,i,biaotou[i])  </span><br><span class="line"><span class="comment">#求和前面的文件一共写了多少行  </span></span><br><span class="line">zh=<span class="number">1</span>  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(ge):  </span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(matrix[i])):  </span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(len(matrix[i][j])):  </span><br><span class="line">            sheet.write(zh,k,matrix[i][j][k])  </span><br><span class="line">        zh=zh+<span class="number">1</span>  </span><br><span class="line">print(<span class="string">"我已经将%d个文件合并成1个文件，并命名为%s.xls.快打开看看正确不？"</span>%(ge,file))  </span><br><span class="line">filename.save(filedestination+file+<span class="string">".xls"</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hello,world</title>
     <url>/2020/03/02/hello-world/</url>
     <content><![CDATA[<h2 id="hello-world"><a href="#hello-world" class="headerlink" title="hello,world"></a>hello,world</h2><p>today is 2020,3.2,13:14</p>
@@ -150,13 +187,13 @@
   </entry>
   <entry>
     <title></title>
-    <url>/2019/11/12/linux-http-apache/</url>
-    <content><![CDATA[<h6 id="以下是关于apache配置的帮助网站"><a href="#以下是关于apache配置的帮助网站" class="headerlink" title="以下是关于apache配置的帮助网站"></a>以下是关于apache配置的帮助网站</h6><p><a href="http://www.apache.org/" target="_blank" rel="noopener">http://www.apache.org/</a><br><a href="https://www.cnblogs.com/sxchengchen/p/7856810.html" target="_blank" rel="noopener">https://www.cnblogs.com/sxchengchen/p/7856810.html</a><br><a href="https://blog.csdn.net/weixin_43466473/article/details/88862062" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43466473/article/details/88862062</a></p>
-<h4 id="1、安装http服务"><a href="#1、安装http服务" class="headerlink" title="1、安装http服务"></a>1、安装http服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y intsll http*</span><br></pre></td></tr></table></figure>
+    <url>/2019/11/12/linux-http/</url>
+    <content><![CDATA[<h4 id="1、安装http服务"><a href="#1、安装http服务" class="headerlink" title="1、安装http服务"></a>1、安装http服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y intsll http*</span><br></pre></td></tr></table></figure>
 <h4 id="2、创建一个或多个网站"><a href="#2、创建一个或多个网站" class="headerlink" title="2、创建一个或多个网站"></a>2、创建一个或多个网站</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/httpd/conf/httpd.conf //在文档的末尾添加如下代码</span><br><span class="line">&lt;VirtualHost 1.1.1.110：80&gt;</span><br><span class="line">	ServerAdmin admin@www1.lwx.com //管理邮箱</span><br><span class="line">	DocumentRoot /var/www/html/www1 //目录</span><br><span class="line">	ServerName www1.lwx.com //域名</span><br><span class="line">	ErrorLog logs/www1_error_log //错误日志</span><br><span class="line">	Customlog logs/www1_access_log common //错误日志</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost 1.1.1.110：80&gt;</span><br><span class="line">	ServerAdmin admin@www2.lwx.com</span><br><span class="line">	DocumentRoot /var/www/html/www2</span><br><span class="line">	ServerName www2.lwx.com</span><br><span class="line">	ErrorLog logs/www2_error_log</span><br><span class="line">	Customlog logs/www2_access_log common</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="3、创建目录以及主页文档"><a href="#3、创建目录以及主页文档" class="headerlink" title="3、创建目录以及主页文档"></a>3、创建目录以及主页文档</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /var/www/html/www1 </span><br><span class="line">echo &quot;this is my www1.lwx.com&quot; &gt;&gt; index.html</span><br></pre></td></tr></table></figure>
 <h4 id="4、配置dns解析文件"><a href="#4、配置dns解析文件" class="headerlink" title="4、配置dns解析文件"></a>4、配置dns解析文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">正向文件</span><br><span class="line">www1 IN A 1.1.1.110 //www1.lwx.com对应的地址</span><br><span class="line">www2 IN A 1.1.1.110 //www2.lwx.com对应的地址</span><br><span class="line">反向文件</span><br><span class="line">110 IN PTR www1.lwx.com.</span><br><span class="line">110 IN PTR www1.lwx.com.</span><br><span class="line"></span><br><span class="line">systemctl restart named //重启dns服务</span><br><span class="line"></span><br><span class="line">vi /etc/reslov.conf //设置主机或客户端dns服务器地址</span><br></pre></td></tr></table></figure>
 <h4 id="5、重启http服务器以及测试"><a href="#5、重启http服务器以及测试" class="headerlink" title="5、重启http服务器以及测试"></a>5、重启http服务器以及测试</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl restart httpd //重启</span><br><span class="line">curl www1.lwx.com</span><br></pre></td></tr></table></figure>
+<h4 id="6、其他"><a href="#6、其他" class="headerlink" title="6、其他"></a>6、其他</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">###### 以下是关于apache配置的帮助网站</span><br><span class="line"></span><br><span class="line">&lt;http://www.apache.org/&gt;</span><br><span class="line">&lt;https://www.cnblogs.com/sxchengchen/p/7856810.html&gt;</span><br><span class="line">&lt;https://blog.csdn.net/weixin_43466473/article/details/88862062&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -174,9 +211,7 @@
 <h4 id="7、挂载目录"><a href="#7、挂载目录" class="headerlink" title="7、挂载目录"></a>7、挂载目录</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount //1.1.1.110/share /mnt -o username = smb1,password = liangwenxin</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">net use * /delete /y</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">comment---------注释说明</span><br><span class="line">path------------分享资源的完整路径名称，除了路径要正确外，目录的权限也要设对</span><br><span class="line">browseable------是yes/否no在浏览资源中显示共享目录，若为否则必须指定共享路径才能存取</span><br><span class="line">printable-------是yes/否no允许打印</span><br><span class="line">hide dot ftles--是yes/否no隐藏隐藏文件</span><br><span class="line">public----------是yes/否no公开共享，若为否则进行身份验证(只有当security = share 时此项才起作用)</span><br><span class="line">guest ok--------是yes/否no公开共享，若为否则进行身份验证(只有当security = share 时此项才起作用)</span><br><span class="line">read only-------是yes/否no以只读方式共享当与writable发生冲突时也writable为准</span><br><span class="line">writable--------是yes/否no不以只读方式共享当与read only发生冲突时，无视read only</span><br><span class="line">vaild users-----设定只有此名单内的用户才能访问共享资源(拒绝优先)(用户名/@组名)</span><br><span class="line">invalid users---设定只有此名单内的用户不能访问共享资源(拒绝优先)(用户名/@组名)</span><br><span class="line">read list-------设定此名单内的成员为只读(用户名/@组名)</span><br><span class="line">write list------若设定为只读时，则只有此设定的名单内的成员才可作写入动作(用户名/@组名)</span><br><span class="line">create mask-----建立文件时所给的权限</span><br><span class="line">directory mask--建立目录时所给的权限</span><br><span class="line">force group-----指定存取资源时须以此设定的群组使用者进入才能存取(用户名/@组名)</span><br><span class="line">force user------指定存取资源时须以此设定的使用者进入才能存取(用户名/@组名)</span><br><span class="line">allow hosts-----设定只有此网段/IP的用户才能访问共享资源</span><br><span class="line">allwo hosts = 网段 except IP</span><br><span class="line">deny hosts------设定只有此网段/IP的用户不能访问共享资源</span><br><span class="line">allow hosts=本网段指定IP指定IP</span><br><span class="line">deny hosts=指定IP本网段指定IP</span><br></pre></td></tr></table></figure>
-<p><a href="https://blog.csdn.net/weixin_34390996/article/details/92980208?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/weixin_34390996/article/details/92980208?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
-<p>1、FTp</p>
-<p><a href="https://www.cnblogs.com/Wang352051443/p/9805980.html" target="_blank" rel="noopener">https://www.cnblogs.com/Wang352051443/p/9805980.html</a></p>
+<h4 id="8、其他"><a href="#8、其他" class="headerlink" title="8、其他"></a>8、其他</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https://blog.csdn.net/weixin_34390996/article/details/92980208?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</span><br><span class="line"></span><br><span class="line">1、FTp</span><br><span class="line"></span><br><span class="line">https://www.cnblogs.com/Wang352051443/p/9805980.html</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -185,9 +220,7 @@
   <entry>
     <title>linux-dns</title>
     <url>/2019/11/03/linux-dns/</url>
-    <content><![CDATA[<p><a href="https://www.cnblogs.com/yueshang/p/9447456.html" target="_blank" rel="noopener">https://www.cnblogs.com/yueshang/p/9447456.html</a></p>
-<p><a href="https://blog.csdn.net/weixin_33800593/article/details/92384884" target="_blank" rel="noopener">https://blog.csdn.net/weixin_33800593/article/details/92384884</a></p>
-<h4 id="1、安装dns服务"><a href="#1、安装dns服务" class="headerlink" title="1、安装dns服务"></a>1、安装dns服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum list bind</span><br><span class="line">yum install bind.x86_64</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h4 id="1、安装dns服务"><a href="#1、安装dns服务" class="headerlink" title="1、安装dns服务"></a>1、安装dns服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum list bind</span><br><span class="line">yum install bind.x86_64</span><br></pre></td></tr></table></figure>
 <h4 id="2、编辑解析配置文件"><a href="#2、编辑解析配置文件" class="headerlink" title="2、编辑解析配置文件"></a>2、编辑解析配置文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/named.conf</span><br><span class="line">options &#123;</span><br><span class="line">listen-on port 53 &#123; 192.168.0.200&#125;; //改成自己服务器的IP</span><br><span class="line">listen-on-v6 port 53 &#123; ::1; &#125;;</span><br><span class="line">directory &quot;/var/named&quot;;</span><br><span class="line">dump-file &quot;/var/named/data/cache_dump.db&quot;;</span><br><span class="line">statistics-file &quot;/var/named/data/named_stats.txt&quot;;</span><br><span class="line">memstatistics-file &quot;/var/named/data/named_mem_stats.txt&quot;;</span><br><span class="line">allow-query &#123; any; &#125;; //任何人都可以访问 ###</span><br></pre></td></tr></table></figure>
 <h4 id="3、配置区域解析文件"><a href="#3、配置区域解析文件" class="headerlink" title="3、配置区域解析文件"></a>3、配置区域解析文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/named.rfc1912.zones</span><br><span class="line">//正向区域配置</span><br><span class="line">zone &quot;lwx.com&quot; IN &#123;</span><br><span class="line">type master;</span><br><span class="line">file &quot;lwx.com.zone&quot;;</span><br><span class="line">allow-update &#123; none; &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">//反向区域配置</span><br><span class="line">zone &quot;68.68.68.in-addr.arpa&quot; IN &#123;</span><br><span class="line">type master;</span><br><span class="line">file &quot;68.com.local&quot;;</span><br><span class="line">allow-update &#123; none; &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h4 id="4、编辑解析文件"><a href="#4、编辑解析文件" class="headerlink" title="4、编辑解析文件"></a>4、编辑解析文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /var/named</span><br><span class="line">cp -p named.localhost lwx.com.zone</span><br><span class="line">修改配置内容：vi lwx.com.zone</span><br></pre></td></tr></table></figure>
@@ -198,6 +231,7 @@
 <h4 id="5、重新启动服务"><a href="#5、重新启动服务" class="headerlink" title="5、重新启动服务"></a>5、重新启动服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl restart named //重新启动</span><br><span class="line"></span><br><span class="line">netstat -anpu | grep name //查看服务运行状态</span><br></pre></td></tr></table></figure>
 <h4 id="6、测试"><a href="#6、测试" class="headerlink" title="6、测试"></a>6、测试</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/resolv.conf //配置服务器DNS</span><br><span class="line"></span><br><span class="line">nslookup www.lwx.com //正向</span><br><span class="line">nslookup 68.68.68.168//反向</span><br></pre></td></tr></table></figure>
 <h4 id="7、客户端测试关闭防火墙"><a href="#7、客户端测试关闭防火墙" class="headerlink" title="7、客户端测试关闭防火墙"></a>7、客户端测试关闭防火墙</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld //关闭防火墙</span><br><span class="line"></span><br><span class="line">systemctl stop iptables //关闭防火墙</span><br></pre></td></tr></table></figure>
+<h4 id="8、其他"><a href="#8、其他" class="headerlink" title="8、其他"></a>8、其他</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;https://www.cnblogs.com/yueshang/p/9447456.html&gt;</span><br><span class="line"></span><br><span class="line">&lt;https://blog.csdn.net/weixin_33800593/article/details/92384884&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -207,15 +241,13 @@
     <title>linux--dhcp</title>
     <url>/2019/10/30/linux-dhcp/</url>
     <content><![CDATA[<h4 id="1、安装DHCP服务"><a href="#1、安装DHCP服务" class="headerlink" title="1、安装DHCP服务"></a>1、安装DHCP服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum list dhcp</span><br><span class="line">yum install dhcp.x86_64</span><br></pre></td></tr></table></figure>
-<h4 id="2、配置DHCP服务器"><a href="#2、配置DHCP服务器" class="headerlink" title="2、配置DHCP服务器"></a>2、配置DHCP服务器</h4><p>1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）    </p>
+<h4 id="2、配置DHCP服务器"><a href="#2、配置DHCP服务器" class="headerlink" title="2、配置DHCP服务器"></a>2、配置DHCP服务器</h4><p>拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）    </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure>
 <h4 id="3、编写DHCP文档"><a href="#3、编写DHCP文档" class="headerlink" title="3、编写DHCP文档"></a>3、编写DHCP文档</h4><p>修改配置文件/etc/dhcp/dhcpd.conf  如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">subnet 192.168.0.0  netmask 255.255.255.0 &#123;</span><br><span class="line">  range 192.168.0.100  192.168.0.200;                         ##地址池 </span><br><span class="line">  option domain-name-servers  192.168.0.2;                   ##DNS服务器地址     </span><br><span class="line">  option routers 192.168.0.1; 					           ##默认路由</span><br><span class="line">  option broadcast-address 192.168.0.255;                     ##广播地址</span><br><span class="line">  default-lease-time 86400;                                       ##默认租约时间 </span><br><span class="line">  max-lease-time 28800;                                          ##最大租约时间 </span><br><span class="line">&#125;</span><br><span class="line">host windows7 &#123;</span><br><span class="line">	hardware ethernet 00:0c:29:0f:67;</span><br><span class="line">	fixed-address 192.168.0.111;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dhcpd -t ##检查语法错误</span><br></pre></td></tr></table></figure>
 <h4 id="4、重新启动DHCP服务"><a href="#4、重新启动DHCP服务" class="headerlink" title="4、重新启动DHCP服务"></a>4、重新启动DHCP服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl restart dhcpd.service #重新启动dhcp</span><br><span class="line"></span><br><span class="line">dhclient #重新获得地址</span><br></pre></td></tr></table></figure>
-<p>servername 95</p>
-<p>/var/www/html/index.html</p>
-<p>119行</p>
+<h4 id="5、其他"><a href="#5、其他" class="headerlink" title="5、其他"></a>5、其他</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">servername 95</span><br><span class="line"></span><br><span class="line">/var/www/html/index.html</span><br><span class="line"></span><br><span class="line">119行</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -224,19 +256,19 @@
   <entry>
     <title>linux配置防火墙策略实验</title>
     <url>/2019/10/25/linux-firewalld-1/</url>
-    <content><![CDATA[<p>1、开启防火墙<br>systemctl stats firewalld.service</p>
-<p>2、设置防火墙默认区域为internal<br>firewall-cmd –set-default-zone=internal<br>查看防火墙默认区域<br>firewall-cmd –get-default-zone</p>
-<p>3、设置防火墙活动区域为internal<br>firewall-cmd –permanent –change-interface=ens33 –zone=internal<br>查看防火墙默认活动区域<br>firewall-cmd –get-acitve-zone</p>
-<p>4、移除ssh服务，添加富规则<br>查看防火墙规则<br>firewall-cmd –list-all<br>在规则里移除ssh服务<br>firewall-cmd –remove-service=ssh –permanent<br>添加富规则<br>firewall-cmd –permanent –zone=internal –add-rich-rules=”rule family=”ipv4 source address=”1.1.1.164” service name=”ssh” accept”<br>重新加载规则<br>firewall-cmd –reload</p>
+    <content><![CDATA[<h3 id="1、开启防火墙"><a href="#1、开启防火墙" class="headerlink" title="1、开启防火墙"></a>1、开启防火墙</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl stats firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="2、设置防火墙默认区域为internal"><a href="#2、设置防火墙默认区域为internal" class="headerlink" title="2、设置防火墙默认区域为internal"></a>2、设置防火墙默认区域为internal</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --set-default-zone=internal</span><br><span class="line">#查看防火墙默认区域</span><br><span class="line">firewall-cmd --get-default-zone</span><br></pre></td></tr></table></figure>
+<h4 id="3、设置防火墙活动区域为internal"><a href="#3、设置防火墙活动区域为internal" class="headerlink" title="3、设置防火墙活动区域为internal"></a>3、设置防火墙活动区域为internal</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --change-interface=ens33 --zone=internal</span><br><span class="line">#查看防火墙默认活动区域</span><br><span class="line">firewall-cmd --get-acitve-zone</span><br></pre></td></tr></table></figure>
+<h4 id="4、移除ssh服务，添加富规则"><a href="#4、移除ssh服务，添加富规则" class="headerlink" title="4、移除ssh服务，添加富规则"></a>4、移除ssh服务，添加富规则</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#查看防火墙规则</span><br><span class="line">firewall-cmd --list-all</span><br><span class="line">#在规则里移除ssh服务</span><br><span class="line">firewall-cmd --remove-service=ssh --permanent</span><br><span class="line">#添加富规则</span><br><span class="line">firewall-cmd --permanent --zone=internal --add-rich-rules=&quot;rule family=&quot;ipv4 source address=&quot;1.1.1.164&quot; service name=&quot;ssh&quot; accept&quot;</span><br><span class="line">#重新加载规则</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>linux</tag>
       </tags>
   </entry>
   <entry>
-    <title>linux-----firewalld</title>
+    <title>linux-常见问题</title>
     <url>/2019/10/25/linux-firewalld/</url>
-    <content><![CDATA[<h5 id="Centos7-systemctl-启动-firewalld-时出现-Failed-to-start-firewalld-service-Unit-is-masked"><a href="#Centos7-systemctl-启动-firewalld-时出现-Failed-to-start-firewalld-service-Unit-is-masked" class="headerlink" title="Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked."></a>Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked.</h5><p>也就是说这个命令被锁着了，只需要执行如下命令：</p>
+    <content><![CDATA[<h5 id="1、Centos7-systemctl-启动-firewalld-时出现-Failed-to-start-firewalld-service-Unit-is-masked"><a href="#1、Centos7-systemctl-启动-firewalld-时出现-Failed-to-start-firewalld-service-Unit-is-masked" class="headerlink" title="1、Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked."></a>1、Centos7 systemctl 启动 firewalld 时出现 Failed to start firewalld.service: Unit is masked.</h5><p>也就是说这个命令被锁着了，只需要执行如下命令：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl unmask firewalld</span><br></pre></td></tr></table></figure>
 <p>出现下面提示即可</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Removed symlink /etc/systemd/system/firewalld.service</span><br></pre></td></tr></table></figure>
@@ -244,7 +276,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl mask firewalld</span><br></pre></td></tr></table></figure>
 <p>通过systemctl start firewalld开启防火墙，没有任何提示即开启成功。</p>
 <p>再次通过systemctl status firewalld查看firewalld状态，显示running即已开启。</p>
-<h4 id="redirecting-to-bin-systemctl-restart-sshd-service"><a href="#redirecting-to-bin-systemctl-restart-sshd-service" class="headerlink" title="redirecting to /bin/systemctl restart sshd.service"></a>redirecting to /bin/systemctl restart sshd.service</h4><p>查看 sshd 服务是否启动</p>
+<h4 id="2、redirecting-to-bin-systemctl-restart-sshd-service"><a href="#2、redirecting-to-bin-systemctl-restart-sshd-service" class="headerlink" title="2、redirecting to /bin/systemctl restart sshd.service"></a>2、redirecting to /bin/systemctl restart sshd.service</h4><p>查看 sshd 服务是否启动</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl status sshd.service</span><br></pre></td></tr></table></figure>
 <p>启动该服务</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start sshd.service</span><br></pre></td></tr></table></figure>
@@ -252,19 +284,21 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl restart sshd.service</span><br></pre></td></tr></table></figure>
 <p>设置服务开启自启</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable sshd.service</span><br></pre></td></tr></table></figure>
-<h4 id="查看linux-SSH服务常用命令"><a href="#查看linux-SSH服务常用命令" class="headerlink" title="查看linux SSH服务常用命令"></a>查看linux SSH服务常用命令</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep ssh</span><br></pre></td></tr></table></figure>
+<h4 id="3、查看linux-SSH服务常用命令"><a href="#3、查看linux-SSH服务常用命令" class="headerlink" title="3、查看linux SSH服务常用命令"></a>3、查看linux SSH服务常用命令</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep ssh</span><br></pre></td></tr></table></figure>
 <p> 可以看到系统中ssh安装包   </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps -ef | grep ssh</span><br></pre></td></tr></table></figure>
 <p>查看ssh服务有没有运行,如果有,可以看到类似以下内容:<br>root 2659 1 0 18:31 ? 00:00:00 /usr/sbin/sshd<br>root 2702 2618 0 18:38 pts/0 00:00:00 grep ssh<br>这证明ssh已经在运行了,进程名为sshd<br>如果没有运行,可以通过以下命令运行之:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service sshd start</span><br></pre></td></tr></table></figure>
 <p>再看下这个ssh服务的网络连接情况:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -ntlp</span><br></pre></td></tr></table></figure>
-<p>如果看到如下内容:<br>tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN<br>这说明sshd已经能够正常工作了,如果利用客户端(SecurCRT,putty等)连接不上,尝试关闭防火墙试试: service iptables stop</p>
-<h4 id="配置虚拟机网络"><a href="#配置虚拟机网络" class="headerlink" title="配置虚拟机网络"></a>配置虚拟机网络</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/networf-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
+<p>如果看到如下内容:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN</span><br></pre></td></tr></table></figure>
+<p>这说明sshd已经能够正常工作了,如果利用客户端(SecurCRT,putty等)连接不上,尝试关闭防火墙试试: service iptables stop</p>
+<p>这说明sshd已经能够正常工作了,如果利用客户端(SecurCRT,putty等)连接不上,尝试关闭防火墙试试: service iptables stop</p>
+<h4 id="4、配置虚拟机网络"><a href="#4、配置虚拟机网络" class="headerlink" title="4、配置虚拟机网络"></a>4、配置虚拟机网络</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/sysconfig/networf-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
 <p>配置与主机相同网段的IP地址、子网掩码、网关信息</p>
-<p>重启网卡</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure>
-<h4 id="使用systemctl-restart-network无法重启网络和ping不通百度"><a href="#使用systemctl-restart-network无法重启网络和ping不通百度" class="headerlink" title="使用systemctl restart network无法重启网络和ping不通百度"></a>使用systemctl restart network无法重启网络和ping不通百度</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl stop NetworkManager.service </span><br><span class="line">systemctl disable NetworkManager.service</span><br></pre></td></tr></table></figure>
+<h4 id="5、使用systemctl-restart-network无法重启网络和ping不通百度"><a href="#5、使用systemctl-restart-network无法重启网络和ping不通百度" class="headerlink" title="5、使用systemctl restart network无法重启网络和ping不通百度"></a>5、使用systemctl restart network无法重启网络和ping不通百度</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl stop NetworkManager.service </span><br><span class="line">systemctl disable NetworkManager.service</span><br></pre></td></tr></table></figure>
 <p>停止网络管理服务</p>
 ]]></content>
       <tags>
@@ -274,21 +308,42 @@
   <entry>
     <title>linux基本操作</title>
     <url>/2019/09/06/linux/</url>
-    <content><![CDATA[<h4 id="1、查看文档信息"><a href="#1、查看文档信息" class="headerlink" title="1、查看文档信息"></a>1、查看文档信息</h4><p>我们要查看一些文本文件的内容时，要使用文本编辑器来查看。在Linux下，可以使用一些命令预览文本文件中的内容，而不必使用文本编辑器打开查看。这篇笔记分享几个常用的文本查看命令。分别是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat：从第一行开始显示文本内容（适用于内容较少的）</span><br><span class="line">tac：从最后一行开始显示，是 cat 的逆顺序</span><br><span class="line">more：一页一页的显示文本内容（适用于内容较多的）</span><br><span class="line">less：与 more 类似，但是比 more 更好的是，它可以往前翻页！</span><br><span class="line">head：只看文本的前面几行</span><br><span class="line">tail：只看文本的后面几行</span><br><span class="line">nl：显示文本内容与行号</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h4 id="0、Linux用户手册"><a href="#0、Linux用户手册" class="headerlink" title="0、Linux用户手册"></a>0、Linux用户手册</h4><p><a href="http://www.shouce.ren/api/linux/" target="_blank" rel="noopener">http://www.shouce.ren/api/linux/</a></p>
+<h4 id="1、查看文档信息"><a href="#1、查看文档信息" class="headerlink" title="1、查看文档信息"></a>1、查看文档信息</h4><p>我们要查看一些文本文件的内容时，要使用文本编辑器来查看。在Linux下，可以使用一些命令预览文本文件中的内容，而不必使用文本编辑器打开查看。这篇笔记分享几个常用的文本查看命令。分别是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat：从第一行开始显示文本内容（适用于内容较少的）-n 显示行号</span><br><span class="line">tac：从最后一行开始显示，是 cat 的逆顺序</span><br><span class="line">more：一页一页的显示文本内容（适用于内容较多的）</span><br><span class="line">less：与 more 类似，但是比 more 更好的是，它可以往前翻页！</span><br><span class="line">head：只看文本的前面几行</span><br><span class="line">tail：只看文本的后面几行</span><br><span class="line">nl：显示文本内容与行号</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep -v &quot;^#&quot;     ###查看非注释文件</span><br></pre></td></tr></table></figure>
 <h4 id="2、挂载光盘"><a href="#2、挂载光盘" class="headerlink" title="2、挂载光盘"></a>2、挂载光盘</h4><p>1、找到光盘的完整路径名。在命令行输入：ls -l /dev | grep cdrom。<br>2、可以看到光盘的名字叫做：cdrom。然后在命令行执行： mount /dev/cdrom /mnt/。这会把光盘挂载到/mnt目录下。然后我们就可以通过访问/mnt来访问光盘。<br>3、比如我们要从光盘中拷贝出来一个rpm包。首先在命令行输入：cd /mnt。然后输入ll。就列出了光盘里面的所有的内容。<br>4、进入到Packages目录，在命令行输入：cd Packages。然后输入：ls -l | grep mysql。找到我们要拷贝出来的rpm包。<br>5、在命令行输入： cp mysql-5.1.66-2.el6_3.x86_64.rpm /opt/soft。把mysql-5.1.66-2.el6_3.x86_64.rpm这个包拷贝到/opt/soft目录下面。在命令行输入：cd /opt/soft。然后ll。可以看到文件已经被拷贝过去了。<br>6、使用完毕以后，要记得卸载光盘。在命令行输入：umount /mnt。然后再进入/mnt目录就看不到光盘的内容了，说明已经成功卸载。</p>
 <p>这个时候，会出现一个问题：mount: block device /dev/sr0 is write-protected, mounting read-only<br>提示信息说，虚拟机挂着光驱光驱时提示只读。用以下命令可解决该报错：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mount -o remount,rw /dev/cdrom /mnt</span><br></pre></td></tr></table></figure>
 <p><a href="https://blog.csdn.net/qq_42776455/article/details/84066933" target="_blank" rel="noopener">https://blog.csdn.net/qq_42776455/article/details/84066933</a></p>
 <p><a href="https://www.cnblogs.com/chris-cp/p/4843407.html" target="_blank" rel="noopener">https://www.cnblogs.com/chris-cp/p/4843407.html</a></p>
-<p>3、安装报错NO <strong>*</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install epel-release //安装专业版软件库</span><br></pre></td></tr></table></figure>
-<p>4、查看本地安装的服务</p>
-<p>rpm -qa | grep ***</p>
+<h4 id="3、安装报错NO"><a href="#3、安装报错NO" class="headerlink" title="3、安装报错NO *"></a>3、安装报错NO <strong>*</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install epel-release //安装专业版软件库</span><br></pre></td></tr></table></figure>
+<h4 id="4、查看本地安装的服务"><a href="#4、查看本地安装的服务" class="headerlink" title="4、查看本地安装的服务"></a>4、查看本地安装的服务</h4><p>rpm -qa | grep ***</p>
 <p><a href="https://www.cnblogs.com/Wang352051443/p/9805980.html" target="_blank" rel="noopener">https://www.cnblogs.com/Wang352051443/p/9805980.html</a></p>
-<p>5、查看本地用户、用户组</p>
-<p>cat /etc/passwd<br>cat /etc/group</p>
+<h4 id="5、查看本地用户、用户组"><a href="#5、查看本地用户、用户组" class="headerlink" title="5、查看本地用户、用户组"></a>5、查看本地用户、用户组</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br><span class="line">cat /etc/group</span><br></pre></td></tr></table></figure>
+<h4 id="6、查看开通那些端口"><a href="#6、查看开通那些端口" class="headerlink" title="6、查看开通那些端口"></a>6、查看开通那些端口</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -anp</span><br></pre></td></tr></table></figure>
+<h4 id="7、查看系统信息"><a href="#7、查看系统信息" class="headerlink" title="7、查看系统信息"></a>7、查看系统信息</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uname -a //查看系统信息</span><br><span class="line">cat /proc/version //查看内核信息</span><br><span class="line">cat /etc/issue //查看</span><br><span class="line">cat /proc/cpuinfo //查看cpu信息</span><br><span class="line">cat -n 显示行号(显示空行)-b（不显示空行）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># chkconfig telnet on //开启Telnet服务</span><br><span class="line"># chkconfig telnet off //关闭Telnet服务</span><br></pre></td></tr></table></figure>
+<h4 id="8、文件操作权限"><a href="#8、文件操作权限" class="headerlink" title="8、文件操作权限"></a>8、文件操作权限</h4><p>l链接、b块、c字符、p管道、d目录、-文件</p>
+<p>rwx rwx rwx 用八进制表示777</p>
+<p>第一组代表文件所有者权限<br>第二组代表组内的用户权限<br>第三组代表组外的用户权限</p>
+<p>chown 更改文件目录的拥有者</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chown -R 文件的新拥有者 文件名</span><br></pre></td></tr></table></figure>
+<p>chmod 更改文件目录的存取权限</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、数值模式：chmod -R 权限值 文件名1 文件名2</span><br><span class="line">R ：对目录及该目录下的所有文件和子目录都进行相同的操作；	</span><br><span class="line"> </span><br><span class="line">chmod 777 file #更改文件读写权限为777</span><br><span class="line"></span><br><span class="line">2、符号模式：chmod 符号 文件名1 文件名2	</span><br><span class="line">a、u、g、o表示要赋予权限的用户的类，a代表所有的用户，u代表文件的所有者自身，g 代表和所有者同组群的用户，o代表组外的其他用户</span><br><span class="line">+-=用来增加、删除或设置权限，+表示增加权限，-表示删除权限，=表示设置权限</span><br><span class="line">rwx表示要增加、删除或设置的权限值，r表示读权限，w表示写权限，x表示执行权限</span><br><span class="line"></span><br><span class="line">chmod u+x file #增加拥有者对file的执行权（把file的权限改为744）</span><br><span class="line">chmod a+x file #增加所有用户对file的执行权（把file的权限改为777）</span><br></pre></td></tr></table></figure>
+<h4 id="9、linux中不同的文件表示不同的涵义"><a href="#9、linux中不同的文件表示不同的涵义" class="headerlink" title="9、linux中不同的文件表示不同的涵义"></a>9、linux中不同的文件表示不同的涵义</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">白色：表示普通文件、</span><br><span class="line">蓝色：表示目录、</span><br><span class="line">绿色：表示可执行文件、</span><br><span class="line">红色：表示压缩文件、</span><br><span class="line">浅蓝色：链接文件</span><br><span class="line">红色闪烁：表示链接的文件有问题、</span><br><span class="line">黄色：表示设备文件、</span><br><span class="line">灰色：表示其它文件</span><br></pre></td></tr></table></figure>
+<h4 id="10、linux查看启用的服务"><a href="#10、linux查看启用的服务" class="headerlink" title="10、linux查看启用的服务"></a>10、linux查看启用的服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ps ax //查看运行的服务</span><br><span class="line">chkconfig --list //查看那些服务开始时启动</span><br><span class="line">systemctl //查看所有启用的服务</span><br><span class="line">systemctl | grep runing</span><br><span class="line"></span><br><span class="line">https://www.linuxidc.com/Linux/2018-08/153512.htm</span><br></pre></td></tr></table></figure>
+<p>如何禁用、</p>
+<p>启用系统服务 </p>
+<p>如何设置系统ssh，以及创建以自己名字命名的账户 </p>
+<p>如何系统更新 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y update    # 升级所有包同时也升级软件和系统内核；</span><br><span class="line">yum -y upgrade   # 只升级所有包，不升级软件和系统内核。</span><br></pre></td></tr></table></figure>
+<p>采用强密码登陆 </p>
+<p><a href="https://blog.csdn.net/qq_36119192/article/details/82906799" target="_blank" rel="noopener">https://blog.csdn.net/qq_36119192/article/details/82906799</a></p>
+<p>强制定期修改密码 </p>
+<p>防止用户重新使用旧密码</p>
+<p><a href="https://blog.csdn.net/woailyoo0000/article/details/86525571" target="_blank" rel="noopener">https://blog.csdn.net/woailyoo0000/article/details/86525571</a></p>
+<h4 id="11、压缩和解压缩"><a href="#11、压缩和解压缩" class="headerlink" title="11、压缩和解压缩"></a>11、压缩和解压缩</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">压缩：tar -czvf 压缩名字 文件名</span><br><span class="line">tar -czvf myetc.tar.gz etc</span><br><span class="line"></span><br><span class="line">解压缩：tar -xzvf 解压名字 —C 目录</span><br><span class="line">tar -xzvf myetc.tar.gz</span><br><span class="line"></span><br><span class="line">tar -xzvf myetc.tar.gz -C /home</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -325,29 +380,35 @@
   </entry>
   <entry>
     <title>python爬虫解析库</title>
-    <url>/2019/08/05/python-1/</url>
+    <url>/2019/08/05/python%E7%88%AC%E8%99%AB%E8%A7%A3%E6%9E%90%E5%BA%93/</url>
     <content><![CDATA[<p><strong>Urllib</strong></p>
-<p>Python内置的Http请求库<br>urllib.request 请求模块<br>urllib.error 异常处理模块<br>urllib.parse url解析模块<br>urllib.robotparser robots.txt解析模块</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Python内置的Http请求库</span><br><span class="line">urllib.request 请求模块</span><br><span class="line">urllib.error 异常处理模块</span><br><span class="line">urllib.parse url解析模块</span><br><span class="line">urllib.robotparser robots.txt解析模块</span><br></pre></td></tr></table></figure>
 <p><strong>获取百度源代码</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"></span><br><span class="line">re = urllib.request.urlopen(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">print(re.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
 <p><strong>Requests</strong></p>
 <p><strong>异常处理</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> ReadTimeout</span><br><span class="line"></span><br><span class="line">URL = <span class="string">"http://httpbin.org/get"</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	response = requests.get(URL,timeout = <span class="number">0.01</span>)</span><br><span class="line">	print(response.status_code)</span><br><span class="line"><span class="keyword">except</span> ReadTimeout:</span><br><span class="line">	print(<span class="string">"Timeout"</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>正则表达式</strong></p>
-<p><img src="/2019/08/05/python-1/H:/hexo\blog\myblog\source\_posts\python-1\正则表达式.jpg" alt></p>
-<p>re.match</p>
+<p><img src="/2019/08/05/python爬虫解析库/H:/hexo\blog\myblog\source\_posts\python-1\正则表达式.jpg" alt></p>
+<p><strong>re.match</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">"Hello 123 4567 World_This is a Regex Demo"</span></span><br><span class="line">result = re.match(<span class="string">'^Hello\s\d\d\d\s\d&#123;4&#125;\s\w&#123;10&#125;.*Demo$'</span>,content)</span><br><span class="line">print(result) </span><br><span class="line">print(result.group()) <span class="comment">#输出结果</span></span><br><span class="line">print(result.span()) <span class="comment">#输出范围</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">"Hello 1234567 World_This is a Regex Demo"</span></span><br><span class="line">result = re.match(<span class="string">'^.*?(\d+).*$'</span>,content) <span class="comment">#非贪婪匹配</span></span><br><span class="line">result = re.match(<span class="string">'^.*(\d+).*$'</span>,content) <span class="comment">#贪婪匹配</span></span><br><span class="line"></span><br><span class="line">print(result) </span><br><span class="line">print(result.group(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''Hello 1234567 World_This </span></span><br><span class="line"><span class="string">is a Regex Demo'''</span></span><br><span class="line"></span><br><span class="line">result = re.match(<span class="string">'^.*?(\d+).*$'</span>,content,re.S)</span><br><span class="line"><span class="comment">#匹配换行re.s</span></span><br><span class="line"></span><br><span class="line">print(result) </span><br><span class="line">print(result.group())</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>总结：尽量使用反匹配、使用括号得到匹配目标、尽量使用非贪婪模式、有换行符就用re.s</p>
-<p>re.search</p>
+</blockquote>
+<p><strong>re.search</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Extra stings Hello 1234567 World_This is a Regex Demo Extra strings'</span></span><br><span class="line">result = re.search(<span class="string">'Hello.*?(\d+).*?Demo'</span>,content)</span><br><span class="line"></span><br><span class="line">print(result) </span><br><span class="line">print(result.group())</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>总结：为匹配方便，能用search就不用match</p>
-<p>html测试</p>
+</blockquote>
+<p><strong>html测试</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	'''</span></span><br><span class="line">result = re.search(<span class="string">'&lt;li.*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>,content,re.S)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> result: </span><br><span class="line">	print(result.group(<span class="number">1</span>),result.group(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-<p>re.findall</p>
+<p><strong>re.findall</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''   &lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">				&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="陈奕迅"&gt;十年&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">				&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="梁文鑫"&gt;再见&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">				&lt;li data-view = "4" class="active"&gt;</span></span><br><span class="line"><span class="string">				&lt;a href="/3.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">				&lt;/li&gt;	</span></span><br><span class="line"><span class="string">								</span></span><br><span class="line"><span class="string">			'''</span></span><br><span class="line"></span><br><span class="line">results = re.findall (<span class="string">'&lt;li.*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>,content,re.S)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">	print(result[<span class="number">0</span>],result[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>总结：查找符合所有符合的信息</p>
+</blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content =requests.get(<span class="string">'https://book.douban.com'</span>).text</span><br><span class="line">pattern = re.compile(<span class="string">'&lt;li.*?cover.*?href="(.*?)".*?title="(.*?)".*?mort-meta.*?author"&gt;(.*?)&lt;/span&gt;.*?year"&gt;(.*?)&lt;/span&gt;.*?&lt;/li&gt;'</span>,re.S)</span><br><span class="line"></span><br><span class="line">results = re.findall(pattern,content)</span><br><span class="line">print(results)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
@@ -402,7 +463,7 @@
 <p>TCP还设有一个保活计时器，显然，客户端如果出现故障，服务器不能一直等下去，白白浪费资源。服务器每收到一次客户端的请求后都会重新复位这个计时器，时间通常是设置为2小时，若两小时还没有收到客户端的任何数据，服务器就会发送一个探测报文段，以后每隔75秒钟发送一次。若一连发送10个探测报文仍然没反应，服务器就认为客户端出了故障，接着就关闭连接。</p>
 ]]></content>
       <tags>
-        <tag>WEB</tag>
+        <tag>网络基础</tag>
       </tags>
   </entry>
   <entry>
@@ -442,7 +503,7 @@
 <p>6、其他：为了提高用户使用浏览器时的性能，现代浏览器还支持并发的访问方式，浏览一个网页时同时建立多个连接，以迅速获得一个网页上的多个图标，这样能更快速完成整个网页的传输。<br>HTTP1.1中提供了这种持续连接的方式，而下一代HTTP协议：HTTP-NG更增加了有关会话控制、丰富的内容协商等方式的支持，来提供更高效率的连接。</p>
 ]]></content>
       <tags>
-        <tag>WEB</tag>
+        <tag>网络基础</tag>
       </tags>
   </entry>
   <entry>
@@ -553,18 +614,11 @@
 <p>好的歌只会在无意间听到<br>可人们会贪心将其循环<br>直到有一天厌烦了 便丢弃在一边 但偶尔听到也会觉得好听<br>仔细想想遇到的人 喜欢的人不也是如此<br>都渴望遇到更好的而我遇见了她<br>每天想她一万一千八百遍去哪都要粘着她<br>爱很简单 只想和她眉来眼去 互相调戏讲点低俗内容 嘻嘻<br>“世界有很多恶意 但是请相信天道有轮回 我们要保持善良可爱和有趣” ​ ​​​</p>
 <p>你喜欢的人一定会慢慢慢慢慢慢慢慢喜欢上你的 要相信</p>
 ]]></content>
-      <tags>
-        <tag>感情</tag>
-      </tags>
   </entry>
   <entry>
     <title>Hexo 常用命令</title>
     <url>/2019/04/07/Hexo-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h3 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h3><p>  npm install hexo -g #安装<br>  npm update hexo -g #更新<br>  hexo init #初始化</p>
-<p>  hexo n “name” #新建文章<br>  hexo g #生成静态网页<br>  hexo p #发表草稿。<br>  hexo s #启动服务<br>  hexo d #部署网站 参数：-g 部署之前先生成静态文件。</p>
-<p>  npm install hexo-server –save #安装服务<br>  hexo s #启动服务<br>  hexo server -p 5000 #更改端口<br>  hexo s -s #静态模式<br>  hexo s -i 192.168.1.1 #自定义ip<br>  hexo clean #清除缓存</p>
-<p>  hexo d -g #部署<br>  hexo g -d</p>
-<p>CD /H/hexo/blog/myblog</p>
+    <content><![CDATA[<h3 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">CD /H/hexo/blog/myblog</span><br><span class="line"></span><br><span class="line">npm install hexo -g #安装</span><br><span class="line">npm update hexo -g #更新</span><br><span class="line">hexo init #初始化</span><br><span class="line"></span><br><span class="line">hexo n "name" #新建文章</span><br><span class="line">hexo g #生成静态网页</span><br><span class="line">hexo p #发表草稿。</span><br><span class="line">hexo s #启动服务</span><br><span class="line">hexo d #部署网站 参数：-g 部署之前先生成静态文件。</span><br><span class="line"></span><br><span class="line">npm install hexo-server --save #安装服务</span><br><span class="line">hexo s #启动服务</span><br><span class="line">hexo server -p 5000 #更改端口</span><br><span class="line">hexo s -s #静态模式</span><br><span class="line">hexo s -i 192.168.1.1 #自定义ip	    </span><br><span class="line">hexo clean #清除缓存</span><br><span class="line"></span><br><span class="line">hexo d -g #部署</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>Hexo</tag>

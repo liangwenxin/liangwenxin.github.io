@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="计算机组成原理,">
+  <meta name="keywords" content="python,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="0x01 总线的基本概念1.总线是链接各个部件的信息传输线、是各个部件共享的传输介质（一条总线只能被一个设备使用、占用了就要通信）2.总线上信息的传送：穿行、并行备注：并行线路无法用于长距离通信、并行传输线路成本高（很宽的一根线，如PATA）信号线之间的干扰大，不能用于长距离传输。在并行传输中，如果传输频率高，数据线之间会产生很大的干扰。串行传输分为：异步传输、同步传输、等时传输。异步传输是面向字">
-<meta name="keywords" content="计算机组成原理">
+<meta name="description" content="使用python实现excel多个表格的合并12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#下面这些变量需要您根据自己的具体情况选择  biaotou=[&apos;序号&apos;,&apos;姓名&apos;,&apos;系部&apos;,&apos;专业班级&apos;,&apos;参与账号&apos;,&apos;密码&apos;,&apos;答题分数">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机组成原理---总线的基本概念">
-<meta property="og:url" content="http://liangwenxin.github.io/2019/08/11/计算机组成原理2/index.html">
+<meta property="og:title" content="Python合并excel表格">
+<meta property="og:url" content="http://liangwenxin.github.io/2020/03/20/Python合并excel表格/index.html">
 <meta property="og:site_name" content="liangwenxin’s blog">
-<meta property="og:description" content="0x01 总线的基本概念1.总线是链接各个部件的信息传输线、是各个部件共享的传输介质（一条总线只能被一个设备使用、占用了就要通信）2.总线上信息的传送：穿行、并行备注：并行线路无法用于长距离通信、并行传输线路成本高（很宽的一根线，如PATA）信号线之间的干扰大，不能用于长距离传输。在并行传输中，如果传输频率高，数据线之间会产生很大的干扰。串行传输分为：异步传输、同步传输、等时传输。异步传输是面向字">
+<meta property="og:description" content="使用python实现excel多个表格的合并12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#下面这些变量需要您根据自己的具体情况选择  biaotou=[&apos;序号&apos;,&apos;姓名&apos;,&apos;系部&apos;,&apos;专业班级&apos;,&apos;参与账号&apos;,&apos;密码&apos;,&apos;答题分数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-13T06:37:43.546Z">
+<meta property="og:updated_time" content="2020-05-20T02:29:47.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机组成原理---总线的基本概念">
-<meta name="twitter:description" content="0x01 总线的基本概念1.总线是链接各个部件的信息传输线、是各个部件共享的传输介质（一条总线只能被一个设备使用、占用了就要通信）2.总线上信息的传送：穿行、并行备注：并行线路无法用于长距离通信、并行传输线路成本高（很宽的一根线，如PATA）信号线之间的干扰大，不能用于长距离传输。在并行传输中，如果传输频率高，数据线之间会产生很大的干扰。串行传输分为：异步传输、同步传输、等时传输。异步传输是面向字">
+<meta name="twitter:title" content="Python合并excel表格">
+<meta name="twitter:description" content="使用python实现excel多个表格的合并12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#下面这些变量需要您根据自己的具体情况选择  biaotou=[&apos;序号&apos;,&apos;姓名&apos;,&apos;系部&apos;,&apos;专业班级&apos;,&apos;参与账号&apos;,&apos;密码&apos;,&apos;答题分数">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://liangwenxin.github.io/2019/08/11/计算机组成原理2/">
+  <link rel="canonical" href="http://liangwenxin.github.io/2020/03/20/Python合并excel表格/">
 
 
 
 
 
-  <title>计算机组成原理---总线的基本概念 | liangwenxin’s blog</title>
+  <title>Python合并excel表格 | liangwenxin’s blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2019/08/11/计算机组成原理2/">
+    <link itemprop="mainEntityOfPage" href="http://liangwenxin.github.io/2020/03/20/Python合并excel表格/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁文鑫">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">计算机组成原理---总线的基本概念</h1>
+          <h1 class="post-title" itemprop="name headline">Python合并excel表格</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-11T15:18:49+08:00">
-                2019-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T10:28:02+08:00">
+                2020-03-20
               </time>
             
 
@@ -325,12 +325,7 @@
       
 
       
-        <p><strong>0x01 总线的基本概念</strong><br>1.总线是链接各个部件的信息传输线、是各个部件共享的传输介质（一条总线只能被一个设备使用、占用了就要通信）<br>2.总线上信息的传送：穿行、并行<br>备注：并行线路无法用于长距离通信、并行传输线路成本高（很宽的一根线，如PATA）信号线之间的干扰大，不能用于长距离传输。在并行传输中，如果传输频率高，数据线之间会产生很大的干扰。串行传输分为：异步传输、同步传输、等时传输。异步传输是面向字符的传输，同步传输是面向比特的传输。异步传输的单位是字符而同步传输的单位是帧，异步传输通过字符起止的开始和停止码抓住在同步的机会，而同步传输则是以数据中抽取同步信息。在实际形况中串行要比并行速度快。</p>
-<p><strong>0x02 总线的分类</strong><br>1.片内总线：芯片内的总线<br>2.系统总线：计算机各个部件的信息传输线<br>数据总线：双向、与机器字长、存储字长有关<br>地址总线：单向、与存储地址、I/O地址有关<br>控制总线：有出、有入<br>3.通信总线：用于计算机系统直线或计算机与其他系统（如控制仪表、移动通信等）之间的通信<br>传输方式：串行、并行</p>
-<p><strong>0x03 总线的特性</strong><br>1.机械特性：尺寸、形状、管脚数以及排列顺序<br>2.电气特性：传输方向和有效的电平范围（高电平表示1、低电平表示0）<br>3.功能特性：每根传输线的功能（地址、数据、控制信号）<br>4.时间特性：信号的时序关系</p>
-<p><strong>0x04 总线的性能指标</strong><br>1.总线的宽度：数据线的根数（4、8、16、32）<br>2.标准传输率：每秒传输的最大字节数（MBps）<br>3.时钟同步/异步：同步、不同步<br>4.总线复用：地址线与数据线复用（公用、8086地址线与数据线共用）<br>5.信号线数：地址线、数据线和控制线的总和<br>6.总线控制方式：图发、自动、仲裁、逻辑、计数<br>7.其他指标：负载 能力</p>
-<p><strong>0x05 总结机构</strong><br>1.单总线结构：系统总线<br>2.双总线结构：主存总线（CPU、主存、通道）、I/O总线（I/O接口、设备）<br>3.三总线结构1：主存总线（CPU与主存）、I/O总线（CPU与I/O接口）、DMA总线（高速外设与主存）<br>4.三总线结构2：局部总线（CPU与Cache、局部I/O控制器）、系统总线（主存、Cache、扩展总线接口）、扩展总线（局域网、SCSI、扩展总线接口、MOdem、串行接口）<br>5.四总线结构：局部总线（CPU与Cache桥）、系统总线（Cache、主存）、高速总线（高速设备：SCSI、图形、Cache桥、多媒体、局域网）、扩展总线（低速设备：FAX、扩展总线接口、Modem、串行接口）<br>备注：最新的设备通过总线将高速设备与低速设备分离、系统总线连接CPU与存储器。CPU与Memory一条线、高速设备一条线、低速设备一条线。北桥控制CPU、内存、显卡和PCI交换数据，南桥控制IO设备。</p>
-<p><strong>0x06 总线控制</strong><br>1、总线判优控制：<br>主设备：对总线有控制权<br>从设备：响应从主设备发来的总线命令<br>总线判优控制：集中式（链式查询、计数器定时查询、独立请求方式）、分布式</p>
+        <h3 id="使用python实现excel多个表格的合并"><a href="#使用python实现excel多个表格的合并" class="headerlink" title="使用python实现excel多个表格的合并"></a>使用python实现excel多个表格的合并</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下面这些变量需要您根据自己的具体情况选择  </span></span><br><span class="line">biaotou=[<span class="string">'序号'</span>,<span class="string">'姓名'</span>,<span class="string">'系部'</span>,<span class="string">'专业班级'</span>,<span class="string">'参与账号'</span>,<span class="string">'密码'</span>,<span class="string">'答题分数'</span>,<span class="string">'联系电话'</span>,<span class="string">'辅导员'</span>,<span class="string">'备注'</span>]  </span><br><span class="line"><span class="comment">#在哪里搜索多个表格  </span></span><br><span class="line">filelocation=<span class="string">r"C:\Users\xin\Desktop\11\biaoge\\"</span>  </span><br><span class="line"><span class="comment">#当前文件夹下搜索的文件名后缀  </span></span><br><span class="line">fileform=<span class="string">"xlsx"</span>  </span><br><span class="line"><span class="comment">#将合并后的表格存放到的位置  </span></span><br><span class="line">filedestination=<span class="string">r"C:\Users\xin\Desktop\1"</span></span><br><span class="line"><span class="comment">#合并后的表格命名为file  </span></span><br><span class="line">file=<span class="string">"test"</span>  </span><br><span class="line">      </span><br><span class="line"><span class="comment">#首先查找默认文件夹下有多少文档需要整合  </span></span><br><span class="line"><span class="keyword">import</span> glob  </span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *  </span><br><span class="line">filearray=[]  </span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> glob.glob(filelocation+<span class="string">"*."</span>+fileform):  </span><br><span class="line">    filearray.append(filename)  </span><br><span class="line"><span class="comment">#以上是从pythonscripts文件夹下读取所有excel表格，并将所有的名字存储到列表filearray  </span></span><br><span class="line">print(<span class="string">"在默认文件夹下有%d个文档哦"</span>%len(filearray))  </span><br><span class="line">ge=len(filearray)  </span><br><span class="line">matrix = [<span class="literal">None</span>]*ge  </span><br><span class="line"><span class="comment">#实现读写数据  </span></span><br><span class="line">      </span><br><span class="line"><span class="comment">#下面是将所有文件读数据到三维列表cell[][][]中（不包含表头）  </span></span><br><span class="line"><span class="keyword">import</span> xlrd  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(ge):  </span><br><span class="line">    fname=filearray[i]  </span><br><span class="line">    bk=xlrd.open_workbook(fname)  </span><br><span class="line">    <span class="keyword">try</span>:  </span><br><span class="line">        sh=bk.sheet_by_name(<span class="string">"Sheet1"</span>)  </span><br><span class="line">    <span class="keyword">except</span>:  </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">"在文件%s中没有找到sheet1，读取文件数据失败,要不你换换表格的名字？"</span> %fname)  </span><br><span class="line">    nrows=sh.nrows   </span><br><span class="line">    matrix[i] = [<span class="number">0</span>]*(nrows<span class="number">-1</span>)  </span><br><span class="line">          </span><br><span class="line">    ncols=sh.ncols  </span><br><span class="line">    <span class="keyword">for</span> m <span class="keyword">in</span> range(nrows<span class="number">-1</span>):    </span><br><span class="line">        matrix[i][m] = [<span class="string">"0"</span>]*ncols  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,nrows):  </span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">0</span>,ncols):  </span><br><span class="line">            matrix[i][j<span class="number">-1</span>][k]=sh.cell(j,k).value  </span><br><span class="line"><span class="comment">#下面是写数据到新的表格test.xls中哦  </span></span><br><span class="line"><span class="keyword">import</span> xlwt  </span><br><span class="line">filename=xlwt.Workbook()  </span><br><span class="line">sheet=filename.add_sheet(<span class="string">"hel"</span>)  </span><br><span class="line"><span class="comment">#下面是把表头写上  </span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(biaotou)):  </span><br><span class="line">    sheet.write(<span class="number">0</span>,i,biaotou[i])  </span><br><span class="line"><span class="comment">#求和前面的文件一共写了多少行  </span></span><br><span class="line">zh=<span class="number">1</span>  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(ge):  </span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(matrix[i])):  </span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(len(matrix[i][j])):  </span><br><span class="line">            sheet.write(zh,k,matrix[i][j][k])  </span><br><span class="line">        zh=zh+<span class="number">1</span>  </span><br><span class="line">print(<span class="string">"我已经将%d个文件合并成1个文件，并命名为%s.xls.快打开看看正确不？"</span>%(ge,file))  </span><br><span class="line">filename.save(filedestination+file+<span class="string">".xls"</span>)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -348,7 +343,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/计算机组成原理/" rel="tag"># 计算机组成原理</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -361,8 +356,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/10/计算机组成原理1/" rel="next" title="计算机组成原理1">
-                <i class="fa fa-chevron-left"></i> 计算机组成原理1
+              <a href="/2020/03/02/hello-world/" rel="next" title="hello,world">
+                <i class="fa fa-chevron-left"></i> hello,world
               </a>
             
           </div>
@@ -371,8 +366,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/06/linux/" rel="prev" title="linux基本操作">
-                linux基本操作 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/27/C-容器的使用/" rel="prev" title="C++容器的使用-vector">
+                C++容器的使用-vector <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -425,8 +420,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -495,6 +499,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用python实现excel多个表格的合并"><span class="nav-number">1.</span> <span class="nav-text">使用python实现excel多个表格的合并</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

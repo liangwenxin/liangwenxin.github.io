@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="liangwenxin’s blog">
 <meta property="og:description" content="1、安装samba服务1yum install samba* 2、添加用户1234useradd jsjuser #添加用户smbpasswd -a jsjuser #设置密码groupadd jsjusers #添加用户组usermod -G jsjusers jsjuser #将用户添加到组中 3、创建目录1mkdir /share 4、修改配置文件1234567891011vi /etc/s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-17T12:22:24.779Z">
+<meta property="og:updated_time" content="2020-05-20T02:18:42.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux--samba">
 <meta name="twitter:description" content="1、安装samba服务1yum install samba* 2、添加用户1234useradd jsjuser #添加用户smbpasswd -a jsjuser #设置密码groupadd jsjusers #添加用户组usermod -G jsjusers jsjuser #将用户添加到组中 3、创建目录1mkdir /share 4、修改配置文件1234567891011vi /etc/s">
@@ -334,9 +334,7 @@
 <h4 id="7、挂载目录"><a href="#7、挂载目录" class="headerlink" title="7、挂载目录"></a>7、挂载目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount //1.1.1.110/share /mnt -o username = smb1,password = liangwenxin</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net use * /delete /y</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">comment---------注释说明</span><br><span class="line">path------------分享资源的完整路径名称，除了路径要正确外，目录的权限也要设对</span><br><span class="line">browseable------是yes/否no在浏览资源中显示共享目录，若为否则必须指定共享路径才能存取</span><br><span class="line">printable-------是yes/否no允许打印</span><br><span class="line">hide dot ftles--是yes/否no隐藏隐藏文件</span><br><span class="line">public----------是yes/否no公开共享，若为否则进行身份验证(只有当security = share 时此项才起作用)</span><br><span class="line">guest ok--------是yes/否no公开共享，若为否则进行身份验证(只有当security = share 时此项才起作用)</span><br><span class="line">read only-------是yes/否no以只读方式共享当与writable发生冲突时也writable为准</span><br><span class="line">writable--------是yes/否no不以只读方式共享当与read only发生冲突时，无视read only</span><br><span class="line">vaild users-----设定只有此名单内的用户才能访问共享资源(拒绝优先)(用户名/@组名)</span><br><span class="line">invalid users---设定只有此名单内的用户不能访问共享资源(拒绝优先)(用户名/@组名)</span><br><span class="line">read list-------设定此名单内的成员为只读(用户名/@组名)</span><br><span class="line">write list------若设定为只读时，则只有此设定的名单内的成员才可作写入动作(用户名/@组名)</span><br><span class="line">create mask-----建立文件时所给的权限</span><br><span class="line">directory mask--建立目录时所给的权限</span><br><span class="line">force group-----指定存取资源时须以此设定的群组使用者进入才能存取(用户名/@组名)</span><br><span class="line">force user------指定存取资源时须以此设定的使用者进入才能存取(用户名/@组名)</span><br><span class="line">allow hosts-----设定只有此网段/IP的用户才能访问共享资源</span><br><span class="line">allwo hosts = 网段 except IP</span><br><span class="line">deny hosts------设定只有此网段/IP的用户不能访问共享资源</span><br><span class="line">allow hosts=本网段指定IP指定IP</span><br><span class="line">deny hosts=指定IP本网段指定IP</span><br></pre></td></tr></table></figure>
-<p><a href="https://blog.csdn.net/weixin_34390996/article/details/92980208?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/weixin_34390996/article/details/92980208?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
-<p>1、FTp</p>
-<p><a href="https://www.cnblogs.com/Wang352051443/p/9805980.html" target="_blank" rel="noopener">https://www.cnblogs.com/Wang352051443/p/9805980.html</a></p>
+<h4 id="8、其他"><a href="#8、其他" class="headerlink" title="8、其他"></a>8、其他</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">https://blog.csdn.net/weixin_34390996/article/details/92980208?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</span><br><span class="line"></span><br><span class="line">1、FTp</span><br><span class="line"></span><br><span class="line">https://www.cnblogs.com/Wang352051443/p/9805980.html</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -377,7 +375,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/12/linux-http-apache/" rel="prev" title>
+              <a href="/2019/11/12/linux-http/" rel="prev" title>
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -458,7 +456,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -520,7 +518,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、安装samba服务"><span class="nav-number">1.</span> <span class="nav-text">1、安装samba服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、添加用户"><span class="nav-number">2.</span> <span class="nav-text">2、添加用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、创建目录"><span class="nav-number">3.</span> <span class="nav-text">3、创建目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、修改配置文件"><span class="nav-number">4.</span> <span class="nav-text">4、修改配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、启动服务"><span class="nav-number">5.</span> <span class="nav-text">5、启动服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、关闭防火墙、修改策略"><span class="nav-number">6.</span> <span class="nav-text">6、关闭防火墙、修改策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、挂载目录"><span class="nav-number">7.</span> <span class="nav-text">7、挂载目录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、安装samba服务"><span class="nav-number">1.</span> <span class="nav-text">1、安装samba服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、添加用户"><span class="nav-number">2.</span> <span class="nav-text">2、添加用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、创建目录"><span class="nav-number">3.</span> <span class="nav-text">3、创建目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、修改配置文件"><span class="nav-number">4.</span> <span class="nav-text">4、修改配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、启动服务"><span class="nav-number">5.</span> <span class="nav-text">5、启动服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、关闭防火墙、修改策略"><span class="nav-number">6.</span> <span class="nav-text">6、关闭防火墙、修改策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、挂载目录"><span class="nav-number">7.</span> <span class="nav-text">7、挂载目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、其他"><span class="nav-number">8.</span> <span class="nav-text">8、其他</span></a></li></ol></div>
             
 
           </div>

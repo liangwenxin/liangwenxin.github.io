@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1、开启防火墙systemctl stats firewalld.service 2、设置防火墙默认区域为internalfirewall-cmd –set-default-zone=internal查看防火墙默认区域firewall-cmd –get-default-zone 3、设置防火墙活动区域为internalfirewall-cmd –permanent –change-interfac">
+<meta name="description" content="1、开启防火墙1systemctl stats firewalld.service 2、设置防火墙默认区域为internal123firewall-cmd --set-default-zone=internal#查看防火墙默认区域firewall-cmd --get-default-zone 3、设置防火墙活动区域为internal123firewall-cmd --permanent --cha">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux配置防火墙策略实验">
 <meta property="og:url" content="http://liangwenxin.github.io/2019/10/25/linux-firewalld-1/index.html">
 <meta property="og:site_name" content="liangwenxin’s blog">
-<meta property="og:description" content="1、开启防火墙systemctl stats firewalld.service 2、设置防火墙默认区域为internalfirewall-cmd –set-default-zone=internal查看防火墙默认区域firewall-cmd –get-default-zone 3、设置防火墙活动区域为internalfirewall-cmd –permanent –change-interfac">
+<meta property="og:description" content="1、开启防火墙1systemctl stats firewalld.service 2、设置防火墙默认区域为internal123firewall-cmd --set-default-zone=internal#查看防火墙默认区域firewall-cmd --get-default-zone 3、设置防火墙活动区域为internal123firewall-cmd --permanent --cha">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-04T08:38:19.948Z">
+<meta property="og:updated_time" content="2020-05-20T02:16:40.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux配置防火墙策略实验">
-<meta name="twitter:description" content="1、开启防火墙systemctl stats firewalld.service 2、设置防火墙默认区域为internalfirewall-cmd –set-default-zone=internal查看防火墙默认区域firewall-cmd –get-default-zone 3、设置防火墙活动区域为internalfirewall-cmd –permanent –change-interfac">
+<meta name="twitter:description" content="1、开启防火墙1systemctl stats firewalld.service 2、设置防火墙默认区域为internal123firewall-cmd --set-default-zone=internal#查看防火墙默认区域firewall-cmd --get-default-zone 3、设置防火墙活动区域为internal123firewall-cmd --permanent --cha">
 
 
 
@@ -325,10 +325,10 @@
       
 
       
-        <p>1、开启防火墙<br>systemctl stats firewalld.service</p>
-<p>2、设置防火墙默认区域为internal<br>firewall-cmd –set-default-zone=internal<br>查看防火墙默认区域<br>firewall-cmd –get-default-zone</p>
-<p>3、设置防火墙活动区域为internal<br>firewall-cmd –permanent –change-interface=ens33 –zone=internal<br>查看防火墙默认活动区域<br>firewall-cmd –get-acitve-zone</p>
-<p>4、移除ssh服务，添加富规则<br>查看防火墙规则<br>firewall-cmd –list-all<br>在规则里移除ssh服务<br>firewall-cmd –remove-service=ssh –permanent<br>添加富规则<br>firewall-cmd –permanent –zone=internal –add-rich-rules=”rule family=”ipv4 source address=”1.1.1.164” service name=”ssh” accept”<br>重新加载规则<br>firewall-cmd –reload</p>
+        <h3 id="1、开启防火墙"><a href="#1、开启防火墙" class="headerlink" title="1、开启防火墙"></a>1、开启防火墙</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stats firewalld.service</span><br></pre></td></tr></table></figure>
+<h4 id="2、设置防火墙默认区域为internal"><a href="#2、设置防火墙默认区域为internal" class="headerlink" title="2、设置防火墙默认区域为internal"></a>2、设置防火墙默认区域为internal</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --set-default-zone=internal</span><br><span class="line">#查看防火墙默认区域</span><br><span class="line">firewall-cmd --get-default-zone</span><br></pre></td></tr></table></figure>
+<h4 id="3、设置防火墙活动区域为internal"><a href="#3、设置防火墙活动区域为internal" class="headerlink" title="3、设置防火墙活动区域为internal"></a>3、设置防火墙活动区域为internal</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --change-interface=ens33 --zone=internal</span><br><span class="line">#查看防火墙默认活动区域</span><br><span class="line">firewall-cmd --get-acitve-zone</span><br></pre></td></tr></table></figure>
+<h4 id="4、移除ssh服务，添加富规则"><a href="#4、移除ssh服务，添加富规则" class="headerlink" title="4、移除ssh服务，添加富规则"></a>4、移除ssh服务，添加富规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#查看防火墙规则</span><br><span class="line">firewall-cmd --list-all</span><br><span class="line">#在规则里移除ssh服务</span><br><span class="line">firewall-cmd --remove-service=ssh --permanent</span><br><span class="line">#添加富规则</span><br><span class="line">firewall-cmd --permanent --zone=internal --add-rich-rules=&quot;rule family=&quot;ipv4 source address=&quot;1.1.1.164&quot; service name=&quot;ssh&quot; accept&quot;</span><br><span class="line">#重新加载规则</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -359,8 +359,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/25/linux-firewalld/" rel="next" title="linux-----firewalld">
-                <i class="fa fa-chevron-left"></i> linux-----firewalld
+              <a href="/2019/10/25/linux-firewalld/" rel="next" title="linux-常见问题">
+                <i class="fa fa-chevron-left"></i> linux-常见问题
               </a>
             
           </div>
@@ -423,8 +423,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -441,7 +450,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -493,6 +502,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、开启防火墙"><span class="nav-number">1.</span> <span class="nav-text">1、开启防火墙</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2、设置防火墙默认区域为internal"><span class="nav-number">1.1.</span> <span class="nav-text">2、设置防火墙默认区域为internal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、设置防火墙活动区域为internal"><span class="nav-number">1.2.</span> <span class="nav-text">3、设置防火墙活动区域为internal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、移除ssh服务，添加富规则"><span class="nav-number">1.3.</span> <span class="nav-text">4、移除ssh服务，添加富规则</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

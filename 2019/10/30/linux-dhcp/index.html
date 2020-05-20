@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1、安装DHCP服务12yum list dhcpyum install dhcp.x86_64 2、配置DHCP服务器1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）     1cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 3、编写DHCP文档修改">
+<meta name="description" content="1、安装DHCP服务12yum list dhcpyum install dhcp.x86_64 2、配置DHCP服务器拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）     1cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 3、编写DHCP文档修改配置">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux--dhcp">
 <meta property="og:url" content="http://liangwenxin.github.io/2019/10/30/linux-dhcp/index.html">
 <meta property="og:site_name" content="liangwenxin’s blog">
-<meta property="og:description" content="1、安装DHCP服务12yum list dhcpyum install dhcp.x86_64 2、配置DHCP服务器1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）     1cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 3、编写DHCP文档修改">
+<meta property="og:description" content="1、安装DHCP服务12yum list dhcpyum install dhcp.x86_64 2、配置DHCP服务器拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）     1cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 3、编写DHCP文档修改配置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-17T04:16:21.261Z">
+<meta property="og:updated_time" content="2020-05-20T02:15:26.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux--dhcp">
-<meta name="twitter:description" content="1、安装DHCP服务12yum list dhcpyum install dhcp.x86_64 2、配置DHCP服务器1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）     1cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 3、编写DHCP文档修改">
+<meta name="twitter:description" content="1、安装DHCP服务12yum list dhcpyum install dhcp.x86_64 2、配置DHCP服务器拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）     1cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf 3、编写DHCP文档修改配置">
 
 
 
@@ -326,15 +326,13 @@
 
       
         <h4 id="1、安装DHCP服务"><a href="#1、安装DHCP服务" class="headerlink" title="1、安装DHCP服务"></a>1、安装DHCP服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum list dhcp</span><br><span class="line">yum install dhcp.x86_64</span><br></pre></td></tr></table></figure>
-<h4 id="2、配置DHCP服务器"><a href="#2、配置DHCP服务器" class="headerlink" title="2、配置DHCP服务器"></a>2、配置DHCP服务器</h4><p>1、拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）    </p>
+<h4 id="2、配置DHCP服务器"><a href="#2、配置DHCP服务器" class="headerlink" title="2、配置DHCP服务器"></a>2、配置DHCP服务器</h4><p>拷贝示例文件覆盖原来的空文件。通过rpm -ql dhcp查看自己模板配置文件（不一定和我一样的版本）    </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/doc/dhcp-4.2.5/dhcpd.conf.example /etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure>
 <h4 id="3、编写DHCP文档"><a href="#3、编写DHCP文档" class="headerlink" title="3、编写DHCP文档"></a>3、编写DHCP文档</h4><p>修改配置文件/etc/dhcp/dhcpd.conf  如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">subnet 192.168.0.0  netmask 255.255.255.0 &#123;</span><br><span class="line">  range 192.168.0.100  192.168.0.200;                         ##地址池 </span><br><span class="line">  option domain-name-servers  192.168.0.2;                   ##DNS服务器地址     </span><br><span class="line">  option routers 192.168.0.1; 					           ##默认路由</span><br><span class="line">  option broadcast-address 192.168.0.255;                     ##广播地址</span><br><span class="line">  default-lease-time 86400;                                       ##默认租约时间 </span><br><span class="line">  max-lease-time 28800;                                          ##最大租约时间 </span><br><span class="line">&#125;</span><br><span class="line">host windows7 &#123;</span><br><span class="line">	hardware ethernet 00:0c:29:0f:67;</span><br><span class="line">	fixed-address 192.168.0.111;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dhcpd -t ##检查语法错误</span><br></pre></td></tr></table></figure>
 <h4 id="4、重新启动DHCP服务"><a href="#4、重新启动DHCP服务" class="headerlink" title="4、重新启动DHCP服务"></a>4、重新启动DHCP服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart dhcpd.service #重新启动dhcp</span><br><span class="line"></span><br><span class="line">dhclient #重新获得地址</span><br></pre></td></tr></table></figure>
-<p>servername 95</p>
-<p>/var/www/html/index.html</p>
-<p>119行</p>
+<h4 id="5、其他"><a href="#5、其他" class="headerlink" title="5、其他"></a>5、其他</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">servername 95</span><br><span class="line"></span><br><span class="line">/var/www/html/index.html</span><br><span class="line"></span><br><span class="line">119行</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -456,7 +454,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -518,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、安装DHCP服务"><span class="nav-number">1.</span> <span class="nav-text">1、安装DHCP服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、配置DHCP服务器"><span class="nav-number">2.</span> <span class="nav-text">2、配置DHCP服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、编写DHCP文档"><span class="nav-number">3.</span> <span class="nav-text">3、编写DHCP文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、重新启动DHCP服务"><span class="nav-number">4.</span> <span class="nav-text">4、重新启动DHCP服务</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、安装DHCP服务"><span class="nav-number">1.</span> <span class="nav-text">1、安装DHCP服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、配置DHCP服务器"><span class="nav-number">2.</span> <span class="nav-text">2、配置DHCP服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、编写DHCP文档"><span class="nav-number">3.</span> <span class="nav-text">3、编写DHCP文档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、重新启动DHCP服务"><span class="nav-number">4.</span> <span class="nav-text">4、重新启动DHCP服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、其他"><span class="nav-number">5.</span> <span class="nav-text">5、其他</span></a></li></ol></div>
             
 
           </div>
